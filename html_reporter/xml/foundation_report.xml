@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results version="2">
+    <cppcheck version="2.1"/>
+    <errors>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;argv[1]&apos; is initialized" verbose="Cannot determine that &apos;argv[1]&apos; is initialized" cwe="457">
+            <location file="foundation/aafwk/services/abilitymgr_lite/tools/src/main.cpp" line="49" column="31"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;easingType_[EasingType::EASE_IN]&apos; is initialized" verbose="Cannot determine that &apos;easingType_[EasingType::EASE_IN]&apos; is initialized" cwe="457">
+            <location file="foundation/ace/frameworks/lite/src/core/animation/transition_impl.cpp" line="170" column="20"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;easingType_[EasingType::EASE_OUT]&apos; is initialized" verbose="Cannot determine that &apos;easingType_[EasingType::EASE_OUT]&apos; is initialized" cwe="457">
+            <location file="foundation/ace/frameworks/lite/src/core/animation/transition_impl.cpp" line="172" column="27"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;easingType_[EasingType::EASE_IN_OUT]&apos; is initialized" verbose="Cannot determine that &apos;easingType_[EasingType::EASE_IN_OUT]&apos; is initialized" cwe="457">
+            <location file="foundation/ace/frameworks/lite/src/core/animation/transition_impl.cpp" line="174" column="27"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;isTransitionSet_[GeneralType::IS_HEIGHT_TRANSITION_SET]&apos; is initialized" verbose="Cannot determine that &apos;isTransitionSet_[GeneralType::IS_HEIGHT_TRANSITION_SET]&apos; is initialized" cwe="457">
+            <location file="foundation/ace/frameworks/lite/src/core/animation/transition_impl.cpp" line="237" column="25"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;isTransitionSet_[GeneralType::IS_WIDTH_TRANSITION_SET]&apos; is initialized" verbose="Cannot determine that &apos;isTransitionSet_[GeneralType::IS_WIDTH_TRANSITION_SET]&apos; is initialized" cwe="457">
+            <location file="foundation/ace/frameworks/lite/src/core/animation/transition_impl.cpp" line="240" column="25"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;isTransitionSet_[GeneralType::IS_OPCITY_TRANSITION_SET]&apos; is initialized" verbose="Cannot determine that &apos;isTransitionSet_[GeneralType::IS_OPCITY_TRANSITION_SET]&apos; is initialized" cwe="457">
+            <location file="foundation/ace/frameworks/lite/src/core/animation/transition_impl.cpp" line="244" column="25"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;isTransitionSet_[GeneralType::IS_BACKGROUND_COLOR_TRANSITION_SET]&apos; is initialized" verbose="Cannot determine that &apos;isTransitionSet_[GeneralType::IS_BACKGROUND_COLOR_TRANSITION_SET]&apos; is initialized" cwe="457">
+            <location file="foundation/ace/frameworks/lite/src/core/animation/transition_impl.cpp" line="248" column="25"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="foundation/ace/frameworks/lite/src/core/animation/transition_impl.cpp" line="270" column="86"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="foundation/ace/frameworks/lite/src/core/animation/transition_impl.cpp" line="271" column="86"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="foundation/ace/frameworks/lite/src/core/animation/transition_impl.cpp" line="272" column="86"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="foundation/ace/frameworks/lite/src/core/animation/transition_impl.cpp" line="323" column="55"/>
+        </error>
+        <error id="cert-INT31-c" severity="style" msg="Ensure that integer conversions do not result in lost or misinterpreted data (casting 128 to signed char)" verbose="Ensure that integer conversions do not result in lost or misinterpreted data (casting 128 to signed char)">
+            <location file="foundation/ace/frameworks/lite/src/core/animation/transition_impl.cpp" line="352" column="16"/>
+        </error>
+        <error id="bughuntingInvalidArgValue" severity="error" msg="There is function call, cannot determine that 1st argument value is valid. Bad value: less than 1" verbose="There is function call, cannot determine that 1st argument value is valid. Bad value: less than 1">
+            <location file="foundation/ace/frameworks/lite/src/core/base/ace_mem_base.cpp" line="67" column="19"/>
+        </error>
+        <error id="toomanyconfigs" severity="information" msg="Too many #ifdef configurations - cppcheck only checks 12 of 14 configurations. Use --force to check all configurations." verbose="The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time." cwe="398">
+            <location file="foundation/ace/frameworks/lite/src/core/base/js_fwk_common.cpp" line="0" column="0"/>
+        </error>
+        <error id="cert-INT31-c" severity="style" msg="Ensure that integer conversions do not result in lost or misinterpreted data (casting -1 to unsigned char)" verbose="Ensure that integer conversions do not result in lost or misinterpreted data (casting -1 to unsigned char)">
+            <location file="foundation/ace/frameworks/lite/src/core/base/js_fwk_common.cpp" line="1066" column="19"/>
+        </error>
+        <error id="toomanyconfigs" severity="information" msg="Too many #ifdef configurations - cppcheck only checks 12 of 13 configurations. Use --force to check all configurations." verbose="The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time." cwe="398">
+            <location file="foundation/ace/frameworks/lite/src/core/base/key_parser.cpp" line="0" column="0"/>
+        </error>
+        <error id="syntaxError" severity="error" msg="syntax error" verbose="syntax error">
+            <location file0="foundation/ace/frameworks/lite/src/core/base/key_parser.cpp" file="foundation/ace/frameworks/lite/src/core/base/keys.h" line="223" column="21"/>
+        </error>
+        <error id="bughuntingUninitArg" severity="error" msg="There is function call, cannot determine that 1st argument is initialized." verbose="There is function call, cannot determine that 1st argument is initialized." cwe="457">
+            <location file="foundation/ace/frameworks/lite/src/core/components/component.cpp" line="828" column="47"/>
+        </error>
+        <error id="cert-STR05-C" severity="style" msg="Use pointers to const when referring to string literals" verbose="Use pointers to const when referring to string literals">
+            <location file="foundation/ace/frameworks/lite/src/core/components/tab_bar_component.cpp" line="132" column="21"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="foundation/ace/frameworks/lite/src/core/components/video_component.cpp" line="391" column="40"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="foundation/ace/frameworks/lite/src/core/components/video_view.cpp" line="443" column="26"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="foundation/ace/frameworks/lite/src/core/components/video_view.cpp" line="450" column="40"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="foundation/ace/frameworks/lite/src/core/components/video_view.cpp" line="456" column="73"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;count&apos; is initialized" verbose="Cannot determine that &apos;count&apos; is initialized" cwe="457">
+            <location file="foundation/ace/frameworks/lite/src/core/modules/module_manager.cpp" line="170" column="65"/>
+        </error>
+        <error id="bughuntingUninitArg" severity="error" msg="There is function call, cannot determine that 1st argument is initialized." verbose="There is function call, cannot determine that 1st argument is initialized." cwe="457">
+            <location file="foundation/ace/frameworks/lite/src/core/modules/presets/cjson_parser.cpp" line="301" column="38"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;allCountries_[index]&apos; is initialized" verbose="Cannot determine that &apos;allCountries_[index]&apos; is initialized" cwe="457">
+            <location file="foundation/ace/frameworks/lite/src/core/modules/presets/cjson_parser.cpp" line="669" column="25"/>
+        </error>
+        <error id="cert-INT31-c" severity="style" msg="Ensure that integer conversions do not result in lost or misinterpreted data (casting -1 to unsigned char)" verbose="Ensure that integer conversions do not result in lost or misinterpreted data (casting -1 to unsigned char)">
+            <location file="foundation/ace/frameworks/lite/src/core/modules/presets/timer_module.cpp" line="133" column="25"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;stateMap_[i]&apos; is initialized" verbose="Cannot determine that &apos;stateMap_[i]&apos; is initialized" cwe="457">
+            <location file="foundation/ace/frameworks/lite/src/core/router/js_page_state_machine.cpp" line="61" column="22"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;stateMap_[newState]&apos; is initialized" verbose="Cannot determine that &apos;stateMap_[newState]&apos; is initialized" cwe="457">
+            <location file="foundation/ace/frameworks/lite/src/core/router/js_page_state_machine.cpp" line="251" column="29"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;state&apos; is initialized" verbose="Cannot determine that &apos;state&apos; is initialized" cwe="457">
+            <location file="foundation/ace/frameworks/lite/src/core/router/js_page_state_machine.cpp" line="252" column="9"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use fopen() better use fopen_s()" verbose="Do not use fopen() better use fopen_s()">
+            <location file="foundation/appexecfwk/services/bundlemgr_lite/src/zip_file.cpp" line="192" column="21"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="foundation/communication/frameworks/ipc_lite/liteipc/src/liteipc_adapter.c" line="55" column="12"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*size&apos; is initialized" verbose="Cannot determine that &apos;*size&apos; is initialized" cwe="457">
+            <location file="foundation/communication/frameworks/ipc_lite/liteipc/src/serializer.c" line="496" column="9"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*size&apos; is initialized" verbose="Cannot determine that &apos;*size&apos; is initialized" cwe="457">
+            <location file="foundation/communication/frameworks/ipc_lite/liteipc/src/serializer.c" line="499" column="29"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="foundation/communication/frameworks/ipc_lite/liteipc/src/serializer.c" line="233" column="26"/>
+        </error>
+        <error id="bughuntingInvalidArgValue" severity="error" msg="There is function call, cannot determine that 1st argument value is valid. Bad value: less than 0" verbose="There is function call, cannot determine that 1st argument value is valid. Bad value: less than 0">
+            <location file="foundation/communication/services/softbus_lite/authmanager/source/auth_interface.c" line="37" column="46"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="foundation/communication/services/softbus_lite/authmanager/source/auth_interface.c" line="451" column="34"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="foundation/communication/services/softbus_lite/authmanager/source/wifi_auth_manager.c" line="434" column="9"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*value&apos; is initialized" verbose="Cannot determine that &apos;*value&apos; is initialized" cwe="457">
+            <location file="foundation/communication/services/softbus_lite/discovery/coap/source/coap_adapter.c" line="37" column="9"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*headerLen&apos; is initialized" verbose="Cannot determine that &apos;*headerLen&apos; is initialized" cwe="457">
+            <location file="foundation/communication/services/softbus_lite/discovery/coap/source/coap_adapter.c" line="39" column="22"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*value&apos; is initialized" verbose="Cannot determine that &apos;*value&apos; is initialized" cwe="457">
+            <location file="foundation/communication/services/softbus_lite/discovery/coap/source/coap_adapter.c" line="48" column="9"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*headerLen&apos; is initialized" verbose="Cannot determine that &apos;*headerLen&apos; is initialized" cwe="457">
+            <location file="foundation/communication/services/softbus_lite/discovery/coap/source/coap_adapter.c" line="49" column="38"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*headerLen&apos; is initialized" verbose="Cannot determine that &apos;*headerLen&apos; is initialized" cwe="457">
+            <location file="foundation/communication/services/softbus_lite/discovery/coap/source/coap_adapter.c" line="50" column="22"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*value&apos; is initialized" verbose="Cannot determine that &apos;*value&apos; is initialized" cwe="457">
+            <location file="foundation/communication/services/softbus_lite/discovery/coap/source/coap_adapter.c" line="65" column="9"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*runningDelta&apos; is initialized" verbose="Cannot determine that &apos;*runningDelta&apos; is initialized" cwe="457">
+            <location file="foundation/communication/services/softbus_lite/discovery/coap/source/coap_adapter.c" line="102" column="44"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*runningDelta&apos; is initialized" verbose="Cannot determine that &apos;*runningDelta&apos; is initialized" cwe="457">
+            <location file="foundation/communication/services/softbus_lite/discovery/coap/source/coap_adapter.c" line="107" column="38"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*len&apos; is initialized" verbose="Cannot determine that &apos;*len&apos; is initialized" cwe="457">
+            <location file="foundation/communication/services/softbus_lite/discovery/coap/source/coap_adapter.c" line="558" column="9"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*len&apos; is initialized" verbose="Cannot determine that &apos;*len&apos; is initialized" cwe="457">
+            <location file="foundation/communication/services/softbus_lite/discovery/coap/source/coap_adapter.c" line="567" column="19"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*len&apos; is initialized" verbose="Cannot determine that &apos;*len&apos; is initialized" cwe="457">
+            <location file="foundation/communication/services/softbus_lite/discovery/coap/source/coap_adapter.c" line="570" column="33"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="foundation/communication/services/softbus_lite/discovery/coap/source/coap_adapter.c" line="615" column="61"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="foundation/communication/services/softbus_lite/discovery/coap/source/coap_adapter.c" line="620" column="61"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="foundation/communication/services/softbus_lite/discovery/coap/source/coap_adapter.c" line="626" column="24"/>
+        </error>
+        <error id="cert-INT31-c" severity="style" msg="Ensure that integer conversions do not result in lost or misinterpreted data (casting 65536 to unsigned short)" verbose="Ensure that integer conversions do not result in lost or misinterpreted data (casting 65536 to unsigned short)">
+            <location file="foundation/communication/services/softbus_lite/discovery/coap/source/coap_adapter.c" line="60" column="18"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="foundation/communication/services/softbus_lite/discovery/coap/source/coap_discover.c" line="92" column="33"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="foundation/communication/services/softbus_lite/discovery/coap/source/coap_socket.c" line="108" column="31"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="foundation/communication/services/softbus_lite/discovery/coap/source/json_payload.c" line="296" column="24"/>
+        </error>
+        <error id="bughuntingUninitArg" severity="error" msg="There is function call, cannot determine that 3rd argument is initialized." verbose="There is function call, cannot determine that 3rd argument is initialized." cwe="457">
+            <location file="foundation/communication/services/softbus_lite/discovery/coap/source/nstackx_device.c" line="206" column="13"/>
+        </error>
+        <error id="bughuntingUninitArg" severity="error" msg="There is function call, cannot determine that 3rd argument is initialized." verbose="There is function call, cannot determine that 3rd argument is initialized." cwe="457">
+            <location file="foundation/communication/services/softbus_lite/discovery/discovery_service/source/discovery_service.c" line="92" column="63"/>
+        </error>
+        <error id="bughuntingUninitArg" severity="error" msg="There is function call, cannot determine that 3rd argument is initialized." verbose="There is function call, cannot determine that 3rd argument is initialized." cwe="457">
+            <location file="foundation/communication/services/softbus_lite/discovery/discovery_service/source/discovery_service.c" line="97" column="63"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="foundation/communication/services/softbus_lite/discovery/discovery_service/source/discovery_service.c" line="29" column="9"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="foundation/communication/services/softbus_lite/discovery/discovery_service/source/discovery_service.c" line="40" column="10"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*fd&apos; is initialized" verbose="Cannot determine that &apos;*fd&apos; is initialized" cwe="457">
+            <location file="foundation/communication/services/softbus_lite/os_adapter/source/L0/os_adapter.c" line="64" column="9"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*fd&apos; is initialized" verbose="Cannot determine that &apos;*fd&apos; is initialized" cwe="457">
+            <location file="foundation/communication/services/softbus_lite/os_adapter/source/L0/os_adapter.c" line="65" column="21"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="foundation/communication/services/softbus_lite/os_adapter/source/L0/os_adapter.c" line="75" column="40"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*fd&apos; is initialized" verbose="Cannot determine that &apos;*fd&apos; is initialized" cwe="457">
+            <location file="foundation/communication/services/softbus_lite/os_adapter/source/L1/os_adapter.c" line="64" column="9"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*fd&apos; is initialized" verbose="Cannot determine that &apos;*fd&apos; is initialized" cwe="457">
+            <location file="foundation/communication/services/softbus_lite/os_adapter/source/L1/os_adapter.c" line="65" column="15"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*bufferSize&apos; is initialized" verbose="Cannot determine that &apos;*bufferSize&apos; is initialized" cwe="457">
+            <location file="foundation/communication/services/softbus_lite/os_adapter/source/L1/os_adapter.c" line="111" column="29"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="foundation/communication/services/softbus_lite/trans_service/source/libdistbus/tcp_session.h" line="35" column="10"/>
+        </error>
+        <error id="bughuntingUninitArg" severity="error" msg="There is function call, cannot determine that 1st argument is initialized." verbose="There is function call, cannot determine that 1st argument is initialized." cwe="457">
+            <location file="foundation/communication/services/softbus_lite/trans_service/source/libdistbus/tcp_session_manager.c" line="618" column="23"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="foundation/communication/services/softbus_lite/trans_service/source/libdistbus/tcp_session_manager.c" line="391" column="32"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="foundation/communication/services/softbus_lite/trans_service/source/libdistbus/tcp_session_manager.c" line="603" column="44"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="foundation/communication/services/softbus_lite/trans_service/source/libdistbus/tcp_session_manager.c" line="1091" column="55"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="foundation/communication/services/softbus_lite/trans_service/source/libdistbus/tcp_session_manager.c" line="79" column="30"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="foundation/distributedschedule/services/dtbschedmgr_lite/source/dmslite.c" line="60" column="23"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*len&apos; is initialized" verbose="Cannot determine that &apos;*len&apos; is initialized" cwe="457">
+            <location file="foundation/distributedschedule/services/dtbschedmgr_lite/source/dmslite_tlv_common.c" line="46" column="14"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="foundation/distributedschedule/services/samgr_lite/samgr/source/samgr_lite.c" line="249" column="44"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="foundation/distributedschedule/services/samgr_lite/samgr/source/samgr_lite.c" line="453" column="44"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="foundation/distributedschedule/services/samgr_lite/samgr/source/service.c" line="140" column="60"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="foundation/distributedschedule/services/samgr_lite/samgr/source/service.c" line="156" column="60"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="foundation/distributedschedule/services/samgr_lite/samgr/source/service.c" line="171" column="60"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="foundation/distributedschedule/services/samgr_lite/samgr_endpoint/source/sa_store.h" line="35" column="12"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="foundation/distributedschedule/services/samgr_lite/samgr_endpoint/source/sa_store.h" line="41" column="12"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="foundation/distributedschedule/services/samgr_lite/samgr_server/source/samgr_server.c" line="411" column="20"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="foundation/distributedschedule/services/samgr_lite/samgr_server/source/samgr_server.c" line="412" column="20"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use fopen() better use fopen_s()" verbose="Do not use fopen() better use fopen_s()">
+            <location file="foundation/graphic/lite/frameworks/ui/src/common/image.cpp" line="212" column="19"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use fopen() better use fopen_s()" verbose="Do not use fopen() better use fopen_s()">
+            <location file="foundation/graphic/lite/frameworks/ui/src/common/image.cpp" line="315" column="19"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;ret.full&apos; is initialized" verbose="Cannot determine that &apos;ret.full&apos; is initialized" cwe="457">
+            <location file="foundation/graphic/lite/services/wms/src/server/lite_win.cpp" line="136" column="15"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;vencHdls_[i]&apos; is initialized" verbose="Cannot determine that &apos;vencHdls_[i]&apos; is initialized" cwe="457">
+            <location file="foundation/multimedia/frameworks/camera_lite/camera_device.cpp" line="294" column="35"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;vencHdls_[i]&apos; is initialized" verbose="Cannot determine that &apos;vencHdls_[i]&apos; is initialized" cwe="457">
+            <location file="foundation/multimedia/frameworks/camera_lite/camera_device.cpp" line="304" column="32"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;vencHdls_[i]&apos; is initialized" verbose="Cannot determine that &apos;vencHdls_[i]&apos; is initialized" cwe="457">
+            <location file="foundation/multimedia/frameworks/camera_lite/camera_device.cpp" line="321" column="28"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;vencHdls_[i]&apos; is initialized" verbose="Cannot determine that &apos;vencHdls_[i]&apos; is initialized" cwe="457">
+            <location file="foundation/multimedia/frameworks/camera_lite/camera_device.cpp" line="322" column="31"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;vencAttr_[i]&apos; is initialized" verbose="Cannot determine that &apos;vencAttr_[i]&apos; is initialized" cwe="457">
+            <location file="foundation/multimedia/frameworks/camera_lite/camera_device.cpp" line="335" column="22"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;frameCacheQue_[0]&apos; is initialized" verbose="Cannot determine that &apos;frameCacheQue_[0]&apos; is initialized" cwe="457">
+            <location file="foundation/multimedia/frameworks/player_lite/player_control/sink/player_audio_sink.cpp" line="160" column="37"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;frameCacheQue_[0]&apos; is initialized" verbose="Cannot determine that &apos;frameCacheQue_[0]&apos; is initialized" cwe="457">
+            <location file="foundation/multimedia/frameworks/player_lite/player_control/sink/player_audio_sink.cpp" line="170" column="42"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;frame&apos; is initialized" verbose="Cannot determine that &apos;frame&apos; is initialized" cwe="457">
+            <location file="foundation/multimedia/frameworks/player_lite/player_control/sink/player_audio_sink.cpp" line="172" column="36"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;frameCacheQue_[i]&apos; is initialized" verbose="Cannot determine that &apos;frameCacheQue_[i]&apos; is initialized" cwe="457">
+            <location file="foundation/multimedia/frameworks/player_lite/player_control/sink/player_audio_sink.cpp" line="186" column="50"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;frameReleaseQue_[0]&apos; is initialized" verbose="Cannot determine that &apos;frameReleaseQue_[0]&apos; is initialized" cwe="457">
+            <location file="foundation/multimedia/frameworks/player_lite/player_control/sink/player_audio_sink.cpp" line="197" column="29"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;m_audioSinkInfo_[m_audioSinkNum_]&apos; is initialized" verbose="Cannot determine that &apos;m_audioSinkInfo_[m_audioSinkNum_]&apos; is initialized" cwe="457">
+            <location file="foundation/multimedia/frameworks/player_lite/player_control/sink/player_sink_manager.cpp" line="70" column="25"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;m_videoSinkInfo_[m_videoSinkNum_]&apos; is initialized" verbose="Cannot determine that &apos;m_videoSinkInfo_[m_videoSinkNum_]&apos; is initialized" cwe="457">
+            <location file="foundation/multimedia/frameworks/player_lite/player_control/sink/player_sink_manager.cpp" line="80" column="25"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;audioStatus.audFrameCount&apos; is initialized" verbose="Cannot determine that &apos;audioStatus.audFrameCount&apos; is initialized" cwe="457">
+            <location file="foundation/multimedia/frameworks/player_lite/player_control/sink/player_sink_manager.cpp" line="370" column="56"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;videoStatus.vidFrameCount&apos; is initialized" verbose="Cannot determine that &apos;videoStatus.vidFrameCount&apos; is initialized" cwe="457">
+            <location file="foundation/multimedia/frameworks/player_lite/player_control/sink/player_sink_manager.cpp" line="375" column="56"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;videoStatus.decHeight&apos; is initialized" verbose="Cannot determine that &apos;videoStatus.decHeight&apos; is initialized" cwe="457">
+            <location file="foundation/multimedia/frameworks/player_lite/player_control/sink/player_sink_manager.cpp" line="376" column="53"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;videoStatus.decWidth&apos; is initialized" verbose="Cannot determine that &apos;videoStatus.decWidth&apos; is initialized" cwe="457">
+            <location file="foundation/multimedia/frameworks/player_lite/player_control/sink/player_sink_manager.cpp" line="377" column="52"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;videoStatus.fpsDecimal&apos; is initialized" verbose="Cannot determine that &apos;videoStatus.fpsDecimal&apos; is initialized" cwe="457">
+            <location file="foundation/multimedia/frameworks/player_lite/player_control/sink/player_sink_manager.cpp" line="378" column="54"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;videoStatus.fpsInteger&apos; is initialized" verbose="Cannot determine that &apos;videoStatus.fpsInteger&apos; is initialized" cwe="457">
+            <location file="foundation/multimedia/frameworks/player_lite/player_control/sink/player_sink_manager.cpp" line="379" column="54"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;audioPos&apos; is initialized" verbose="Cannot determine that &apos;audioPos&apos; is initialized" cwe="457">
+            <location file="foundation/multimedia/frameworks/player_lite/player_control/sink/player_sink_manager.cpp" line="432" column="53"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;videoPos&apos; is initialized" verbose="Cannot determine that &apos;videoPos&apos; is initialized" cwe="457">
+            <location file="foundation/multimedia/frameworks/player_lite/player_control/sink/player_sink_manager.cpp" line="433" column="53"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;audioPos&apos; is initialized" verbose="Cannot determine that &apos;audioPos&apos; is initialized" cwe="457">
+            <location file="foundation/multimedia/frameworks/player_lite/player_control/sink/player_sink_manager.cpp" line="434" column="21"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;videoPos&apos; is initialized" verbose="Cannot determine that &apos;videoPos&apos; is initialized" cwe="457">
+            <location file="foundation/multimedia/frameworks/player_lite/player_control/sink/player_sink_manager.cpp" line="434" column="33"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;frameCacheQue_[0]&apos; is initialized" verbose="Cannot determine that &apos;frameCacheQue_[0]&apos; is initialized" cwe="457">
+            <location file="foundation/multimedia/frameworks/player_lite/player_control/sink/player_video_sink.cpp" line="219" column="37"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;frameCacheQue_[0]&apos; is initialized" verbose="Cannot determine that &apos;frameCacheQue_[0]&apos; is initialized" cwe="457">
+            <location file="foundation/multimedia/frameworks/player_lite/player_control/sink/player_video_sink.cpp" line="229" column="42"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;frame&apos; is initialized" verbose="Cannot determine that &apos;frame&apos; is initialized" cwe="457">
+            <location file="foundation/multimedia/frameworks/player_lite/player_control/sink/player_video_sink.cpp" line="231" column="36"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;frameCacheQue_[i]&apos; is initialized" verbose="Cannot determine that &apos;frameCacheQue_[i]&apos; is initialized" cwe="457">
+            <location file="foundation/multimedia/frameworks/player_lite/player_control/sink/player_video_sink.cpp" line="245" column="50"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;frameReleaseQue_[0]&apos; is initialized" verbose="Cannot determine that &apos;frameReleaseQue_[0]&apos; is initialized" cwe="457">
+            <location file="foundation/multimedia/frameworks/player_lite/player_control/sink/player_video_sink.cpp" line="256" column="29"/>
+        </error>
+        <error id="missingInclude" severity="information" msg="Cppcheck cannot find all the include files (use --check-config for details)" verbose="Cppcheck cannot find all the include files. Cppcheck can check the code without the include files found. But the results will probably be more accurate if all the include files are found. Please check your project&apos;s include directories and add all of them as include directories for Cppcheck. To see what files Cppcheck cannot find use --check-config."/>
+    </errors>
+</results>

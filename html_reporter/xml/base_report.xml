@@ -1,0 +1,514 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results version="2">
+    <cppcheck version="2.1"/>
+    <errors>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*value&apos; is initialized" verbose="Cannot determine that &apos;*value&apos; is initialized" cwe="457">
+            <location file="base/global/frameworks/resmgr_lite/src/global.c" line="108" column="9"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*value&apos; is initialized" verbose="Cannot determine that &apos;*value&apos; is initialized" cwe="457">
+            <location file="base/global/frameworks/resmgr_lite/src/global.c" line="109" column="14"/>
+        </error>
+        <error id="bughuntingUninitArg" severity="error" msg="There is function call, cannot determine that 1st argument is initialized." verbose="There is function call, cannot determine that 1st argument is initialized." cwe="457">
+            <location file="base/global/frameworks/resmgr_lite/src/global_utils.c" line="72" column="31"/>
+        </error>
+        <error id="bughuntingUninitArg" severity="error" msg="There is function call, cannot determine that 1st argument is initialized." verbose="There is function call, cannot determine that 1st argument is initialized." cwe="457">
+            <location file="base/global/frameworks/resmgr_lite/src/global_utils.c" line="90" column="31"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;resConfig[LANGUAGE_INDEX]&apos; is initialized" verbose="Cannot determine that &apos;resConfig[LANGUAGE_INDEX]&apos; is initialized" cwe="457">
+            <location file="base/global/frameworks/resmgr_lite/src/global_utils.c" line="177" column="58"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;resConfig[1]&apos; is initialized" verbose="Cannot determine that &apos;resConfig[1]&apos; is initialized" cwe="457">
+            <location file="base/global/frameworks/resmgr_lite/src/global_utils.c" line="178" column="56"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;resConfig[1]&apos; is initialized" verbose="Cannot determine that &apos;resConfig[1]&apos; is initialized" cwe="457">
+            <location file="base/global/frameworks/resmgr_lite/src/global_utils.c" line="179" column="36"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;resConfig[LANGUAGE_INDEX]&apos; is initialized" verbose="Cannot determine that &apos;resConfig[LANGUAGE_INDEX]&apos; is initialized" cwe="457">
+            <location file="base/global/frameworks/resmgr_lite/src/global_utils.c" line="216" column="58"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;resConfig[SCRIPT_INDEX]&apos; is initialized" verbose="Cannot determine that &apos;resConfig[SCRIPT_INDEX]&apos; is initialized" cwe="457">
+            <location file="base/global/frameworks/resmgr_lite/src/global_utils.c" line="217" column="56"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;resConfig[REGION_INDEX]&apos; is initialized" verbose="Cannot determine that &apos;resConfig[REGION_INDEX]&apos; is initialized" cwe="457">
+            <location file="base/global/frameworks/resmgr_lite/src/global_utils.c" line="218" column="56"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;resConfig[0]&apos; is initialized" verbose="Cannot determine that &apos;resConfig[0]&apos; is initialized" cwe="457">
+            <location file="base/global/frameworks/resmgr_lite/src/global_utils.c" line="265" column="52"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/hiviewdfx/frameworks/hievent_lite/hiview_event.c" line="60" column="54"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/hiviewdfx/frameworks/hievent_lite/hiview_event.c" line="91" column="59"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/hiviewdfx/frameworks/hievent_lite/hiview_output_event.c" line="295" column="17"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/hiviewdfx/frameworks/hievent_lite/hiview_output_event.c" line="296" column="16"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/hiviewdfx/frameworks/hievent_lite/hiview_output_event.c" line="297" column="16"/>
+        </error>
+        <error id="toomanyconfigs" severity="information" msg="Too many #ifdef configurations - cppcheck only checks 12 of 19 configurations. Use --force to check all configurations." verbose="The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time." cwe="398">
+            <location file="base/hiviewdfx/frameworks/hilog_lite/featured/hiview_log.c" line="0" column="0"/>
+        </error>
+        <error id="cert-INT31-c" severity="style" msg="Ensure that integer conversions do not result in lost or misinterpreted data (casting 18446744073709551487 to unsigned char)" verbose="Ensure that integer conversions do not result in lost or misinterpreted data (casting 18446744073709551487 to unsigned char)">
+            <location file="base/hiviewdfx/frameworks/hilog_lite/featured/hiview_log.c" line="1017" column="43"/>
+        </error>
+        <error id="cert-INT31-c" severity="style" msg="Ensure that integer conversions do not result in lost or misinterpreted data (casting 4294967296 to unsigned int)" verbose="Ensure that integer conversions do not result in lost or misinterpreted data (casting 4294967296 to unsigned int)">
+            <location file="base/hiviewdfx/frameworks/hilog_lite/featured/hiview_log.c" line="1133" column="59"/>
+        </error>
+        <error id="cert-INT31-c" severity="style" msg="Ensure that integer conversions do not result in lost or misinterpreted data (casting -1 to unsigned long)" verbose="Ensure that integer conversions do not result in lost or misinterpreted data (casting -1 to unsigned long)">
+            <location file="base/hiviewdfx/frameworks/hilog_lite/featured/hiview_log.c" line="1400" column="59"/>
+        </error>
+        <error id="cert-STR05-C" severity="style" msg="Use pointers to const when referring to string literals" verbose="Use pointers to const when referring to string literals">
+            <location file="base/hiviewdfx/frameworks/hilog_lite/featured/hiview_log.c" line="420" column="30"/>
+        </error>
+        <error id="cert-STR05-C" severity="style" msg="Use pointers to const when referring to string literals" verbose="Use pointers to const when referring to string literals">
+            <location file="base/hiviewdfx/frameworks/hilog_lite/featured/hiview_log.c" line="529" column="31"/>
+        </error>
+        <error id="cert-INT31-c" severity="style" msg="Ensure that integer conversions do not result in lost or misinterpreted data (casting -1 to unsigned long)" verbose="Ensure that integer conversions do not result in lost or misinterpreted data (casting -1 to unsigned long)">
+            <location file="base/hiviewdfx/frameworks/hilog_lite/featured/hiview_log.c" line="1417" column="59"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/hiviewdfx/frameworks/hilog_lite/mini/hiview_log.c" line="125" column="54"/>
+        </error>
+        <error id="cert-STR05-C" severity="style" msg="Use pointers to const when referring to string literals" verbose="Use pointers to const when referring to string literals">
+            <location file="base/hiviewdfx/frameworks/hilog_lite/mini/hiview_log.c" line="105" column="23"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/hiviewdfx/frameworks/hilog_lite/mini/hiview_log_limit.c" line="60" column="55"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/hiviewdfx/frameworks/hilog_lite/mini/hiview_log_limit.c" line="74" column="65"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/hiviewdfx/frameworks/hilog_lite/mini/hiview_output_log.c" line="290" column="16"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/hiviewdfx/frameworks/hilog_lite/mini/hiview_output_log.c" line="291" column="17"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/hiviewdfx/frameworks/hilog_lite/mini/hiview_output_log.c" line="292" column="16"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/hiviewdfx/frameworks/hilog_lite/mini/hiview_output_log.c" line="293" column="16"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/hiviewdfx/services/hilogcat_lite/apphilogcat/hiview_applogcat.c" line="154" column="38"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/hiviewdfx/services/hilogcat_lite/apphilogcat/hiview_applogcat.c" line="158" column="56"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use fopen() better use fopen_s()" verbose="Do not use fopen() better use fopen_s()">
+            <location file="base/hiviewdfx/services/hilogcat_lite/apphilogcat/hiview_applogcat.c" line="42" column="16"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use fopen() better use fopen_s()" verbose="Do not use fopen() better use fopen_s()">
+            <location file="base/hiviewdfx/services/hilogcat_lite/apphilogcat/hiview_applogcat.c" line="56" column="11"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use fopen() better use fopen_s()" verbose="Do not use fopen() better use fopen_s()">
+            <location file="base/hiviewdfx/services/hilogcat_lite/apphilogcat/hiview_applogcat.c" line="115" column="17"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use fopen() better use fopen_s()" verbose="Do not use fopen() better use fopen_s()">
+            <location file="base/hiviewdfx/services/hilogcat_lite/apphilogcat/hiview_applogcat.c" line="122" column="17"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/hiviewdfx/services/hilogcat_lite/command/hiview_command.c" line="230" column="18"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/hiviewdfx/services/hilogcat_lite/hilogcat/hiview_logcat.c" line="321" column="38"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;array[i]&apos; is initialized" verbose="Cannot determine that &apos;array[i]&apos; is initialized" cwe="457">
+            <location file="base/security/frameworks/app_verify/src/app_provision.c" line="67" column="18"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;array[i]&apos; is initialized" verbose="Cannot determine that &apos;array[i]&apos; is initialized" cwe="457">
+            <location file="base/security/frameworks/app_verify/src/app_provision.c" line="68" column="28"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*hashLen&apos; is initialized" verbose="Cannot determine that &apos;*hashLen&apos; is initialized" cwe="457">
+            <location file="base/security/frameworks/app_verify/src/app_verify.c" line="269" column="25"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/app_verify/src/app_verify.c" line="486" column="37"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/app_verify/src/app_verify.c" line="635" column="44"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/app_verify/src/app_verify.c" line="819" column="64"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/app_verify/src/app_verify.c" line="1044" column="37"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*hlen&apos; is initialized" verbose="Cannot determine that &apos;*hlen&apos; is initialized" cwe="457">
+            <location file="base/security/frameworks/app_verify/src/app_verify_hap.c" line="170" column="9"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/app_verify/src/app_verify_hap.c" line="73" column="40"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*p&apos; is initialized" verbose="Cannot determine that &apos;*p&apos; is initialized" cwe="457">
+            <location file="base/security/frameworks/app_verify/src/mbedtls_pkcs7.c" line="180" column="26"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*p&apos; is initialized" verbose="Cannot determine that &apos;*p&apos; is initialized" cwe="457">
+            <location file="base/security/frameworks/app_verify/src/mbedtls_pkcs7.c" line="261" column="15"/>
+        </error>
+        <error id="bughuntingInvalidArgValue" severity="error" msg="There is function call, cannot determine that 1st argument value is valid. Bad value: less than 1" verbose="There is function call, cannot determine that 1st argument value is valid. Bad value: less than 1">
+            <location file="base/security/frameworks/app_verify/src/mbedtls_pkcs7.c" line="347" column="19"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/app_verify/src/mbedtls_pkcs7.c" line="1268" column="13"/>
+        </error>
+        <error id="bughuntingUninitArg" severity="error" msg="There is function call, cannot determine that 1st argument is initialized." verbose="There is function call, cannot determine that 1st argument is initialized." cwe="457">
+            <location file="base/security/frameworks/crypto_lite/cipher/src/cipher_aes.c" line="31" column="23"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;data[dataLen-1]&apos; is initialized" verbose="Cannot determine that &apos;data[dataLen-1]&apos; is initialized" cwe="457">
+            <location file="base/security/frameworks/crypto_lite/cipher/src/cipher_aes.c" line="45" column="26"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*olen&apos; is initialized" verbose="Cannot determine that &apos;*olen&apos; is initialized" cwe="457">
+            <location file="base/security/frameworks/crypto_lite/cipher/src/cipher_aes.c" line="89" column="66"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/security/frameworks/crypto_lite/cipher/src/cipher_aes.c" line="193" column="26"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/security/frameworks/crypto_lite/cipher/src/cipher_aes.c" line="194" column="44"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/security/frameworks/crypto_lite/cipher/src/cipher_aes.c" line="216" column="40"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*keyLen&apos; is initialized" verbose="Cannot determine that &apos;*keyLen&apos; is initialized" cwe="457">
+            <location file="base/security/frameworks/crypto_lite/cipher/src/cipher_rsa.c" line="37" column="26"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*keyLen&apos; is initialized" verbose="Cannot determine that &apos;*keyLen&apos; is initialized" cwe="457">
+            <location file="base/security/frameworks/crypto_lite/cipher/src/cipher_rsa.c" line="78" column="26"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/security/frameworks/hichainsdk_lite/source/auth_info/add_auth_info.c" line="211" column="36"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/hichainsdk_lite/source/auth_info/add_auth_info.c" line="292" column="29"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/hichainsdk_lite/source/auth_info/auth_info.c" line="84" column="35"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/hichainsdk_lite/source/auth_info/auth_info.c" line="110" column="35"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/hichainsdk_lite/source/auth_info/exchange_auth_info.c" line="91" column="35"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/hichainsdk_lite/source/auth_info/exchange_auth_info.c" line="163" column="27"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/hichainsdk_lite/source/auth_info/exchange_auth_info_client.c" line="100" column="35"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/hichainsdk_lite/source/auth_info/exchange_auth_info_client.c" line="174" column="27"/>
+        </error>
+        <error id="bughuntingInvalidArgValue" severity="error" msg="There is function call, cannot determine that 2nd argument value is valid. Bad value: less than 0" verbose="There is function call, cannot determine that 2nd argument value is valid. Bad value: less than 0">
+            <location file="base/security/frameworks/hichainsdk_lite/source/hichain.c" line="1107" column="32"/>
+        </error>
+        <error id="bughuntingInvalidArgValue" severity="error" msg="There is function call, cannot determine that 4th argument value is valid. Bad value: less than 0" verbose="There is function call, cannot determine that 4th argument value is valid. Bad value: less than 0">
+            <location file="base/security/frameworks/hichainsdk_lite/source/hichain.c" line="1107" column="43"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/security/frameworks/hichainsdk_lite/source/hichain.c" line="227" column="40"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/security/frameworks/hichainsdk_lite/source/hichain.c" line="630" column="40"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/hichainsdk_lite/source/hichain.c" line="867" column="41"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/hichainsdk_lite/source/hichain.c" line="872" column="43"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;key_param.key_role&apos; is initialized" verbose="Cannot determine that &apos;key_param.key_role&apos; is initialized" cwe="457">
+            <location file="base/security/frameworks/hichainsdk_lite/source/huks_adapter/huks_adapter.c" line="912" column="40"/>
+        </error>
+        <error id="cert-INT31-c" severity="style" msg="Ensure that integer conversions do not result in lost or misinterpreted data (casting 1073741825 to unsigned char)" verbose="Ensure that integer conversions do not result in lost or misinterpreted data (casting 1073741825 to unsigned char)">
+            <location file="base/security/frameworks/hichainsdk_lite/source/huks_adapter/huks_adapter.c" line="340" column="20"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/hichainsdk_lite/source/huks_adapter/huks_adapter.c" line="1684" column="34"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/security/frameworks/hichainsdk_lite/source/json/commonutil.c" line="92" column="14"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/security/frameworks/hichainsdk_lite/source/json/commonutil.c" line="98" column="19"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/hichainsdk_lite/source/schedule/build_object.c" line="234" column="40"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/hichainsdk_lite/source/schedule/build_object.c" line="257" column="36"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/security/frameworks/hichainsdk_lite/source/struct/add_auth_info_request.c" line="46" column="28"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/security/frameworks/hichainsdk_lite/source/struct/add_auth_info_request.c" line="50" column="62"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/security/frameworks/hichainsdk_lite/source/struct/add_auth_info_response.c" line="46" column="25"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/security/frameworks/hichainsdk_lite/source/struct/add_auth_info_response.c" line="50" column="60"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/security/frameworks/hichainsdk_lite/source/struct/exchange_request.c" line="46" column="27"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/security/frameworks/hichainsdk_lite/source/struct/exchange_request.c" line="50" column="56"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/security/frameworks/hichainsdk_lite/source/struct/exchange_response.c" line="47" column="27"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/security/frameworks/hichainsdk_lite/source/struct/exchange_response.c" line="51" column="57"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/hichainsdk_lite/source/struct/parsedata.c" line="71" column="10"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/hichainsdk_lite/source/struct/parsedata.c" line="76" column="14"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/hichainsdk_lite/source/struct/parsedata.c" line="98" column="16"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/security/frameworks/hichainsdk_lite/source/struct/rmv_auth_info_request.c" line="46" column="25"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/security/frameworks/hichainsdk_lite/source/struct/rmv_auth_info_request.c" line="50" column="59"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/security/frameworks/hichainsdk_lite/source/struct/rmv_auth_info_response.c" line="46" column="25"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/security/frameworks/hichainsdk_lite/source/struct/rmv_auth_info_response.c" line="50" column="60"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/security/frameworks/hichainsdk_lite/source/struct/sec_clone_data.c" line="57" column="24"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/security/frameworks/hichainsdk_lite/source/struct/sec_clone_data.c" line="60" column="40"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/security/frameworks/hichainsdk_lite/source/struct/sec_clone_data.c" line="61" column="42"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*ptr&apos; is initialized" verbose="Cannot determine that &apos;*ptr&apos; is initialized" cwe="457">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/common/hks_common.c" line="267" column="9"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*ptr&apos; is initialized" verbose="Cannot determine that &apos;*ptr&apos; is initialized" cwe="457">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/common/hks_common.c" line="270" column="18"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*ptr&apos; is initialized" verbose="Cannot determine that &apos;*ptr&apos; is initialized" cwe="457">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/common/hks_common.c" line="271" column="9"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;operation.core_alg&apos; is initialized" verbose="Cannot determine that &apos;operation.core_alg&apos; is initialized" cwe="457">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/common/hks_common.c" line="1278" column="18"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;operation.tag_length&apos; is initialized" verbose="Cannot determine that &apos;operation.tag_length&apos; is initialized" cwe="457">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/common/hks_common.c" line="1279" column="56"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;operation.tag_length&apos; is initialized" verbose="Cannot determine that &apos;operation.tag_length&apos; is initialized" cwe="457">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/common/hks_common.c" line="1285" column="99"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;operation.tag_length&apos; is initialized" verbose="Cannot determine that &apos;operation.tag_length&apos; is initialized" cwe="457">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/common/hks_common.c" line="1287" column="62"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;operation.tag_length&apos; is initialized" verbose="Cannot determine that &apos;operation.tag_length&apos; is initialized" cwe="457">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/common/hks_common.c" line="1299" column="49"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;operation.tag_length&apos; is initialized" verbose="Cannot determine that &apos;operation.tag_length&apos; is initialized" cwe="457">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/common/hks_common.c" line="1320" column="80"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;operation.core_alg&apos; is initialized" verbose="Cannot determine that &apos;operation.core_alg&apos; is initialized" cwe="457">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/common/hks_common.c" line="1327" column="18"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;operation.tag_length&apos; is initialized" verbose="Cannot determine that &apos;operation.tag_length&apos; is initialized" cwe="457">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/common/hks_common.c" line="1330" column="102"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;operation.tag_length&apos; is initialized" verbose="Cannot determine that &apos;operation.tag_length&apos; is initialized" cwe="457">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/common/hks_common.c" line="1339" column="63"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;operation.tag_length&apos; is initialized" verbose="Cannot determine that &apos;operation.tag_length&apos; is initialized" cwe="457">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/common/hks_common.c" line="1341" column="76"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/common/hks_common.c" line="1035" column="42"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/hks_access.c" line="267" column="22"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/hks_access.c" line="286" column="23"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/hks_access.c" line="307" column="33"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/soft_service/hks_rkc.h" line="231" column="14"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/soft_service/hks_rkc.h" line="253" column="14"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/soft_service/hks_rkc.h" line="257" column="14"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/soft_service/hks_rkc.h" line="261" column="21"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/hks_access.c" line="107" column="42"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/hks_access.c" line="251" column="22"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/hks_access.c" line="342" column="42"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/hks_access.c" line="594" column="42"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/hks_access.c" line="633" column="42"/>
+        </error>
+        <error id="cert-INT31-c" severity="style" msg="Ensure that integer conversions do not result in lost or misinterpreted data (casting 139268 to unsigned char)" verbose="Ensure that integer conversions do not result in lost or misinterpreted data (casting 139268 to unsigned char)">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/hks_access.c" line="29" column="27"/>
+        </error>
+        <error id="toomanyconfigs" severity="information" msg="Too many #ifdef configurations - cppcheck only checks 12 of 16 configurations. Use --force to check all configurations." verbose="The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time." cwe="398">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/hks_client.c" line="0" column="0"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/soft_service/hks_file_liteos.c" line="88" column="58"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/soft_service/hks_file_liteos.c" line="123" column="58"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/soft_service/hks_file_liteos.c" line="160" column="58"/>
+        </error>
+        <error id="cert-EXP42-C" severity="style" msg="Comparison of struct padding data (fix either by packing the struct using &apos;#pragma pack&apos; or by rewriting the comparison)" verbose="Comparison of struct padding data (fix either by packing the struct using &apos;#pragma pack&apos; or by rewriting the comparison)">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/soft_service/hks_rkc.c" line="783" column="15"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/soft_service/hks_service.c" line="461" column="50"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/soft_service/hks_service.c" line="509" column="22"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/soft_service/hks_service.c" line="1271" column="22"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/soft_service/hks_service.c" line="1272" column="27"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*ret_offset&apos; is initialized" verbose="Cannot determine that &apos;*ret_offset&apos; is initialized" cwe="457">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/soft_service/hks_storage.c" line="177" column="5"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*shift&apos; is initialized" verbose="Cannot determine that &apos;*shift&apos; is initialized" cwe="457">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/soft_service/hks_storage.c" line="724" column="18"/>
+        </error>
+        <error id="bughuntingUninitArg" severity="error" msg="There is function call, cannot determine that 3rd argument is initialized." verbose="There is function call, cannot determine that 3rd argument is initialized." cwe="457">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/soft_service/hks_storage.c" line="1341" column="36"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/soft_service/hks_storage.c" line="132" column="16"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/soft_service/hks_storage.c" line="146" column="16"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="base/security/frameworks/huks_lite/source/hw_keystore_sdk/soft_service/hks_storage.c" line="160" column="16"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;bitMap[i&gt;&gt;3]&apos; is initialized" verbose="Cannot determine that &apos;bitMap[i&gt;&gt;3]&apos; is initialized" cwe="457">
+            <location file="base/security/frameworks/secure_os/libteec/src/tee_client_api.c" line="52" column="11"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;bitMap[i&gt;&gt;3]&apos; is initialized" verbose="Cannot determine that &apos;bitMap[i&gt;&gt;3]&apos; is initialized" cwe="457">
+            <location file="base/security/frameworks/secure_os/libteec/src/tee_client_api.c" line="60" column="11"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;bitMap[i]&apos; is initialized" verbose="Cannot determine that &apos;bitMap[i]&apos; is initialized" cwe="457">
+            <location file="base/security/frameworks/secure_os/libteec/src/tee_client_api.c" line="70" column="19"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*cnt&apos; is initialized" verbose="Cannot determine that &apos;*cnt&apos; is initialized" cwe="457">
+            <location file="base/security/frameworks/secure_os/libteec/src/tee_client_api.c" line="117" column="10"/>
+        </error>
+        <error id="cert-INT31-c" severity="style" msg="Ensure that integer conversions do not result in lost or misinterpreted data (casting -1 to unsigned int)" verbose="Ensure that integer conversions do not result in lost or misinterpreted data (casting -1 to unsigned int)">
+            <location file="base/security/frameworks/secure_os/libteec/src/tee_client_api.c" line="1325" column="31"/>
+        </error>
+        <error id="cert-INT31-c" severity="style" msg="Ensure that integer conversions do not result in lost or misinterpreted data (casting -1 to unsigned int)" verbose="Ensure that integer conversions do not result in lost or misinterpreted data (casting -1 to unsigned int)">
+            <location file="base/security/frameworks/secure_os/libteec/src/tee_client_api.c" line="1435" column="25"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="base/security/frameworks/secure_os/libteec/src/tee_client_api.c" line="127" column="14"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="base/security/frameworks/secure_os/libteec/src/tee_client_api.c" line="129" column="9"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use fopen() better use fopen_s()" verbose="Do not use fopen() better use fopen_s()">
+            <location file="base/security/frameworks/secure_os/libteec/src/tee_client_app_load.c" line="230" column="17"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use fopen() better use fopen_s()" verbose="Do not use fopen() better use fopen_s()">
+            <location file="base/security/frameworks/secure_os/libteec/src/tee_client_app_load.c" line="265" column="21"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;fixedUid[m]&apos; is initialized" verbose="Cannot determine that &apos;fixedUid[m]&apos; is initialized" cwe="457">
+            <location file="base/security/services/iam_lite/ipc_auth/src/ipc_auth_impl.c" line="192" column="21"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*totalLen&apos; is initialized" verbose="Cannot determine that &apos;*totalLen&apos; is initialized" cwe="457">
+            <location file="base/security/services/secure_os/teecd/src/secfile_load_agent.c" line="51" column="9"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*totalLen&apos; is initialized" verbose="Cannot determine that &apos;*totalLen&apos; is initialized" cwe="457">
+            <location file="base/security/services/secure_os/teecd/src/secfile_load_agent.c" line="52" column="75"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use fopen() better use fopen_s()" verbose="Do not use fopen() better use fopen_s()">
+            <location file="base/security/services/secure_os/teecd/src/secfile_load_agent.c" line="81" column="10"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use fopen() better use fopen_s()" verbose="Do not use fopen() better use fopen_s()">
+            <location file="base/security/services/secure_os/teecd/src/tcu_authentication.c" line="64" column="10"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use fopen() better use fopen_s()" verbose="Do not use fopen() better use fopen_s()">
+            <location file="base/security/services/secure_os/teecd/src/tcu_authentication.c" line="94" column="10"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/security/services/secure_os/teecd/src/tee_agent.c" line="1177" column="63"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="base/security/services/secure_os/teecd/src/tee_agent.c" line="1186" column="73"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use fopen() better use fopen_s()" verbose="Do not use fopen() better use fopen_s()">
+            <location file="base/security/services/secure_os/teecd/src/tee_agent.c" line="551" column="19"/>
+        </error>
+        <error id="cert-STR05-C" severity="style" msg="Use pointers to const when referring to string literals" verbose="Use pointers to const when referring to string literals">
+            <location file="base/startup/frameworks/syspara_lite/parameter/src/parameter_common.c" line="25" column="24"/>
+        </error>
+        <error id="cert-STR05-C" severity="style" msg="Use pointers to const when referring to string literals" verbose="Use pointers to const when referring to string literals">
+            <location file="base/startup/frameworks/syspara_lite/parameter/src/parameter_common.c" line="26" column="29"/>
+        </error>
+        <error id="cert-STR05-C" severity="style" msg="Use pointers to const when referring to string literals" verbose="Use pointers to const when referring to string literals">
+            <location file="base/startup/frameworks/syspara_lite/parameter/src/parameter_common.c" line="27" column="28"/>
+        </error>
+        <error id="cert-STR05-C" severity="style" msg="Use pointers to const when referring to string literals" verbose="Use pointers to const when referring to string literals">
+            <location file="base/startup/frameworks/syspara_lite/parameter/src/parameter_common.c" line="28" column="30"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*mountflags&apos; is initialized" verbose="Cannot determine that &apos;*mountflags&apos; is initialized" cwe="457">
+            <location file="base/startup/services/init_lite/src/init_cmds.c" line="202" column="10"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*mountflags&apos; is initialized" verbose="Cannot determine that &apos;*mountflags&apos; is initialized" cwe="457">
+            <location file="base/startup/services/init_lite/src/init_cmds.c" line="207" column="10"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*mountflags&apos; is initialized" verbose="Cannot determine that &apos;*mountflags&apos; is initialized" cwe="457">
+            <location file="base/startup/services/init_lite/src/init_cmds.c" line="212" column="10"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*mountflags&apos; is initialized" verbose="Cannot determine that &apos;*mountflags&apos; is initialized" cwe="457">
+            <location file="base/startup/services/init_lite/src/init_cmds.c" line="217" column="10"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use fopen() better use fopen_s()" verbose="Do not use fopen() better use fopen_s()">
+            <location file="base/startup/services/init_lite/src/init_read_cfg.c" line="54" column="14"/>
+        </error>
+        <error id="missingInclude" severity="information" msg="Cppcheck cannot find all the include files (use --check-config for details)" verbose="Cppcheck cannot find all the include files. Cppcheck can check the code without the include files found. But the results will probably be more accurate if all the include files are found. Please check your project&apos;s include directories and add all of them as include directories for Cppcheck. To see what files Cppcheck cannot find use --check-config."/>
+    </errors>
+</results>

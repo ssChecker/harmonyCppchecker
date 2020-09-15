@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results version="2">
+    <cppcheck version="2.1"/>
+    <errors>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="drivers/hdf/frameworks/ability/config/hcs_parser/src/hcs_blob_if.c" line="223" column="14"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*treeLayer&apos; is initialized" verbose="Cannot determine that &apos;*treeLayer&apos; is initialized" cwe="457">
+            <location file="drivers/hdf/frameworks/ability/config/hcs_parser/src/hcs_generate_tree.c" line="42" column="27"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*treeMem&apos; is initialized" verbose="Cannot determine that &apos;*treeMem&apos; is initialized" cwe="457">
+            <location file="drivers/hdf/frameworks/ability/config/hcs_parser/src/hcs_generate_tree.c" line="56" column="72"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;(struct DeviceResourceNode*)(*treeMem)&apos; is initialized" verbose="Cannot determine that &apos;(struct DeviceResourceNode*)(*treeMem)&apos; is initialized" cwe="457">
+            <location file="drivers/hdf/frameworks/ability/config/hcs_parser/src/hcs_generate_tree.c" line="56" column="42"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*treeMem&apos; is initialized" verbose="Cannot determine that &apos;*treeMem&apos; is initialized" cwe="457">
+            <location file="drivers/hdf/frameworks/ability/config/hcs_parser/src/hcs_generate_tree.c" line="57" column="5"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*treeLayer&apos; is initialized" verbose="Cannot determine that &apos;*treeLayer&apos; is initialized" cwe="457">
+            <location file="drivers/hdf/frameworks/ability/config/hcs_parser/src/hcs_generate_tree.c" line="78" column="9"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*treeLayer&apos; is initialized" verbose="Cannot determine that &apos;*treeLayer&apos; is initialized" cwe="457">
+            <location file="drivers/hdf/frameworks/ability/config/hcs_parser/src/hcs_generate_tree.c" line="79" column="77"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*treeLayer&apos; is initialized" verbose="Cannot determine that &apos;*treeLayer&apos; is initialized" cwe="457">
+            <location file="drivers/hdf/frameworks/ability/config/hcs_parser/src/hcs_generate_tree.c" line="83" column="18"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*treeLayer&apos; is initialized" verbose="Cannot determine that &apos;*treeLayer&apos; is initialized" cwe="457">
+            <location file="drivers/hdf/frameworks/ability/config/hcs_parser/src/hcs_generate_tree.c" line="84" column="18"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*treeMem&apos; is initialized" verbose="Cannot determine that &apos;*treeMem&apos; is initialized" cwe="457">
+            <location file="drivers/hdf/frameworks/ability/config/hcs_parser/src/hcs_generate_tree.c" line="94" column="72"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;(struct DeviceResourceAttr*)(*treeMem)&apos; is initialized" verbose="Cannot determine that &apos;(struct DeviceResourceAttr*)(*treeMem)&apos; is initialized" cwe="457">
+            <location file="drivers/hdf/frameworks/ability/config/hcs_parser/src/hcs_generate_tree.c" line="94" column="42"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*treeMem&apos; is initialized" verbose="Cannot determine that &apos;*treeMem&apos; is initialized" cwe="457">
+            <location file="drivers/hdf/frameworks/ability/config/hcs_parser/src/hcs_generate_tree.c" line="95" column="5"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*treeMem&apos; is initialized" verbose="Cannot determine that &apos;*treeMem&apos; is initialized" cwe="457">
+            <location file="drivers/hdf/frameworks/ability/config/hcs_parser/src/hcs_generate_tree.c" line="116" column="17"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*treeLayerOrMemLen&apos; is initialized" verbose="Cannot determine that &apos;*treeLayerOrMemLen&apos; is initialized" cwe="457">
+            <location file="drivers/hdf/frameworks/ability/config/hcs_parser/src/hcs_generate_tree.c" line="117" column="17"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*treeMem&apos; is initialized" verbose="Cannot determine that &apos;*treeMem&apos; is initialized" cwe="457">
+            <location file="drivers/hdf/frameworks/ability/config/hcs_parser/src/hcs_generate_tree.c" line="131" column="17"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;count&apos; is initialized" verbose="Cannot determine that &apos;count&apos; is initialized" cwe="457">
+            <location file="drivers/hdf/frameworks/ability/config/hcs_parser/src/hcs_tree_if.c" line="140" column="18"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;count&apos; is initialized" verbose="Cannot determine that &apos;count&apos; is initialized" cwe="457">
+            <location file="drivers/hdf/frameworks/ability/config/hcs_parser/src/hcs_tree_if.c" line="141" column="76"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="drivers/hdf/frameworks/model/network/wifi/netdevice/net_device.c" line="463" column="19"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="drivers/hdf/frameworks/support/platform/src/rtc_base.c" line="160" column="31"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="drivers/hdf/frameworks/support/platform/src/rtc_base.c" line="161" column="32"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="drivers/hdf/frameworks/support/platform/src/rtc_base.c" line="162" column="29"/>
+        </error>
+        <error id="cert-STR05-C" severity="style" msg="Use pointers to const when referring to string literals" verbose="Use pointers to const when referring to string literals">
+            <location file="drivers/hdf/frameworks/support/platform/src/rtc_if.c" line="42" column="14"/>
+        </error>
+        <error id="bughuntingUninitArg" severity="error" msg="There is function call, cannot determine that 1st argument is initialized." verbose="There is function call, cannot determine that 1st argument is initialized." cwe="457">
+            <location file="drivers/hdf/frameworks/tools/hc-gen/src/hcs_decompile_gen.c" line="49" column="28"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="drivers/hdf/frameworks/tools/hc-gen/src/hcs_file.c" line="174" column="20"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="drivers/hdf/frameworks/tools/hc-gen/src/hcs_file.c" line="180" column="20"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="drivers/hdf/frameworks/tools/hc-gen/src/hcs_file.c" line="184" column="22"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="drivers/hdf/frameworks/tools/hc-gen/src/hcs_file.c" line="331" column="20"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="drivers/hdf/frameworks/tools/hc-gen/src/hcs_file.c" line="336" column="16"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="drivers/hdf/frameworks/tools/hc-gen/src/hcs_file.c" line="349" column="16"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use fopen() better use fopen_s()" verbose="Do not use fopen() better use fopen_s()">
+            <location file="drivers/hdf/frameworks/tools/hc-gen/src/hcs_file.c" line="209" column="15"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use fopen() better use fopen_s()" verbose="Do not use fopen() better use fopen_s()">
+            <location file="drivers/hdf/frameworks/tools/hc-gen/src/hcs_file.c" line="387" column="20"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;includePath[0]&apos; is initialized" verbose="Cannot determine that &apos;includePath[0]&apos; is initialized" cwe="457">
+            <location file="drivers/hdf/frameworks/tools/hc-gen/src/hcs_parser.c" line="106" column="20"/>
+        </error>
+        <error id="bughuntingUninitArg" severity="error" msg="There is function call, cannot determine that 1st argument is initialized." verbose="There is function call, cannot determine that 1st argument is initialized." cwe="457">
+            <location file="drivers/hdf/frameworks/tools/hc-gen/src/hcs_text_gen.c" line="74" column="16"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="drivers/hdf/lite/adapter/network/src/net_device_adapter.c" line="163" column="21"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="drivers/hdf/lite/adapter/osal/posix/src/osal_mutex.c" line="105" column="27"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="drivers/hdf/lite/adapter/osal/posix/src/osal_mutex.c" line="106" column="29"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="drivers/hdf/lite/adapter/osal/posix/src/osal_sem.c" line="71" column="27"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="drivers/hdf/lite/adapter/osal/posix/src/osal_sem.c" line="72" column="29"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="drivers/hdf/lite/adapter/osal/posix/src/osal_time.c" line="80" column="20"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="drivers/hdf/lite/adapter/osal/posix/src/osal_time.c" line="81" column="61"/>
+        </error>
+        <error id="cert-INT31-c" severity="style" msg="Ensure that integer conversions do not result in lost or misinterpreted data (casting -1 to unsigned long)" verbose="Ensure that integer conversions do not result in lost or misinterpreted data (casting -1 to unsigned long)">
+            <location file="drivers/hdf/lite/adapter/osal/src/osal_file.c" line="35" column="30"/>
+        </error>
+        <error id="cert-INT31-c" severity="style" msg="Ensure that integer conversions do not result in lost or misinterpreted data (casting -1 to unsigned long)" verbose="Ensure that integer conversions do not result in lost or misinterpreted data (casting -1 to unsigned long)">
+            <location file="drivers/hdf/lite/adapter/osal/src/osal_file.c" line="48" column="30"/>
+        </error>
+        <error id="cert-INT31-c" severity="style" msg="Ensure that integer conversions do not result in lost or misinterpreted data (casting -1 to unsigned long)" verbose="Ensure that integer conversions do not result in lost or misinterpreted data (casting -1 to unsigned long)">
+            <location file="drivers/hdf/lite/adapter/osal/src/osal_file.c" line="78" column="30"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*flags&apos; is initialized" verbose="Cannot determine that &apos;*flags&apos; is initialized" cwe="457">
+            <location file="drivers/hdf/lite/adapter/osal/src/osal_spinlock.c" line="118" column="61"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*flags&apos; is initialized" verbose="Cannot determine that &apos;*flags&apos; is initialized" cwe="457">
+            <location file="drivers/hdf/lite/adapter/osal/src/osal_spinlock.c" line="129" column="66"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="drivers/hdf/lite/adapter/osal/src/osal_time.c" line="36" column="20"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="drivers/hdf/lite/adapter/osal/src/osal_time.c" line="37" column="22"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="drivers/hdf/lite/model/bus/usb/hdf_usb.c" line="36" column="14"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="drivers/liteos/hievent/src/hievent_driver.c" line="282" column="23"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="drivers/liteos/hievent/src/hievent_driver.c" line="300" column="37"/>
+        </error>
+        <error id="cert-STR05-C" severity="style" msg="Use pointers to const when referring to string literals" verbose="Use pointers to const when referring to string literals">
+            <location file="drivers/liteos/hievent/src/hiview_hievent.c" line="418" column="13"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*value&apos; is initialized" verbose="Cannot determine that &apos;*value&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/random/src/random.c" line="44" column="16"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*value&apos; is initialized" verbose="Cannot determine that &apos;*value&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/random/src/random.c" line="45" column="17"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;flags&apos; is initialized" verbose="Cannot determine that &apos;flags&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/agent.c" line="296" column="45"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;flags&apos; is initialized" verbose="Cannot determine that &apos;flags&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/agent.c" line="303" column="50"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;flags&apos; is initialized" verbose="Cannot determine that &apos;flags&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/agent.c" line="314" column="45"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;flags&apos; is initialized" verbose="Cannot determine that &apos;flags&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/agent.c" line="322" column="50"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;flags&apos; is initialized" verbose="Cannot determine that &apos;flags&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/agent.c" line="352" column="45"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;flags&apos; is initialized" verbose="Cannot determine that &apos;flags&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/agent.c" line="360" column="50"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;ret&apos; is initialized" verbose="Cannot determine that &apos;ret&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/agent.c" line="459" column="12"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;flags&apos; is initialized" verbose="Cannot determine that &apos;flags&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/agent.c" line="734" column="45"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;flags&apos; is initialized" verbose="Cannot determine that &apos;flags&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/agent.c" line="742" column="50"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;flags&apos; is initialized" verbose="Cannot determine that &apos;flags&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/agent.c" line="753" column="45"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;flags&apos; is initialized" verbose="Cannot determine that &apos;flags&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/agent.c" line="756" column="50"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;flags&apos; is initialized" verbose="Cannot determine that &apos;flags&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/agent.c" line="968" column="45"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;flags&apos; is initialized" verbose="Cannot determine that &apos;flags&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/agent.c" line="975" column="50"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;flags&apos; is initialized" verbose="Cannot determine that &apos;flags&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/agent.c" line="1012" column="45"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;flags&apos; is initialized" verbose="Cannot determine that &apos;flags&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/agent.c" line="1019" column="50"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="drivers/liteos/tzdriver/src/agent.c" line="59" column="14"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="drivers/liteos/tzdriver/src/cmdmonitor.c" line="170" column="59"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="drivers/liteos/tzdriver/src/cmdmonitor.c" line="313" column="63"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="drivers/liteos/tzdriver/src/cmdmonitor.c" line="63" column="18"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;preproc.smcCmd&apos; is initialized" verbose="Cannot determine that &apos;preproc.smcCmd&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/gp_ops.c" line="1593" column="33"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;preproc.smcCmd&apos; is initialized" verbose="Cannot determine that &apos;preproc.smcCmd&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/gp_ops.c" line="1595" column="58"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;preproc.mbPack&apos; is initialized" verbose="Cannot determine that &apos;preproc.mbPack&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/gp_ops.c" line="1624" column="50"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;preproc.smcCmd&apos; is initialized" verbose="Cannot determine that &apos;preproc.smcCmd&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/gp_ops.c" line="1624" column="66"/>
+        </error>
+        <error id="bughuntingUninitArg" severity="error" msg="There is function call, cannot determine that 3rd argument is initialized." verbose="There is function call, cannot determine that 3rd argument is initialized." cwe="457">
+            <location file="drivers/liteos/tzdriver/src/gp_ops.c" line="1173" column="59"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;preproc.smcCmd&apos; is initialized" verbose="Cannot determine that &apos;preproc.smcCmd&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/gp_ops.c" line="1598" column="39"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;preproc.tcToken&apos; is initialized" verbose="Cannot determine that &apos;preproc.tcToken&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/gp_ops.c" line="1598" column="70"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*plainTextBufferSize&apos; is initialized" verbose="Cannot determine that &apos;*plainTextBufferSize&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/gp_ops.c" line="1665" column="28"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*plaintextSize&apos; is initialized" verbose="Cannot determine that &apos;*plaintextSize&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/gp_ops.c" line="1697" column="9"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*plaintextAlignedSize&apos; is initialized" verbose="Cannot determine that &apos;*plaintextAlignedSize&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/gp_ops.c" line="1699" column="18"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*totalSize&apos; is initialized" verbose="Cannot determine that &apos;*totalSize&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/gp_ops.c" line="1700" column="9"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="drivers/liteos/tzdriver/src/gp_ops.c" line="238" column="76"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="drivers/liteos/tzdriver/src/gp_ops.c" line="281" column="76"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="drivers/liteos/tzdriver/src/mailbox_mempool.c" line="208" column="28"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="drivers/liteos/tzdriver/src/mailbox_mempool.c" line="490" column="63"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="drivers/liteos/tzdriver/src/security_auth_enhance.c" line="87" column="57"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*timeStamp&apos; is initialized" verbose="Cannot determine that &apos;*timeStamp&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/security_auth_enhance.c" line="96" column="13"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*timeStamp&apos; is initialized" verbose="Cannot determine that &apos;*timeStamp&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/security_auth_enhance.c" line="103" column="13"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="drivers/liteos/tzdriver/src/security_auth_enhance.c" line="87" column="15"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;ret&apos; is initialized" verbose="Cannot determine that &apos;ret&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/smc_smp.c" line="639" column="12"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*params-&gt;exitReason&apos; is initialized" verbose="Cannot determine that &apos;*params-&gt;exitReason&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/smc_smp.c" line="806" column="9"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*params-&gt;ta&apos; is initialized" verbose="Cannot determine that &apos;*params-&gt;ta&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/smc_smp.c" line="810" column="14"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*params-&gt;target&apos; is initialized" verbose="Cannot determine that &apos;*params-&gt;target&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/smc_smp.c" line="811" column="14"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*params-&gt;exitReason&apos; is initialized" verbose="Cannot determine that &apos;*params-&gt;exitReason&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/smc_smp.c" line="812" column="16"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*params-&gt;nIdled&apos; is initialized" verbose="Cannot determine that &apos;*params-&gt;nIdled&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/smc_smp.c" line="818" column="13"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*cmdUsage&apos; is initialized" verbose="Cannot determine that &apos;*cmdUsage&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/smc_smp.c" line="1035" column="9"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*cmdIndex&apos; is initialized" verbose="Cannot determine that &apos;*cmdIndex&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/smc_smp.c" line="1036" column="29"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*cmdIndex&apos; is initialized" verbose="Cannot determine that &apos;*cmdIndex&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/smc_smp.c" line="1038" column="29"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*cmdUsage&apos; is initialized" verbose="Cannot determine that &apos;*cmdUsage&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/smc_smp.c" line="1050" column="9"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*lastIndex&apos; is initialized" verbose="Cannot determine that &apos;*lastIndex&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/smc_smp.c" line="1051" column="21"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*cmdIndex&apos; is initialized" verbose="Cannot determine that &apos;*cmdIndex&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/smc_smp.c" line="1058" column="43"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*lastIndex&apos; is initialized" verbose="Cannot determine that &apos;*lastIndex&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/smc_smp.c" line="1059" column="9"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*cmdIndex&apos; is initialized" verbose="Cannot determine that &apos;*cmdIndex&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/smc_smp.c" line="1054" column="22"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*cmdIndex&apos; is initialized" verbose="Cannot determine that &apos;*cmdIndex&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/smc_smp.c" line="1044" column="13"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;CONFIG_CPU_AFF_NR&apos; since the value of &apos;CONFIG_CPU_AFF_NR&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;CONFIG_CPU_AFF_NR&apos; since the value of &apos;CONFIG_CPU_AFF_NR&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="drivers/liteos/tzdriver/src/smc_smp.c" line="1465" column="0"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="drivers/liteos/tzdriver/src/smc_smp.c" line="804" column="20"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="drivers/liteos/tzdriver/src/smc_smp.c" line="110" column="14"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="drivers/liteos/tzdriver/src/smc_smp.c" line="1105" column="18"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="drivers/liteos/tzdriver/src/smc_smp.c" line="1111" column="22"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*flags&apos; is initialized" verbose="Cannot determine that &apos;*flags&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/tc_client_driver.c" line="783" column="9"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;(unsigned int)(UINTPTR)argp&apos; is initialized" verbose="Cannot determine that &apos;(unsigned int)(UINTPTR)argp&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/tc_client_driver.c" line="1606" column="52"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="drivers/liteos/tzdriver/src/tc_client_driver.c" line="585" column="24"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="drivers/liteos/tzdriver/src/tc_client_driver.c" line="633" column="13"/>
+        </error>
+        <error id="cert-INT31-c" severity="style" msg="Ensure that integer conversions do not result in lost or misinterpreted data (casting -1 to unsigned int)" verbose="Ensure that integer conversions do not result in lost or misinterpreted data (casting -1 to unsigned int)">
+            <location file="drivers/liteos/tzdriver/src/tc_client_driver.c" line="319" column="22"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*secureParamsAlignedSize&apos; is initialized" verbose="Cannot determine that &apos;*secureParamsAlignedSize&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/tc_client_sub_driver.c" line="233" column="19"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="drivers/liteos/tzdriver/src/tc_client_sub_driver.c" line="835" column="52"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="drivers/liteos/tzdriver/src/tc_client_sub_driver.c" line="922" column="32"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;paramType[paramCnt]&apos; is initialized" verbose="Cannot determine that &apos;paramType[paramCnt]&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/teek_client_api.c" line="45" column="22"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;paramType[paramCnt]&apos; is initialized" verbose="Cannot determine that &apos;paramType[paramCnt]&apos; is initialized" cwe="457">
+            <location file="drivers/liteos/tzdriver/src/teek_client_api.c" line="67" column="22"/>
+        </error>
+        <error id="bughuntingUninitArg" severity="error" msg="There is function call, cannot determine that 2nd argument is initialized." verbose="There is function call, cannot determine that 2nd argument is initialized." cwe="457">
+            <location file="drivers/liteos/tzdriver/src/tz_spi_notify.c" line="160" column="58"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="drivers/liteos/tzdriver/src/tz_spi_notify.c" line="68" column="18"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="drivers/liteos/tzdriver/src/tz_spi_notify.c" line="110" column="28"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="drivers/liteos/tzdriver/src/tz_spi_notify.c" line="135" column="13"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="drivers/liteos/tzdriver/src/tzdebug.c" line="135" column="76"/>
+        </error>
+        <error id="missingInclude" severity="information" msg="Cppcheck cannot find all the include files (use --check-config for details)" verbose="Cppcheck cannot find all the include files. Cppcheck can check the code without the include files found. But the results will probably be more accurate if all the include files are found. Please check your project&apos;s include directories and add all of them as include directories for Cppcheck. To see what files Cppcheck cannot find use --check-config."/>
+    </errors>
+</results>

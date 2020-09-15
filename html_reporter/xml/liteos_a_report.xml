@@ -1,0 +1,1225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results version="2">
+    <cppcheck version="2.1"/>
+    <errors>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/apps/shell/src/shcmd.c" line="226" column="36"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*s2&apos; is initialized" verbose="Cannot determine that &apos;*s2&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/apps/shell/src/shcmd.c" line="272" column="20"/>
+        </error>
+        <error id="bughuntingUninitArg" severity="error" msg="There is function call, cannot determine that 1st argument is initialized." verbose="There is function call, cannot determine that 1st argument is initialized." cwe="457">
+            <location file="kernel/liteos_a/apps/shell/src/shcmd.c" line="290" column="32"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*len&apos; is initialized" verbose="Cannot determine that &apos;*len&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/apps/shell/src/shcmd.c" line="291" column="26"/>
+        </error>
+        <error id="bughuntingUninitArg" severity="error" msg="There is function call, cannot determine that 1st argument is initialized." verbose="There is function call, cannot determine that 1st argument is initialized." cwe="457">
+            <location file="kernel/liteos_a/apps/shell/src/shcmdparse.c" line="154" column="60"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="kernel/liteos_a/apps/shell/src/shmsg.c" line="374" column="22"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/arch/arm/arm/src/los_arch_mmu.c" line="77" column="63"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/arch/arm/arm/src/los_arch_mmu.c" line="453" column="53"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/arch/arm/arm/src/los_hw_tick.c" line="70" column="64"/>
+        </error>
+        <error id="preprocessorErrorDirective" severity="error" msg="failed to evaluate #if condition, division/modulo by zero" verbose="failed to evaluate #if condition, division/modulo by zero">
+            <location file="kernel/liteos_a/bsd/compat/linuxkpi/src/adp.c" line="94" column="0"/>
+        </error>
+        <error id="noValidConfiguration" severity="information" msg="This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details." verbose="This file is not analyzed. Cppcheck failed to extract a valid configuration. The tested configurations have these preprocessor errors:\012&apos;&apos; : [kernel/liteos_a/bsd/compat/linuxkpi/src/adp.c:94] failed to evaluate #if condition, division/modulo by zero\012LOSCFG_KERNEL_DYNLOAD : [kernel/liteos_a/bsd/compat/linuxkpi/src/adp.c:94] failed to evaluate #if condition, division/modulo by zero\012LOSCFG_NET_LWIP_SACK : [kernel/liteos_a/bsd/compat/linuxkpi/src/adp.c:94] failed to evaluate #if condition, division/modulo by zero\012__LP64__ : [kernel/liteos_a/bsd/compat/linuxkpi/src/adp.c:94] failed to evaluate #if condition, division/modulo by zero">
+            <location file="kernel/liteos_a/bsd/compat/linuxkpi/src/adp.c" line="0" column="0"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/compat/linuxkpi/src/tzdst.c" line="355" column="20"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/compat/linuxkpi/src/tzdst.c" line="358" column="73"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/compat/linuxkpi/src/tzdst.c" line="361" column="51"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/compat/linuxkpi/src/tzdst.c" line="367" column="69"/>
+        </error>
+        <error id="bughuntingUninitArg" severity="error" msg="There is function call, cannot determine that 2nd argument is initialized." verbose="There is function call, cannot determine that 2nd argument is initialized." cwe="457">
+            <location file="kernel/liteos_a/bsd/crypto/sha2/sha256c.c" line="141" column="2"/>
+        </error>
+        <error id="bughuntingUninitArg" severity="error" msg="There is function call, cannot determine that 2nd argument is initialized." verbose="There is function call, cannot determine that 2nd argument is initialized." cwe="457">
+            <location file="kernel/liteos_a/bsd/crypto/sha2/sha256c.c" line="144" column="12"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/crypto/sha2/sha256.h" line="42" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/random/unit_test.h" line="82" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/random/yarrow.c" line="98" column="9"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/random/yarrow.c" line="101" column="7"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/dev/usb/controller/ehci.c" line="1024" column="15"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/dev/usb/controller/ehci.c" line="1027" column="15"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;xfer&apos; is initialized" verbose="Cannot determine that &apos;xfer&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/controller/ehci.c" line="1354" column="16"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;xfer&apos; is initialized" verbose="Cannot determine that &apos;xfer&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/controller/ehci.c" line="1358" column="27"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/dev/usb/controller/ehci.c" line="1531" column="19"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/dev/usb/controller/ehci.c" line="1593" column="47"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/dev/usb/controller/ehci.c" line="2906" column="14"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/dev/usb/controller/ehci.c" line="3507" column="32"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/dev/usb/controller/ehci.c" line="3522" column="32"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/dev/usb/controller/ehci.c" line="3546" column="32"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*ptr&apos; is initialized" verbose="Cannot determine that &apos;*ptr&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/controller/xhci.c" line="206" column="18"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/dev/usb/controller/xhci.c" line="1708" column="19"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/dev/usb/controller/xhci.c" line="1808" column="60"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/dev/usb/controller/xhci.c" line="2163" column="50"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/dev/usb/controller/xhci.c" line="2166" column="34"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/dev/usb/controller/xhci.c" line="2167" column="23"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/dev/usb/controller/xhci.c" line="2389" column="21"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/dev/usb/controller/xhci.c" line="3723" column="32"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/dev/usb/controller/xhci.c" line="3726" column="32"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/dev/usb/controller/xhci.c" line="3729" column="32"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*ptr&apos; is initialized" verbose="Cannot determine that &apos;*ptr&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/controller/xhci.c" line="233" column="18"/>
+        </error>
+        <error id="cert-INT31-c" severity="style" msg="Ensure that integer conversions do not result in lost or misinterpreted data (casting 768 to unsigned char)" verbose="Ensure that integer conversions do not result in lost or misinterpreted data (casting 768 to unsigned char)">
+            <location file="kernel/liteos_a/bsd/dev/usb/controller/xhci.c" line="3156" column="2"/>
+        </error>
+        <error id="cert-INT31-c" severity="style" msg="Ensure that integer conversions do not result in lost or misinterpreted data (casting 256 to unsigned char)" verbose="Ensure that integer conversions do not result in lost or misinterpreted data (casting 256 to unsigned char)">
+            <location file="kernel/liteos_a/bsd/dev/usb/controller/xhci.c" line="3163" column="2"/>
+        </error>
+        <error id="cert-INT31-c" severity="style" msg="Ensure that integer conversions do not result in lost or misinterpreted data (casting -1 to unsigned int)" verbose="Ensure that integer conversions do not result in lost or misinterpreted data (casting -1 to unsigned int)">
+            <location file="kernel/liteos_a/bsd/dev/usb/controller/xhci_pci.c" line="203" column="8"/>
+        </error>
+        <error id="syntaxError" severity="error" msg="syntax error" verbose="syntax error">
+            <location file="kernel/liteos_a/bsd/dev/usb/implementation/bsd_kernel.c" line="70" column="19"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*port_num&apos; is initialized" verbose="Cannot determine that &apos;*port_num&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/implementation/usb_btree.c" line="170" column="7"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*port_num&apos; is initialized" verbose="Cannot determine that &apos;*port_num&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/implementation/usb_btree.c" line="160" column="3"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/dev/usb/implementation/usb_busdma_loader.c" line="89" column="20"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/dev/usb/implementation/usb_busdma_loader.c" line="91" column="11"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;(bus_addr_t)(UINTPTR)dma_handle&apos; is initialized" verbose="Cannot determine that &apos;(bus_addr_t)(UINTPTR)dma_handle&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/implementation/usb_busdma_loader.c" line="246" column="20"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;phys&apos; is initialized" verbose="Cannot determine that &apos;phys&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/implementation/usb_busdma_loader.c" line="249" column="17"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/dev/usb/implementation/usb_busdma_loader.c" line="547" column="21"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/dev/usb/implementation/usb_busdma_loader.c" line="554" column="36"/>
+        </error>
+        <error id="toomanyconfigs" severity="information" msg="Too many #ifdef configurations - cppcheck only checks 12 of 13 configurations. Use --force to check all configurations." verbose="The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time." cwe="398">
+            <location file="kernel/liteos_a/bsd/dev/usb/implementation/usb_init.c" line="0" column="0"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;ret&apos; is initialized" verbose="Cannot determine that &apos;ret&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/implementation/usb_init.c" line="204" column="6"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/input/uhid.c" line="71" column="21"/>
+        </error>
+        <error id="syntaxError" severity="error" msg="syntax error" verbose="syntax error">
+            <location file="kernel/liteos_a/bsd/dev/usb/linux_usb.c" line="74" column="18"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;ETH_PAD_SIZE&apos; since the value of &apos;ETH_PAD_SIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;ETH_PAD_SIZE&apos; since the value of &apos;ETH_PAD_SIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="kernel/liteos_a/bsd/dev/usb/net/if_axe.c" line="863" column="0"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;ETH_PAD_SIZE&apos; since the value of &apos;ETH_PAD_SIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;ETH_PAD_SIZE&apos; since the value of &apos;ETH_PAD_SIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="kernel/liteos_a/bsd/dev/usb/net/if_axe.c" line="873" column="0"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;ETH_PAD_SIZE&apos; since the value of &apos;ETH_PAD_SIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;ETH_PAD_SIZE&apos; since the value of &apos;ETH_PAD_SIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="kernel/liteos_a/bsd/dev/usb/net/if_axe.c" line="885" column="0"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/net/usb_ethernet.h" line="126" column="8"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/net/if_axereg.h" line="356" column="6"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/net/if_axereg.h" line="370" column="11"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;ETH_PAD_SIZE&apos; since the value of &apos;ETH_PAD_SIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;ETH_PAD_SIZE&apos; since the value of &apos;ETH_PAD_SIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="kernel/liteos_a/bsd/dev/usb/net/if_axge.c" line="483" column="0"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;ETH_PAD_SIZE&apos; since the value of &apos;ETH_PAD_SIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;ETH_PAD_SIZE&apos; since the value of &apos;ETH_PAD_SIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="kernel/liteos_a/bsd/dev/usb/net/if_axge.c" line="493" column="0"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;ETH_PAD_SIZE&apos; since the value of &apos;ETH_PAD_SIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;ETH_PAD_SIZE&apos; since the value of &apos;ETH_PAD_SIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="kernel/liteos_a/bsd/dev/usb/net/if_axge.c" line="505" column="0"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/net/if_axgereg.h" line="165" column="6"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/net/if_axgereg.h" line="175" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/net/if_cdcereg.h" line="82" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/net/if_cdcereg.h" line="101" column="9"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/net/if_cdcereg.h" line="108" column="10"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/net/if_cdcereg.h" line="120" column="11"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;ETH_PAD_SIZE&apos; since the value of &apos;ETH_PAD_SIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;ETH_PAD_SIZE&apos; since the value of &apos;ETH_PAD_SIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="kernel/liteos_a/bsd/dev/usb/net/if_urndis.c" line="800" column="0"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;ETH_PAD_SIZE&apos; since the value of &apos;ETH_PAD_SIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;ETH_PAD_SIZE&apos; since the value of &apos;ETH_PAD_SIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="kernel/liteos_a/bsd/dev/usb/net/if_urndis.c" line="808" column="0"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;ETH_PAD_SIZE&apos; since the value of &apos;ETH_PAD_SIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;ETH_PAD_SIZE&apos; since the value of &apos;ETH_PAD_SIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="kernel/liteos_a/bsd/dev/usb/net/if_urndis.c" line="820" column="0"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/net/if_urndisreg.h" line="41" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/net/if_urndisreg.h" line="63" column="10"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/net/if_urndis.c" line="185" column="13"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;ETH_PAD_SIZE&apos; since the value of &apos;ETH_PAD_SIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;ETH_PAD_SIZE&apos; since the value of &apos;ETH_PAD_SIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="kernel/liteos_a/bsd/dev/usb/net/usb_eth_drv.c" line="145" column="0"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;ETH_PAD_SIZE&apos; since the value of &apos;ETH_PAD_SIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;ETH_PAD_SIZE&apos; since the value of &apos;ETH_PAD_SIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="kernel/liteos_a/bsd/dev/usb/net/usb_eth_drv.c" line="152" column="0"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;ETH_PAD_SIZE&apos; since the value of &apos;ETH_PAD_SIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;ETH_PAD_SIZE&apos; since the value of &apos;ETH_PAD_SIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="kernel/liteos_a/bsd/dev/usb/net/usb_eth_drv.c" line="163" column="0"/>
+        </error>
+        <error id="cert-EXP15-C" severity="style" msg="Do not place a semicolon on the same line as an IF, FOR or WHILE" verbose="Do not place a semicolon on the same line as an IF, FOR or WHILE">
+            <location file="kernel/liteos_a/bsd/dev/usb/net/usb_eth_drv.c" line="177" column="39"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;m&apos; is initialized" verbose="Cannot determine that &apos;m&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/net/usb_ethernet.c" line="224" column="26"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;m&apos; is initialized" verbose="Cannot determine that &apos;m&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/net/usb_ethernet.c" line="225" column="6"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/serial/usb_serial.h" line="170" column="23"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/serial/usb_serial.h" line="194" column="10"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/serial/u3g.c" line="98" column="21"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="kernel/liteos_a/bsd/dev/usb/serial/usb_serial.c" line="1054" column="23"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="kernel/liteos_a/bsd/dev/usb/serial/usb_serial.c" line="1445" column="22"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;cmd_ptr[0]&apos; is initialized" verbose="Cannot determine that &apos;cmd_ptr[0]&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/umass.c" line="2195" column="17"/>
+        </error>
+        <error id="bughuntingUninitArg" severity="error" msg="There is function call, cannot determine that 3rd argument is initialized." verbose="There is function call, cannot determine that 3rd argument is initialized." cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/umass.c" line="2228" column="61"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;cmd_ptr[0]&apos; is initialized" verbose="Cannot determine that &apos;cmd_ptr[0]&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/umass.c" line="2248" column="17"/>
+        </error>
+        <error id="bughuntingUninitArg" severity="error" msg="There is function call, cannot determine that 3rd argument is initialized." verbose="There is function call, cannot determine that 3rd argument is initialized." cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/umass.c" line="2269" column="62"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;cmd_ptr[0]&apos; is initialized" verbose="Cannot determine that &apos;cmd_ptr[0]&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/umass.c" line="2317" column="17"/>
+        </error>
+        <error id="bughuntingUninitArg" severity="error" msg="There is function call, cannot determine that 3rd argument is initialized." verbose="There is function call, cannot determine that 3rd argument is initialized." cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/umass.c" line="2372" column="61"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;cmd_ptr[0]&apos; is initialized" verbose="Cannot determine that &apos;cmd_ptr[0]&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/umass.c" line="2406" column="17"/>
+        </error>
+        <error id="bughuntingUninitArg" severity="error" msg="There is function call, cannot determine that 3rd argument is initialized." verbose="There is function call, cannot determine that 3rd argument is initialized." cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/umass.c" line="2418" column="63"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;resp.lba&apos; is initialized" verbose="Cannot determine that &apos;resp.lba&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/umass.c" line="2738" column="42"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;resp.blklen&apos; is initialized" verbose="Cannot determine that &apos;resp.blklen&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/umass.c" line="2739" column="43"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;resp.lba&apos; is initialized" verbose="Cannot determine that &apos;resp.lba&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/umass.c" line="2770" column="26"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;resp.lba&apos; is initialized" verbose="Cannot determine that &apos;resp.lba&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/umass.c" line="2781" column="42"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;resp.blklen&apos; is initialized" verbose="Cannot determine that &apos;resp.blklen&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/umass.c" line="2782" column="43"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;c[0]&apos; is initialized" verbose="Cannot determine that &apos;c[0]&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/umass.c" line="2543" column="2"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;c[1]&apos; is initialized" verbose="Cannot determine that &apos;c[1]&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/umass.c" line="2543" column="2"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;c[2]&apos; is initialized" verbose="Cannot determine that &apos;c[2]&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/umass.c" line="2543" column="2"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;c[3]&apos; is initialized" verbose="Cannot determine that &apos;c[3]&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/umass.c" line="2543" column="2"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;c[4]&apos; is initialized" verbose="Cannot determine that &apos;c[4]&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/umass.c" line="2543" column="2"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;c[5]&apos; is initialized" verbose="Cannot determine that &apos;c[5]&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/umass.c" line="2543" column="2"/>
+        </error>
+        <error id="bughuntingUninitArg" severity="error" msg="There is function call, cannot determine that 1st argument is initialized." verbose="There is function call, cannot determine that 1st argument is initialized." cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/umass.c" line="3599" column="34"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/umass.c" line="2911" column="22"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/umass.c" line="2966" column="22"/>
+        </error>
+        <error id="cert-STR05-C" severity="style" msg="Use pointers to const when referring to string literals" verbose="Use pointers to const when referring to string literals">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/umass.c" line="1250" column="3"/>
+        </error>
+        <error id="cert-STR05-C" severity="style" msg="Use pointers to const when referring to string literals" verbose="Use pointers to const when referring to string literals">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/umass.c" line="1254" column="3"/>
+        </error>
+        <error id="cert-STR05-C" severity="style" msg="Use pointers to const when referring to string literals" verbose="Use pointers to const when referring to string literals">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/umass.c" line="1257" column="3"/>
+        </error>
+        <error id="cert-STR05-C" severity="style" msg="Use pointers to const when referring to string literals" verbose="Use pointers to const when referring to string literals">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/umass.c" line="1260" column="3"/>
+        </error>
+        <error id="cert-STR05-C" severity="style" msg="Use pointers to const when referring to string literals" verbose="Use pointers to const when referring to string literals">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/umass.c" line="1263" column="3"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi_all.h" line="147" column="10"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi_all.h" line="155" column="10"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi_all.h" line="167" column="10"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi_all.h" line="195" column="10"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="645" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="657" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="659" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="673" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="701" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="721" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="750" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="780" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="783" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="794" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="804" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="824" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="834" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="843" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="848" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="857" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="868" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="886" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="895" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="906" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="917" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="927" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="929" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="938" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="940" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="949" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="951" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="960" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="962" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="972" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="979" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="994" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="1004" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="1015" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/scsi.h" line="1026" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/umass_fs.h" line="108" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/umass_fs.h" line="121" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/umass.c" line="411" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/umass.c" line="433" column="21"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/storage/umass.c" line="440" column="10"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;xfer&apos; is initialized" verbose="Cannot determine that &apos;xfer&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/usb_debug.c" line="95" column="17"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;xfer&apos; is initialized" verbose="Cannot determine that &apos;xfer&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/usb_debug.c" line="96" column="18"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;argv[0]&apos; is initialized" verbose="Cannot determine that &apos;argv[0]&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/usb_debug.c" line="258" column="12"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;argv[1]&apos; is initialized" verbose="Cannot determine that &apos;argv[1]&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/usb_debug.c" line="259" column="22"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;str&apos; is initialized" verbose="Cannot determine that &apos;str&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/bsd/dev/usb/usb_debug.c" line="261" column="25"/>
+        </error>
+        <error id="syntaxError" severity="error" msg="syntax error" verbose="syntax error">
+            <location file="kernel/liteos_a/bsd/dev/usb/usb_dev.c" line="81" column="19"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;USB_TEMPLATE&apos; since the value of &apos;USB_TEMPLATE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;USB_TEMPLATE&apos; since the value of &apos;USB_TEMPLATE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="kernel/liteos_a/bsd/dev/usb/usb_device.c" line="61" column="0"/>
+        </error>
+        <error id="cert-EXP15-C" severity="style" msg="Do not place a semicolon on the same line as an IF, FOR or WHILE" verbose="Do not place a semicolon on the same line as an IF, FOR or WHILE">
+            <location file="kernel/liteos_a/bsd/dev/usb/usb_device.c" line="1502" column="31"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="kernel/liteos_a/bsd/dev/usb/usb_generic.c" line="1668" column="7"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="kernel/liteos_a/bsd/dev/usb/usb_generic.c" line="1688" column="16"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="kernel/liteos_a/bsd/dev/usb/usb_generic.c" line="1712" column="7"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="kernel/liteos_a/bsd/dev/usb/usb_generic.c" line="1714" column="12"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="kernel/liteos_a/bsd/dev/usb/usb_generic.c" line="1715" column="8"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/dev/usb/usb_hid.c" line="893" column="71"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/usb_hid.c" line="64" column="10"/>
+        </error>
+        <error id="cert-INT31-c" severity="style" msg="Ensure that integer conversions do not result in lost or misinterpreted data (casting -1 to unsigned char)" verbose="Ensure that integer conversions do not result in lost or misinterpreted data (casting -1 to unsigned char)">
+            <location file="kernel/liteos_a/bsd/dev/usb/usb_hub.c" line="3029" column="9"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/bsd/dev/usb/usb_hub.c" line="82" column="10"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="kernel/liteos_a/bsd/dev/usb/usb_process.c" line="169" column="16"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/dev/usb/usb_transfer.c" line="642" column="35"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/dev/usb/usb_transfer.c" line="800" column="31"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/dev/usb/usb_transfer.c" line="224" column="25"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/dev/usb/usb_transfer.c" line="232" column="26"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/dev/usb/usb_transfer.c" line="237" column="35"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/dev/usb/usb_transfer.c" line="789" column="40"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/kern/kern_condvar.c" line="42" column="25"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/bsd/kern/kern_condvar.c" line="43" column="26"/>
+        </error>
+        <error id="syntaxError" severity="error" msg="syntax error" verbose="syntax error">
+            <location file="kernel/liteos_a/bsd/kern/subr_bus.c" line="156" column="19"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/compat/posix/src/pprivate.h" line="57" column="25"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/compat/posix/src/time.c" line="158" column="90"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/compat/posix/src/time.c" line="176" column="90"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/compat/posix/src/time.c" line="209" column="46"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/compat/posix/src/time.c" line="210" column="48"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/compat/posix/src/time.c" line="212" column="48"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/compat/posix/src/time.c" line="213" column="50"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/compat/posix/src/time.c" line="231" column="35"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/compat/posix/src/time.c" line="232" column="35"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/compat/posix/src/time.c" line="285" column="30"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/compat/posix/src/time.c" line="375" column="36"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/compat/posix/src/time.c" line="455" column="30"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/compat/posix/src/time.c" line="533" column="48"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/compat/posix/src/time.c" line="824" column="51"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/compat/posix/src/time.c" line="826" column="39"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/compat/posix/src/time.c" line="875" column="35"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;argv[3]&apos; is initialized" verbose="Cannot determine that &apos;argv[3]&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/fs/fat/os_adapt/fat_shellcmd.c" line="64" column="25"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;argv[0]&apos; is initialized" verbose="Cannot determine that &apos;argv[0]&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/fs/fat/os_adapt/fat_shellcmd.c" line="71" column="20"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;argv[1]&apos; is initialized" verbose="Cannot determine that &apos;argv[1]&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/fs/fat/os_adapt/fat_shellcmd.c" line="71" column="34"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;argv[2]&apos; is initialized" verbose="Cannot determine that &apos;argv[2]&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/fs/fat/os_adapt/fat_shellcmd.c" line="71" column="49"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;argv[0]&apos; is initialized" verbose="Cannot determine that &apos;argv[0]&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/fs/fat/os_adapt/fat_shellcmd.c" line="72" column="44"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;argv[3]&apos; is initialized" verbose="Cannot determine that &apos;argv[3]&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/fs/fat/os_adapt/fat_shellcmd.c" line="67" column="27"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;argv[0]&apos; is initialized" verbose="Cannot determine that &apos;argv[0]&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/fs/fat/os_adapt/fat_shellcmd.c" line="97" column="28"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;argv[0]&apos; is initialized" verbose="Cannot determine that &apos;argv[0]&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/fs/fat/os_adapt/fat_shellcmd.c" line="106" column="52"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;argv[0]&apos; is initialized" verbose="Cannot determine that &apos;argv[0]&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/fs/fat/os_adapt/fat_shellcmd.c" line="111" column="78"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use atoi() better use strtol()" verbose="Do not use atoi() better use strtol()">
+            <location file="kernel/liteos_a/fs/fat/os_adapt/fat_shellcmd.c" line="71" column="25"/>
+        </error>
+        <error id="toomanyconfigs" severity="information" msg="Too many #ifdef configurations - cppcheck only checks 12 of 14 configurations. Use --force to check all configurations." verbose="The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time." cwe="398">
+            <location file="kernel/liteos_a/fs/fat/os_adapt/fatfs.c" line="0" column="0"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/fs/fat/os_adapt/fatfs.c" line="1189" column="86"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/fs/fat/os_adapt/fatfs.c" line="1217" column="84"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="kernel/liteos_a/fs/fat/os_adapt/fatfs.c" line="354" column="21"/>
+        </error>
+        <error id="cert-STR05-C" severity="style" msg="Use pointers to const when referring to string literals" verbose="Use pointers to const when referring to string literals">
+            <location file="kernel/liteos_a/fs/fat/virpart/src/virpart.c" line="113" column="17"/>
+        </error>
+        <error id="cert-STR05-C" severity="style" msg="Use pointers to const when referring to string literals" verbose="Use pointers to const when referring to string literals">
+            <location file="kernel/liteos_a/fs/proc/os_adapt/mounts_proc.c" line="46" column="13"/>
+        </error>
+        <error id="cert-STR05-C" severity="style" msg="Use pointers to const when referring to string literals" verbose="Use pointers to const when referring to string literals">
+            <location file="kernel/liteos_a/fs/proc/os_adapt/mounts_proc.c" line="47" column="13"/>
+        </error>
+        <error id="cert-STR05-C" severity="style" msg="Use pointers to const when referring to string literals" verbose="Use pointers to const when referring to string literals">
+            <location file="kernel/liteos_a/fs/proc/os_adapt/mounts_proc.c" line="50" column="13"/>
+        </error>
+        <error id="cert-STR05-C" severity="style" msg="Use pointers to const when referring to string literals" verbose="Use pointers to const when referring to string literals">
+            <location file="kernel/liteos_a/fs/proc/os_adapt/mounts_proc.c" line="51" column="13"/>
+        </error>
+        <error id="cert-STR05-C" severity="style" msg="Use pointers to const when referring to string literals" verbose="Use pointers to const when referring to string literals">
+            <location file="kernel/liteos_a/fs/proc/os_adapt/mounts_proc.c" line="54" column="13"/>
+        </error>
+        <error id="cert-STR05-C" severity="style" msg="Use pointers to const when referring to string literals" verbose="Use pointers to const when referring to string literals">
+            <location file="kernel/liteos_a/fs/proc/os_adapt/mounts_proc.c" line="55" column="13"/>
+        </error>
+        <error id="cert-STR05-C" severity="style" msg="Use pointers to const when referring to string literals" verbose="Use pointers to const when referring to string literals">
+            <location file="kernel/liteos_a/fs/proc/os_adapt/mounts_proc.c" line="58" column="13"/>
+        </error>
+        <error id="cert-STR05-C" severity="style" msg="Use pointers to const when referring to string literals" verbose="Use pointers to const when referring to string literals">
+            <location file="kernel/liteos_a/fs/proc/os_adapt/mounts_proc.c" line="59" column="13"/>
+        </error>
+        <error id="cert-STR05-C" severity="style" msg="Use pointers to const when referring to string literals" verbose="Use pointers to const when referring to string literals">
+            <location file="kernel/liteos_a/fs/proc/os_adapt/mounts_proc.c" line="62" column="13"/>
+        </error>
+        <error id="cert-STR05-C" severity="style" msg="Use pointers to const when referring to string literals" verbose="Use pointers to const when referring to string literals">
+            <location file="kernel/liteos_a/fs/proc/os_adapt/mounts_proc.c" line="63" column="13"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/fs/proc/os_adapt/uptime_proc.c" line="56" column="47"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="kernel/liteos_a/fs/proc/os_adapt/vfs_proc.c" line="45" column="18"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="kernel/liteos_a/fs/proc/os_adapt/vfs_proc.c" line="118" column="40"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/fs/vfs/bcache/src/bcache.c" line="274" column="21"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/fs/vfs/bcache/src/bcache.c" line="307" column="17"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/fs/vfs/bcache/src/bcache.c" line="308" column="16"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/fs/vfs/bcache/src/bcache.c" line="310" column="15"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/fs/vfs/bcache/src/bcache.c" line="311" column="15"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/fs/vfs/bcache/src/bcache.c" line="708" column="38"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/fs/vfs/bcache/src/bcache.c" line="950" column="66"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/fs/vfs/disk/disk.c" line="537" column="23"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/fs/vfs/disk/disk.c" line="538" column="23"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/fs/vfs/disk/disk.c" line="925" column="47"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/fs/vfs/disk/disk.c" line="1140" column="74"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/fs/vfs/disk/disk.c" line="1411" column="26"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/fs/vfs/disk/disk.c" line="1436" column="100"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="kernel/liteos_a/fs/vfs/multi_partition/src/mtd_partition.c" line="73" column="30"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*num&apos; is initialized" verbose="Cannot determine that &apos;*num&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/fs/vfs/operation/fs_other.c" line="306" column="13"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*dest&apos; is initialized" verbose="Cannot determine that &apos;*dest&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/fs/vfs/operation/fullpath.c" line="89" column="10"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;*dest&apos; is initialized" verbose="Cannot determine that &apos;*dest&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/fs/vfs/operation/fullpath.c" line="93" column="32"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="kernel/liteos_a/fs/vfs/operation/fullpath.c" line="176" column="17"/>
+        </error>
+        <error id="bughuntingUninitArg" severity="error" msg="There is function call, cannot determine that 1st argument is initialized." verbose="There is function call, cannot determine that 1st argument is initialized." cwe="457">
+            <location file="kernel/liteos_a/fs/vfs/vfs_cmd/vfs_shellcmd.c" line="970" column="21"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="kernel/liteos_a/fs/vfs/vfs_cmd/vfs_shellcmd.c" line="286" column="45"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="kernel/liteos_a/fs/vfs/vfs_cmd/vfs_shellcmd.c" line="360" column="39"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="kernel/liteos_a/fs/vfs/vfs_cmd/vfs_shellcmd.c" line="362" column="28"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="kernel/liteos_a/fs/vfs/vfs_cmd/vfs_shellcmd.c" line="416" column="28"/>
+        </error>
+        <error id="cert-STR05-C" severity="style" msg="Use pointers to const when referring to string literals" verbose="Use pointers to const when referring to string literals">
+            <location file="kernel/liteos_a/fs/vfs/vfs_cmd/vfs_shellcmd.c" line="1003" column="17"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use fopen() better use fopen_s()" verbose="Do not use fopen() better use fopen_s()">
+            <location file="kernel/liteos_a/fs/vfs/vfs_cmd/vfs_shellcmd.c" line="191" column="9"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use atoi() better use strtol()" verbose="Do not use atoi() better use strtol()">
+            <location file="kernel/liteos_a/fs/vfs/vfs_cmd/vfs_shellcmd.c" line="1384" column="16"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use atoi() better use strtol()" verbose="Do not use atoi() better use strtol()">
+            <location file="kernel/liteos_a/fs/vfs/vfs_cmd/vfs_shellcmd.c" line="1385" column="16"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use atoi() better use strtol()" verbose="Do not use atoi() better use strtol()">
+            <location file="kernel/liteos_a/fs/vfs/vfs_cmd/vfs_shellcmd.c" line="1463" column="15"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use atoi() better use strtol()" verbose="Do not use atoi() better use strtol()">
+            <location file="kernel/liteos_a/fs/vfs/vfs_cmd/vfs_shellcmd.c" line="1470" column="15"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use atoi() better use strtol()" verbose="Do not use atoi() better use strtol()">
+            <location file="kernel/liteos_a/fs/vfs/vfs_cmd/vfs_shellcmd.c" line="1471" column="15"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use atoi() better use strtol()" verbose="Do not use atoi() better use strtol()">
+            <location file="kernel/liteos_a/fs/vfs/vfs_cmd/vfs_shellcmd.c" line="1516" column="11"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/base/core/los_bitmap.c" line="91" column="54"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/base/core/los_bitmap.c" line="111" column="56"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/base/core/los_sortlink.c" line="219" column="72"/>
+        </error>
+        <error id="noValidConfiguration" severity="information" msg="This file is not analyzed. Cppcheck failed to extract a valid configuration. Use -v for more details." verbose="This file is not analyzed. Cppcheck failed to extract a valid configuration. The tested configurations have these preprocessor errors:\012&apos;&apos; : [kernel/liteos_a/kernel/base/core/los_task.c:78] #error &quot;task maxnum cannot be zero&quot;\012LOSCFG_ENABLE_OOM_LOOP_TASK : [kernel/liteos_a/kernel/base/core/los_task.c:78] #error &quot;task maxnum cannot be zero&quot;\012LOSCFG_EXC_INTERACTION : [kernel/liteos_a/kernel/base/core/los_task.c:78] #error &quot;task maxnum cannot be zero&quot;\012LOSCFG_KERNEL_CPUP : [kernel/liteos_a/kernel/base/core/los_task.c:78] #error &quot;task maxnum cannot be zero&quot;\012LOSCFG_KERNEL_TICKLESS : [kernel/liteos_a/kernel/base/core/los_task.c:78] #error &quot;task maxnum cannot be zero&quot;">
+            <location file="kernel/liteos_a/kernel/base/core/los_task.c" line="0" column="0"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/base/ipc/los_futex.c" line="152" column="41"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/base/ipc/los_futex.c" line="154" column="28"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/base/ipc/los_futex.c" line="168" column="28"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/base/ipc/los_futex.c" line="228" column="30"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/base/ipc/los_futex.c" line="552" column="29"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/base/ipc/los_futex.c" line="662" column="29"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/base/ipc/los_futex.c" line="696" column="28"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/base/ipc/los_futex.c" line="794" column="31"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/base/ipc/los_futex.c" line="833" column="34"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/base/ipc/los_futex.c" line="888" column="34"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/base/ipc/los_futex.c" line="889" column="34"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;intSave&apos; is initialized" verbose="Cannot determine that &apos;intSave&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/kernel/base/ipc/los_signal.c" line="131" column="20"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;intSave&apos; is initialized" verbose="Cannot determine that &apos;intSave&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/kernel/base/ipc/los_signal.c" line="365" column="20"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;intSave&apos; is initialized" verbose="Cannot determine that &apos;intSave&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/kernel/base/ipc/los_signal.c" line="367" column="22"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;intSave&apos; is initialized" verbose="Cannot determine that &apos;intSave&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/kernel/base/ipc/los_signal.c" line="429" column="20"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;intSave&apos; is initialized" verbose="Cannot determine that &apos;intSave&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/kernel/base/ipc/los_signal.c" line="486" column="20"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;intSave&apos; is initialized" verbose="Cannot determine that &apos;intSave&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/kernel/base/ipc/los_signal.c" line="490" column="22"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;intSave&apos; is initialized" verbose="Cannot determine that &apos;intSave&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/kernel/base/ipc/los_signal.c" line="515" column="20"/>
+        </error>
+        <error id="toomanyconfigs" severity="information" msg="Too many #ifdef configurations - cppcheck only checks 12 of 21 configurations. Use --force to check all configurations." verbose="The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time." cwe="398">
+            <location file="kernel/liteos_a/kernel/base/mem/bestfit/los_memory.c" line="0" column="0"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/base/mem/bestfit/los_memory.c" line="746" column="49"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="kernel/liteos_a/kernel/base/mem/bestfit/los_memory.c" line="1144" column="13"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/kernel/base/mem/bestfit/los_memory.c" line="100" column="12"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/base/mem/membox/los_membox.c" line="70" column="17"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/base/mem/membox/los_membox.c" line="74" column="17"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/base/mem/membox/los_membox.c" line="106" column="62"/>
+        </error>
+        <error id="toomanyconfigs" severity="information" msg="Too many #ifdef configurations - cppcheck only checks 12 of 13 configurations. Use --force to check all configurations." verbose="The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time." cwe="398">
+            <location file="kernel/liteos_a/kernel/base/misc/mempt_shellcmd.c" line="0" column="0"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/base/misc/swtmr_shellcmd.c" line="129" column="55"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/base/misc/task_shellcmd.c" line="177" column="9"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/base/misc/task_shellcmd.c" line="185" column="9"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use atoi() better use strtol()" verbose="Do not use atoi() better use strtol()">
+            <location file="kernel/liteos_a/kernel/base/misc/vm_shellcmd.c" line="79" column="16"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/base/vm/los_vm_dump.c" line="285" column="42"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/base/vm/los_vm_dump.c" line="456" column="26"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/base/vm/los_vm_filemap.c" line="177" column="27"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/base/vm/los_vm_filemap.c" line="229" column="27"/>
+        </error>
+        <error id="cert-EXP15-C" severity="style" msg="Do not place a semicolon on the same line as an IF, FOR or WHILE" verbose="Do not place a semicolon on the same line as an IF, FOR or WHILE">
+            <location file="kernel/liteos_a/kernel/base/vm/los_vm_phys.c" line="549" column="64"/>
+        </error>
+        <error id="toomanyconfigs" severity="information" msg="Too many #ifdef configurations - cppcheck only checks 12 of 16 configurations. Use --force to check all configurations." verbose="The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time." cwe="398">
+            <location file="kernel/liteos_a/kernel/common/console.c" line="0" column="0"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/kernel/common/console.h" line="97" column="12"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/common/hwi_shell.c" line="77" column="58"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/common/hwi_shell.c" line="93" column="40"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/common/hwi_shell.c" line="94" column="40"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/common/hwi_shell.c" line="95" column="40"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/common/hwi_shell.c" line="96" column="40"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/common/hwi_shell.c" line="97" column="39"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/common/hwi_shell.c" line="98" column="39"/>
+        </error>
+        <error id="toomanyconfigs" severity="information" msg="Too many #ifdef configurations - cppcheck only checks 12 of 31 configurations. Use --force to check all configurations." verbose="The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time." cwe="398">
+            <location file="kernel/liteos_a/kernel/common/los_config.c" line="0" column="0"/>
+        </error>
+        <error id="toomanyconfigs" severity="information" msg="Too many #ifdef configurations - cppcheck only checks 12 of 14 configurations. Use --force to check all configurations." verbose="The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time." cwe="398">
+            <location file="kernel/liteos_a/kernel/common/los_exc_interaction.c" line="0" column="0"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="kernel/liteos_a/kernel/common/los_hilog.c" line="277" column="35"/>
+        </error>
+        <error id="toomanyconfigs" severity="information" msg="Too many #ifdef configurations - cppcheck only checks 12 of 15 configurations. Use --force to check all configurations." verbose="The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time." cwe="398">
+            <location file="kernel/liteos_a/kernel/common/los_printf.c" line="0" column="0"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/common/los_rootfs.c" line="110" column="44"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/common/los_rootfs.c" line="115" column="56"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/common/los_rootfs.c" line="116" column="46"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/common/los_rootfs.c" line="212" column="73"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/common/los_rootfs.c" line="213" column="43"/>
+        </error>
+        <error id="bughuntingUninitArg" severity="error" msg="There is function call, cannot determine that 3rd argument is initialized." verbose="There is function call, cannot determine that 3rd argument is initialized." cwe="457">
+            <location file="kernel/liteos_a/kernel/common/los_seq_buf.c" line="54" column="48"/>
+        </error>
+        <error id="toomanyconfigs" severity="information" msg="Too many #ifdef configurations - cppcheck only checks 12 of 13 configurations. Use --force to check all configurations." verbose="The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time." cwe="398">
+            <location file="kernel/liteos_a/kernel/common/virtual_serial.c" line="0" column="0"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/extended/cpup/cpup_shellcmd.c" line="58" column="27"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/extended/cpup/cpup_shellcmd.c" line="73" column="27"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/extended/cpup/cpup_shellcmd.c" line="97" column="53"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/extended/tickless/los_tickless.c" line="135" column="32"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/extended/tickless/los_tickless.c" line="141" column="24"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/extended/tickless/los_tickless.c" line="143" column="29"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/extended/tickless/los_tickless.c" line="167" column="39"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/extended/tickless/los_tickless.c" line="168" column="35"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/kernel/extended/tickless/los_tickless.c" line="186" column="27"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;vdsoStart&apos; is initialized" verbose="Cannot determine that &apos;vdsoStart&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/kernel/extended/vdso/usr/los_vdso_sys.c" line="92" column="17"/>
+        </error>
+        <error id="toomanyconfigs" severity="information" msg="Too many #ifdef configurations - cppcheck only checks 12 of 46 configurations. Use --force to check all configurations." verbose="The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time." cwe="398">
+            <location file="kernel/liteos_a/net/lwip-2.1/enhancement/src/api_shell.c" line="0" column="0"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use atoi() better use strtol()" verbose="Do not use atoi() better use strtol()">
+            <location file="kernel/liteos_a/net/lwip-2.1/enhancement/src/api_shell.c" line="1013" column="18"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use atoi() better use strtol()" verbose="Do not use atoi() better use strtol()">
+            <location file="kernel/liteos_a/net/lwip-2.1/enhancement/src/api_shell.c" line="1019" column="40"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use atoi() better use strtol()" verbose="Do not use atoi() better use strtol()">
+            <location file="kernel/liteos_a/net/lwip-2.1/enhancement/src/api_shell.c" line="1953" column="17"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/net/lwip-2.1/enhancement/src/api_shell.c" line="240" column="18"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/net/lwip-2.1/enhancement/src/api_shell.c" line="245" column="11"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/net/lwip-2.1/enhancement/src/api_shell.c" line="251" column="18"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/net/lwip-2.1/enhancement/src/api_shell.c" line="1156" column="18"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/net/lwip-2.1/enhancement/src/api_shell.c" line="1162" column="15"/>
+        </error>
+        <error id="cert-API01-C" severity="style" msg="Avoid laying out strings in memory directly before sensitive data" verbose="Avoid laying out strings in memory directly before sensitive data">
+            <location file="kernel/liteos_a/net/lwip-2.1/enhancement/src/api_shell.c" line="1164" column="9"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use atoi() better use strtol()" verbose="Do not use atoi() better use strtol()">
+            <location file="kernel/liteos_a/net/lwip-2.1/enhancement/src/api_shell.c" line="1809" column="19"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use atoi() better use strtol()" verbose="Do not use atoi() better use strtol()">
+            <location file="kernel/liteos_a/net/lwip-2.1/enhancement/src/api_shell.c" line="1824" column="19"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use atoi() better use strtol()" verbose="Do not use atoi() better use strtol()">
+            <location file="kernel/liteos_a/net/lwip-2.1/enhancement/src/api_shell.c" line="1834" column="19"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use atoi() better use strtol()" verbose="Do not use atoi() better use strtol()">
+            <location file="kernel/liteos_a/net/lwip-2.1/enhancement/src/api_shell.c" line="3763" column="14"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use atoi() better use strtol()" verbose="Do not use atoi() better use strtol()">
+            <location file="kernel/liteos_a/net/lwip-2.1/enhancement/src/api_shell.c" line="3797" column="13"/>
+        </error>
+        <error id="cert-INT31-c" severity="style" msg="Ensure that integer conversions do not result in lost or misinterpreted data (casting 65536 to unsigned short)" verbose="Ensure that integer conversions do not result in lost or misinterpreted data (casting 65536 to unsigned short)">
+            <location file="kernel/liteos_a/net/lwip-2.1/enhancement/src/api_shell.c" line="3611" column="10"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use atoi() better use strtol()" verbose="Do not use atoi() better use strtol()">
+            <location file="kernel/liteos_a/net/lwip-2.1/enhancement/src/api_shell.c" line="3604" column="14"/>
+        </error>
+        <error id="cert-INT31-c" severity="style" msg="Ensure that integer conversions do not result in lost or misinterpreted data (casting 65536 to unsigned short)" verbose="Ensure that integer conversions do not result in lost or misinterpreted data (casting 65536 to unsigned short)">
+            <location file="kernel/liteos_a/net/lwip-2.1/enhancement/src/api_shell.c" line="3689" column="10"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use atoi() better use strtol()" verbose="Do not use atoi() better use strtol()">
+            <location file="kernel/liteos_a/net/lwip-2.1/enhancement/src/api_shell.c" line="3682" column="14"/>
+        </error>
+        <error id="unknownMacro" severity="error" msg="There is an unknown macro here somewhere. Configuration is required. If LWIP_ERROR is a macro then please configure it." verbose="There is an unknown macro here somewhere. Configuration is required. If LWIP_ERROR is a macro then please configure it.">
+            <location file="kernel/liteos_a/net/lwip-2.1/enhancement/src/api_shell_fix.c" line="157" column="5"/>
+        </error>
+        <error id="unknownMacro" severity="error" msg="There is an unknown macro here somewhere. Configuration is required. If LWIP_ERROR is a macro then please configure it." verbose="There is an unknown macro here somewhere. Configuration is required. If LWIP_ERROR is a macro then please configure it.">
+            <location file="kernel/liteos_a/net/lwip-2.1/porting/src/driverif.c" line="147" column="5"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;ETH_PAD_SIZE&apos; since the value of &apos;ETH_PAD_SIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;ETH_PAD_SIZE&apos; since the value of &apos;ETH_PAD_SIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="kernel/liteos_a/net/lwip-2.1/porting/src/driverif.c" line="108" column="0"/>
+        </error>
+        <error id="ConfigurationNotChecked" severity="information" msg="Skipping configuration &apos;ETH_PAD_SIZE&apos; since the value of &apos;ETH_PAD_SIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly." verbose="Skipping configuration &apos;ETH_PAD_SIZE&apos; since the value of &apos;ETH_PAD_SIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.">
+            <location file="kernel/liteos_a/net/lwip-2.1/porting/src/driverif.c" line="114" column="0"/>
+        </error>
+        <error id="toomanyconfigs" severity="information" msg="Too many #ifdef configurations - cppcheck only checks 12 of 17 configurations. Use --force to check all configurations." verbose="The checking of the file will be interrupted because there are too many #ifdef configurations. Checking of all #ifdef configurations can be forced by --force command line option or from GUI preferences. However that may increase the checking time." cwe="398">
+            <location file="kernel/liteos_a/net/lwip-2.1/porting/src/sockets.c" line="0" column="0"/>
+        </error>
+        <error id="unknownMacro" severity="error" msg="There is an unknown macro here somewhere. Configuration is required. If ; is a macro then please configure it." verbose="There is an unknown macro here somewhere. Configuration is required. If ; is a macro then please configure it.">
+            <location file="kernel/liteos_a/net/lwip-2.1/porting/src/sockets.c" line="217" column="40"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use atoi() better use strtol()" verbose="Do not use atoi() better use strtol()">
+            <location file="kernel/liteos_a/net/lwip-2.1/porting/src/sockets.c" line="1075" column="9"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/net/lwip-2.1/porting/src/sys_arch.c" line="187" column="101"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/net/lwip-2.1/porting/src/sys_arch.c" line="258" column="101"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="kernel/liteos_a/net/lwip-2.1/porting/src/sys_arch.c" line="63" column="19"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/net/telnet/src/telnet_dev.c" line="122" column="37"/>
+        </error>
+        <error id="cert-INT31-c" severity="style" msg="Ensure that integer conversions do not result in lost or misinterpreted data (casting -1 to unsigned long)" verbose="Ensure that integer conversions do not result in lost or misinterpreted data (casting -1 to unsigned long)">
+            <location file="kernel/liteos_a/net/telnet/src/telnet_loop.c" line="204" column="21"/>
+        </error>
+        <error id="cert-EXP15-C" severity="style" msg="Do not place a semicolon on the same line as an IF, FOR or WHILE" verbose="Do not place a semicolon on the same line as an IF, FOR or WHILE">
+            <location file="kernel/liteos_a/platform/hw/arm/interrupt/gic/gic_v3.c" line="163" column="77"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/platform/hw/arm/timer/arm_generic/arm_generic_timer.c" line="168" column="56"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/platform/hw/arm/timer/arm_private/arm_private_timer.c" line="72" column="28"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/platform/hw/hisoc/timer/timer.c" line="96" column="48"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/platform/hw/hisoc/timer/timer.c" line="175" column="25"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/platform/hw/hisoc/timer/timer.c" line="181" column="32"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/platform/hw/hisoc/timer/timer.c" line="357" column="53"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/platform/hw/hisoc/timer/timer.c" line="71" column="32"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/platform/uart/amba-pl011-lagacy/uart.c" line="238" column="37"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/platform/uart/amba-pl011-lagacy/uart.c" line="239" column="39"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/platform/uart/amba-pl011-lagacy/uart.c" line="240" column="34"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/platform/uart/dw-3.0.8a/uart.c" line="192" column="37"/>
+        </error>
+        <error id="cert-EXP15-C" severity="style" msg="Do not place a semicolon on the same line as an IF, FOR or WHILE" verbose="Do not place a semicolon on the same line as an IF, FOR or WHILE">
+            <location file="kernel/liteos_a/platform/uart/dw-3.0.8a/uart.c" line="72" column="59"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/shell/full/src/base/shcmd.c" line="218" column="36"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use fopen() better use fopen_s()" verbose="Do not use fopen() better use fopen_s()">
+            <location file="kernel/liteos_a/shell/full/src/base/shell_lk.c" line="110" column="10"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use ctime() better use ctime_s()" verbose="Do not use ctime() better use ctime_s()">
+            <location file="kernel/liteos_a/shell/full/src/cmds/date_shell.c" line="264" column="24"/>
+        </error>
+        <error id="cert-MSC24-C" severity="style" msg="Do not use ctime() better use ctime_s()" verbose="Do not use ctime() better use ctime_s()">
+            <location file="kernel/liteos_a/shell/full/src/cmds/watch_shell.c" line="64" column="22"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="kernel/liteos_a/syscall/net_syscall.c" line="285" column="5"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="kernel/liteos_a/syscall/net_syscall.c" line="302" column="5"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="kernel/liteos_a/syscall/net_syscall.c" line="407" column="5"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="kernel/liteos_a/syscall/net_syscall.c" line="425" column="5"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="kernel/liteos_a/syscall/net_syscall.c" line="427" column="5"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="kernel/liteos_a/syscall/net_syscall.c" line="428" column="5"/>
+        </error>
+        <error id="cert-EXP05-C" severity="style" msg="Attempt to cast away const" verbose="Attempt to cast away const">
+            <location file="kernel/liteos_a/syscall/net_syscall.c" line="509" column="5"/>
+        </error>
+        <error id="cert-EXP15-C" severity="style" msg="Do not place a semicolon on the same line as an IF, FOR or WHILE" verbose="Do not place a semicolon on the same line as an IF, FOR or WHILE">
+            <location file="kernel/liteos_a/syscall/net_syscall.c" line="560" column="5"/>
+        </error>
+        <error id="cert-EXP15-C" severity="style" msg="Do not place a semicolon on the same line as an IF, FOR or WHILE" verbose="Do not place a semicolon on the same line as an IF, FOR or WHILE">
+            <location file="kernel/liteos_a/syscall/net_syscall.c" line="602" column="5"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;intSave&apos; is initialized" verbose="Cannot determine that &apos;intSave&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/syscall/process_syscall.c" line="83" column="20"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;intSave&apos; is initialized" verbose="Cannot determine that &apos;intSave&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/syscall/process_syscall.c" line="117" column="24"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;intSave&apos; is initialized" verbose="Cannot determine that &apos;intSave&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/syscall/process_syscall.c" line="177" column="24"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/syscall/process_syscall.c" line="302" column="22"/>
+        </error>
+        <error id="bughuntingDivByZero" severity="error" msg="There is division, cannot determine that there can&apos;t be a division by zero." verbose="There is division, cannot determine that there can&apos;t be a division by zero." cwe="369">
+            <location file="kernel/liteos_a/syscall/process_syscall.c" line="303" column="24"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;intSave&apos; is initialized" verbose="Cannot determine that &apos;intSave&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/syscall/process_syscall.c" line="877" column="20"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;intSave&apos; is initialized" verbose="Cannot determine that &apos;intSave&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/syscall/process_syscall.c" line="906" column="20"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;intSave&apos; is initialized" verbose="Cannot determine that &apos;intSave&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/syscall/process_syscall.c" line="930" column="20"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;intSave&apos; is initialized" verbose="Cannot determine that &apos;intSave&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/syscall/process_syscall.c" line="956" column="20"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;intSave&apos; is initialized" verbose="Cannot determine that &apos;intSave&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/syscall/process_syscall.c" line="412" column="20"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;intSave&apos; is initialized" verbose="Cannot determine that &apos;intSave&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/syscall/process_syscall.c" line="416" column="22"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;intSave&apos; is initialized" verbose="Cannot determine that &apos;intSave&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/syscall/process_syscall.c" line="451" column="20"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;intSave&apos; is initialized" verbose="Cannot determine that &apos;intSave&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/syscall/process_syscall.c" line="554" column="20"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;intSave&apos; is initialized" verbose="Cannot determine that &apos;intSave&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/syscall/process_syscall.c" line="593" column="20"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;intSave&apos; is initialized" verbose="Cannot determine that &apos;intSave&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/syscall/process_syscall.c" line="597" column="22"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;intSave&apos; is initialized" verbose="Cannot determine that &apos;intSave&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/syscall/process_syscall.c" line="731" column="20"/>
+        </error>
+        <error id="bughuntingUninit" severity="error" msg="Cannot determine that &apos;intSave&apos; is initialized" verbose="Cannot determine that &apos;intSave&apos; is initialized" cwe="457">
+            <location file="kernel/liteos_a/syscall/process_syscall.c" line="733" column="22"/>
+        </error>
+        <error id="missingInclude" severity="information" msg="Cppcheck cannot find all the include files (use --check-config for details)" verbose="Cppcheck cannot find all the include files. Cppcheck can check the code without the include files found. But the results will probably be more accurate if all the include files are found. Please check your project&apos;s include directories and add all of them as include directories for Cppcheck. To see what files Cppcheck cannot find use --check-config."/>
+    </errors>
+</results>

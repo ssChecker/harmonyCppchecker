@@ -1,0 +1,2460 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Cppcheck - HTML report - [project name]</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+.highlight .hll { background-color: #ffffcc }
+.highlight  { background: #ffffff; }
+.highlight .c { color: #888888 } /* Comment */
+.highlight .err { color: #FF0000; background-color: #FFAAAA } /* Error */
+.highlight .k { color: #008800; font-weight: bold } /* Keyword */
+.highlight .o { color: #333333 } /* Operator */
+.highlight .ch { color: #888888 } /* Comment.Hashbang */
+.highlight .cm { color: #888888 } /* Comment.Multiline */
+.highlight .cp { color: #557799 } /* Comment.Preproc */
+.highlight .cpf { color: #888888 } /* Comment.PreprocFile */
+.highlight .c1 { color: #888888 } /* Comment.Single */
+.highlight .cs { color: #cc0000; font-weight: bold } /* Comment.Special */
+.highlight .gd { color: #A00000 } /* Generic.Deleted */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gr { color: #FF0000 } /* Generic.Error */
+.highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.highlight .gi { color: #00A000 } /* Generic.Inserted */
+.highlight .go { color: #888888 } /* Generic.Output */
+.highlight .gp { color: #c65d09; font-weight: bold } /* Generic.Prompt */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.highlight .gt { color: #0044DD } /* Generic.Traceback */
+.highlight .kc { color: #008800; font-weight: bold } /* Keyword.Constant */
+.highlight .kd { color: #008800; font-weight: bold } /* Keyword.Declaration */
+.highlight .kn { color: #008800; font-weight: bold } /* Keyword.Namespace */
+.highlight .kp { color: #003388; font-weight: bold } /* Keyword.Pseudo */
+.highlight .kr { color: #008800; font-weight: bold } /* Keyword.Reserved */
+.highlight .kt { color: #333399; font-weight: bold } /* Keyword.Type */
+.highlight .m { color: #6600EE; font-weight: bold } /* Literal.Number */
+.highlight .s { background-color: #fff0f0 } /* Literal.String */
+.highlight .na { color: #0000CC } /* Name.Attribute */
+.highlight .nb { color: #007020 } /* Name.Builtin */
+.highlight .nc { color: #BB0066; font-weight: bold } /* Name.Class */
+.highlight .no { color: #003366; font-weight: bold } /* Name.Constant */
+.highlight .nd { color: #555555; font-weight: bold } /* Name.Decorator */
+.highlight .ni { color: #880000; font-weight: bold } /* Name.Entity */
+.highlight .ne { color: #FF0000; font-weight: bold } /* Name.Exception */
+.highlight .nf { color: #0066BB; font-weight: bold } /* Name.Function */
+.highlight .nl { color: #997700; font-weight: bold } /* Name.Label */
+.highlight .nn { color: #0e84b5; font-weight: bold } /* Name.Namespace */
+.highlight .nt { color: #007700 } /* Name.Tag */
+.highlight .nv { color: #996633 } /* Name.Variable */
+.highlight .ow { color: #000000; font-weight: bold } /* Operator.Word */
+.highlight .w { color: #bbbbbb } /* Text.Whitespace */
+.highlight .mb { color: #6600EE; font-weight: bold } /* Literal.Number.Bin */
+.highlight .mf { color: #6600EE; font-weight: bold } /* Literal.Number.Float */
+.highlight .mh { color: #005588; font-weight: bold } /* Literal.Number.Hex */
+.highlight .mi { color: #0000DD; font-weight: bold } /* Literal.Number.Integer */
+.highlight .mo { color: #4400EE; font-weight: bold } /* Literal.Number.Oct */
+.highlight .sa { background-color: #fff0f0 } /* Literal.String.Affix */
+.highlight .sb { background-color: #fff0f0 } /* Literal.String.Backtick */
+.highlight .sc { color: #0044DD } /* Literal.String.Char */
+.highlight .dl { background-color: #fff0f0 } /* Literal.String.Delimiter */
+.highlight .sd { color: #DD4422 } /* Literal.String.Doc */
+.highlight .s2 { background-color: #fff0f0 } /* Literal.String.Double */
+.highlight .se { color: #666666; font-weight: bold; background-color: #fff0f0 } /* Literal.String.Escape */
+.highlight .sh { background-color: #fff0f0 } /* Literal.String.Heredoc */
+.highlight .si { background-color: #eeeeee } /* Literal.String.Interpol */
+.highlight .sx { color: #DD2200; background-color: #fff0f0 } /* Literal.String.Other */
+.highlight .sr { color: #000000; background-color: #fff0ff } /* Literal.String.Regex */
+.highlight .s1 { background-color: #fff0f0 } /* Literal.String.Single */
+.highlight .ss { color: #AA6600 } /* Literal.String.Symbol */
+.highlight .bp { color: #007020 } /* Name.Builtin.Pseudo */
+.highlight .fm { color: #0066BB; font-weight: bold } /* Name.Function.Magic */
+.highlight .vc { color: #336699 } /* Name.Variable.Class */
+.highlight .vg { color: #dd7700; font-weight: bold } /* Name.Variable.Global */
+.highlight .vi { color: #3333BB } /* Name.Variable.Instance */
+.highlight .vm { color: #996633 } /* Name.Variable.Magic */
+.highlight .il { color: #0000DD; font-weight: bold } /* Literal.Number.Integer.Long */
+    </style>
+    <script>
+      function getStyle(el, styleProp) {
+        var y;
+
+        if (el.currentStyle) {
+          y = el.currentStyle[styleProp];
+        } else if (window.getComputedStyle) {
+          y = document.defaultView.getComputedStyle(el, null).getPropertyValue(styleProp);
+        }
+
+        return y;
+      }
+
+      function toggle() {
+        var el = this.expandable_content;
+        var mark = this.expandable_marker;
+
+        if (el.style.display === "block") {
+          el.style.display = "none";
+          mark.textContent = "[+]";
+        } else {
+          el.style.display = "block";
+          mark.textContent = "[-]";
+        }
+      }
+
+      function initExpandables() {
+        var elements = document.querySelectorAll(".expandable");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var el = elements[i];
+          var clickable = el.querySelector("span");
+          var marker = clickable.querySelector(".marker");
+          var content = el.querySelector(".content");
+          var width = clickable.clientWidth - parseInt(getStyle(content, "padding-left")) - parseInt(getStyle(content, "padding-right"));
+          content.style.width = width + "px";
+          clickable.expandable_content = content;
+          clickable.expandable_marker = marker;
+          clickable.addEventListener("click", toggle);
+        }
+      }
+
+      function toggleDisplay(id) {
+        var elements = document.querySelectorAll("." + id);
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("d-none");
+        }
+      }
+
+      function toggleAll() {
+        var elements = document.querySelectorAll("input");
+
+        // starting from 1 since 0 is the "toggle all" input
+        for (var i = 1, len = elements.length; i < len; i++) {
+          var el = elements[i];
+
+          if (el.checked) {
+            el.checked = false;
+          } else {
+            el.checked = true;
+          }
+
+          toggleDisplay(el.id);
+        }
+      }
+      window.addEventListener("load", initExpandables);
+    </script>
+  </head>
+  <body>
+    <div id="header" class="header">
+      <h1>Cppcheck report - [project name]: kernel/liteos_a/bsd/dev/usb/net/if_axe.c</h1>
+    </div>
+    <div class="wrapper">
+      <div id="menu">
+       <p id="filename"><a href="index.html">Defects:</a> if_axe.c</p>
+<a href="20.html#line-863"> ConfigurationNotChecked 863</a><a href="20.html#line-873"> ConfigurationNotChecked 873</a><a href="20.html#line-885"> ConfigurationNotChecked 885</a>
+    </div>
+    <div id="content">
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>   1
+   2
+   3
+   4
+   5
+   6
+   7
+   8
+   9
+  10
+  11
+  12
+  13
+  14
+  15
+  16
+  17
+  18
+  19
+  20
+  21
+  22
+  23
+  24
+  25
+  26
+  27
+  28
+  29
+  30
+  31
+  32
+  33
+  34
+  35
+  36
+  37
+  38
+  39
+  40
+  41
+  42
+  43
+  44
+  45
+  46
+  47
+  48
+  49
+  50
+  51
+  52
+  53
+  54
+  55
+  56
+  57
+  58
+  59
+  60
+  61
+  62
+  63
+  64
+  65
+  66
+  67
+  68
+  69
+  70
+  71
+  72
+  73
+  74
+  75
+  76
+  77
+  78
+  79
+  80
+  81
+  82
+  83
+  84
+  85
+  86
+  87
+  88
+  89
+  90
+  91
+  92
+  93
+  94
+  95
+  96
+  97
+  98
+  99
+ 100
+ 101
+ 102
+ 103
+ 104
+ 105
+ 106
+ 107
+ 108
+ 109
+ 110
+ 111
+ 112
+ 113
+ 114
+ 115
+ 116
+ 117
+ 118
+ 119
+ 120
+ 121
+ 122
+ 123
+ 124
+ 125
+ 126
+ 127
+ 128
+ 129
+ 130
+ 131
+ 132
+ 133
+ 134
+ 135
+ 136
+ 137
+ 138
+ 139
+ 140
+ 141
+ 142
+ 143
+ 144
+ 145
+ 146
+ 147
+ 148
+ 149
+ 150
+ 151
+ 152
+ 153
+ 154
+ 155
+ 156
+ 157
+ 158
+ 159
+ 160
+ 161
+ 162
+ 163
+ 164
+ 165
+ 166
+ 167
+ 168
+ 169
+ 170
+ 171
+ 172
+ 173
+ 174
+ 175
+ 176
+ 177
+ 178
+ 179
+ 180
+ 181
+ 182
+ 183
+ 184
+ 185
+ 186
+ 187
+ 188
+ 189
+ 190
+ 191
+ 192
+ 193
+ 194
+ 195
+ 196
+ 197
+ 198
+ 199
+ 200
+ 201
+ 202
+ 203
+ 204
+ 205
+ 206
+ 207
+ 208
+ 209
+ 210
+ 211
+ 212
+ 213
+ 214
+ 215
+ 216
+ 217
+ 218
+ 219
+ 220
+ 221
+ 222
+ 223
+ 224
+ 225
+ 226
+ 227
+ 228
+ 229
+ 230
+ 231
+ 232
+ 233
+ 234
+ 235
+ 236
+ 237
+ 238
+ 239
+ 240
+ 241
+ 242
+ 243
+ 244
+ 245
+ 246
+ 247
+ 248
+ 249
+ 250
+ 251
+ 252
+ 253
+ 254
+ 255
+ 256
+ 257
+ 258
+ 259
+ 260
+ 261
+ 262
+ 263
+ 264
+ 265
+ 266
+ 267
+ 268
+ 269
+ 270
+ 271
+ 272
+ 273
+ 274
+ 275
+ 276
+ 277
+ 278
+ 279
+ 280
+ 281
+ 282
+ 283
+ 284
+ 285
+ 286
+ 287
+ 288
+ 289
+ 290
+ 291
+ 292
+ 293
+ 294
+ 295
+ 296
+ 297
+ 298
+ 299
+ 300
+ 301
+ 302
+ 303
+ 304
+ 305
+ 306
+ 307
+ 308
+ 309
+ 310
+ 311
+ 312
+ 313
+ 314
+ 315
+ 316
+ 317
+ 318
+ 319
+ 320
+ 321
+ 322
+ 323
+ 324
+ 325
+ 326
+ 327
+ 328
+ 329
+ 330
+ 331
+ 332
+ 333
+ 334
+ 335
+ 336
+ 337
+ 338
+ 339
+ 340
+ 341
+ 342
+ 343
+ 344
+ 345
+ 346
+ 347
+ 348
+ 349
+ 350
+ 351
+ 352
+ 353
+ 354
+ 355
+ 356
+ 357
+ 358
+ 359
+ 360
+ 361
+ 362
+ 363
+ 364
+ 365
+ 366
+ 367
+ 368
+ 369
+ 370
+ 371
+ 372
+ 373
+ 374
+ 375
+ 376
+ 377
+ 378
+ 379
+ 380
+ 381
+ 382
+ 383
+ 384
+ 385
+ 386
+ 387
+ 388
+ 389
+ 390
+ 391
+ 392
+ 393
+ 394
+ 395
+ 396
+ 397
+ 398
+ 399
+ 400
+ 401
+ 402
+ 403
+ 404
+ 405
+ 406
+ 407
+ 408
+ 409
+ 410
+ 411
+ 412
+ 413
+ 414
+ 415
+ 416
+ 417
+ 418
+ 419
+ 420
+ 421
+ 422
+ 423
+ 424
+ 425
+ 426
+ 427
+ 428
+ 429
+ 430
+ 431
+ 432
+ 433
+ 434
+ 435
+ 436
+ 437
+ 438
+ 439
+ 440
+ 441
+ 442
+ 443
+ 444
+ 445
+ 446
+ 447
+ 448
+ 449
+ 450
+ 451
+ 452
+ 453
+ 454
+ 455
+ 456
+ 457
+ 458
+ 459
+ 460
+ 461
+ 462
+ 463
+ 464
+ 465
+ 466
+ 467
+ 468
+ 469
+ 470
+ 471
+ 472
+ 473
+ 474
+ 475
+ 476
+ 477
+ 478
+ 479
+ 480
+ 481
+ 482
+ 483
+ 484
+ 485
+ 486
+ 487
+ 488
+ 489
+ 490
+ 491
+ 492
+ 493
+ 494
+ 495
+ 496
+ 497
+ 498
+ 499
+ 500
+ 501
+ 502
+ 503
+ 504
+ 505
+ 506
+ 507
+ 508
+ 509
+ 510
+ 511
+ 512
+ 513
+ 514
+ 515
+ 516
+ 517
+ 518
+ 519
+ 520
+ 521
+ 522
+ 523
+ 524
+ 525
+ 526
+ 527
+ 528
+ 529
+ 530
+ 531
+ 532
+ 533
+ 534
+ 535
+ 536
+ 537
+ 538
+ 539
+ 540
+ 541
+ 542
+ 543
+ 544
+ 545
+ 546
+ 547
+ 548
+ 549
+ 550
+ 551
+ 552
+ 553
+ 554
+ 555
+ 556
+ 557
+ 558
+ 559
+ 560
+ 561
+ 562
+ 563
+ 564
+ 565
+ 566
+ 567
+ 568
+ 569
+ 570
+ 571
+ 572
+ 573
+ 574
+ 575
+ 576
+ 577
+ 578
+ 579
+ 580
+ 581
+ 582
+ 583
+ 584
+ 585
+ 586
+ 587
+ 588
+ 589
+ 590
+ 591
+ 592
+ 593
+ 594
+ 595
+ 596
+ 597
+ 598
+ 599
+ 600
+ 601
+ 602
+ 603
+ 604
+ 605
+ 606
+ 607
+ 608
+ 609
+ 610
+ 611
+ 612
+ 613
+ 614
+ 615
+ 616
+ 617
+ 618
+ 619
+ 620
+ 621
+ 622
+ 623
+ 624
+ 625
+ 626
+ 627
+ 628
+ 629
+ 630
+ 631
+ 632
+ 633
+ 634
+ 635
+ 636
+ 637
+ 638
+ 639
+ 640
+ 641
+ 642
+ 643
+ 644
+ 645
+ 646
+ 647
+ 648
+ 649
+ 650
+ 651
+ 652
+ 653
+ 654
+ 655
+ 656
+ 657
+ 658
+ 659
+ 660
+ 661
+ 662
+ 663
+ 664
+ 665
+ 666
+ 667
+ 668
+ 669
+ 670
+ 671
+ 672
+ 673
+ 674
+ 675
+ 676
+ 677
+ 678
+ 679
+ 680
+ 681
+ 682
+ 683
+ 684
+ 685
+ 686
+ 687
+ 688
+ 689
+ 690
+ 691
+ 692
+ 693
+ 694
+ 695
+ 696
+ 697
+ 698
+ 699
+ 700
+ 701
+ 702
+ 703
+ 704
+ 705
+ 706
+ 707
+ 708
+ 709
+ 710
+ 711
+ 712
+ 713
+ 714
+ 715
+ 716
+ 717
+ 718
+ 719
+ 720
+ 721
+ 722
+ 723
+ 724
+ 725
+ 726
+ 727
+ 728
+ 729
+ 730
+ 731
+ 732
+ 733
+ 734
+ 735
+ 736
+ 737
+ 738
+ 739
+ 740
+ 741
+ 742
+ 743
+ 744
+ 745
+ 746
+ 747
+ 748
+ 749
+ 750
+ 751
+ 752
+ 753
+ 754
+ 755
+ 756
+ 757
+ 758
+ 759
+ 760
+ 761
+ 762
+ 763
+ 764
+ 765
+ 766
+ 767
+ 768
+ 769
+ 770
+ 771
+ 772
+ 773
+ 774
+ 775
+ 776
+ 777
+ 778
+ 779
+ 780
+ 781
+ 782
+ 783
+ 784
+ 785
+ 786
+ 787
+ 788
+ 789
+ 790
+ 791
+ 792
+ 793
+ 794
+ 795
+ 796
+ 797
+ 798
+ 799
+ 800
+ 801
+ 802
+ 803
+ 804
+ 805
+ 806
+ 807
+ 808
+ 809
+ 810
+ 811
+ 812
+ 813
+ 814
+ 815
+ 816
+ 817
+ 818
+ 819
+ 820
+ 821
+ 822
+ 823
+ 824
+ 825
+ 826
+ 827
+ 828
+ 829
+ 830
+ 831
+ 832
+ 833
+ 834
+ 835
+ 836
+ 837
+ 838
+ 839
+ 840
+ 841
+ 842
+ 843
+ 844
+ 845
+ 846
+ 847
+ 848
+ 849
+ 850
+ 851
+ 852
+ 853
+ 854
+ 855
+ 856
+ 857
+ 858
+ 859
+ 860
+ 861
+ 862
+ 863
+ 864
+ 865
+ 866
+ 867
+ 868
+ 869
+ 870
+ 871
+ 872
+ 873
+ 874
+ 875
+ 876
+ 877
+ 878
+ 879
+ 880
+ 881
+ 882
+ 883
+ 884
+ 885
+ 886
+ 887
+ 888
+ 889
+ 890
+ 891
+ 892
+ 893
+ 894
+ 895
+ 896
+ 897
+ 898
+ 899
+ 900
+ 901
+ 902
+ 903
+ 904
+ 905
+ 906
+ 907
+ 908
+ 909
+ 910
+ 911
+ 912
+ 913
+ 914
+ 915
+ 916
+ 917
+ 918
+ 919
+ 920
+ 921
+ 922
+ 923
+ 924
+ 925
+ 926
+ 927
+ 928
+ 929
+ 930
+ 931
+ 932
+ 933
+ 934
+ 935
+ 936
+ 937
+ 938
+ 939
+ 940
+ 941
+ 942
+ 943
+ 944
+ 945
+ 946
+ 947
+ 948
+ 949
+ 950
+ 951
+ 952
+ 953
+ 954
+ 955
+ 956
+ 957
+ 958
+ 959
+ 960
+ 961
+ 962
+ 963
+ 964
+ 965
+ 966
+ 967
+ 968
+ 969
+ 970
+ 971
+ 972
+ 973
+ 974
+ 975
+ 976
+ 977
+ 978
+ 979
+ 980
+ 981
+ 982
+ 983
+ 984
+ 985
+ 986
+ 987
+ 988
+ 989
+ 990
+ 991
+ 992
+ 993
+ 994
+ 995
+ 996
+ 997
+ 998
+ 999
+1000
+1001
+1002
+1003
+1004
+1005
+1006
+1007
+1008
+1009
+1010
+1011
+1012
+1013
+1014
+1015
+1016
+1017
+1018
+1019
+1020
+1021
+1022
+1023
+1024
+1025
+1026
+1027
+1028
+1029
+1030
+1031
+1032
+1033
+1034
+1035
+1036
+1037
+1038
+1039
+1040
+1041
+1042
+1043
+1044
+1045
+1046
+1047
+1048
+1049
+1050
+1051
+1052
+1053
+1054
+1055
+1056
+1057
+1058
+1059
+1060
+1061
+1062
+1063
+1064
+1065
+1066
+1067
+1068
+1069
+1070
+1071
+1072
+1073
+1074
+1075
+1076
+1077
+1078
+1079
+1080
+1081
+1082
+1083
+1084
+1085
+1086
+1087
+1088
+1089
+1090
+1091
+1092
+1093
+1094
+1095
+1096
+1097
+1098
+1099
+1100
+1101
+1102
+1103
+1104
+1105
+1106
+1107
+1108
+1109
+1110
+1111
+1112
+1113
+1114
+1115
+1116
+1117
+1118
+1119
+1120
+1121
+1122
+1123
+1124
+1125
+1126
+1127
+1128
+1129
+1130
+1131
+1132
+1133
+1134
+1135
+1136
+1137
+1138
+1139
+1140
+1141
+1142
+1143
+1144
+1145</pre></div></td><td class="code"><div class="highlight"><pre><span></span><a name="line-1"></a><span class="cm">/*-</span>
+<a name="line-2"></a><span class="cm"> * Copyright (c) 1997, 1998, 1999, 2000-2003</span>
+<a name="line-3"></a><span class="cm"> *	Bill Paul &lt;wpaul@windriver.com&gt;.  All rights reserved.</span>
+<a name="line-4"></a><span class="cm"> *</span>
+<a name="line-5"></a><span class="cm"> * Redistribution and use in source and binary forms, with or without</span>
+<a name="line-6"></a><span class="cm"> * modification, are permitted provided that the following conditions</span>
+<a name="line-7"></a><span class="cm"> * are met:</span>
+<a name="line-8"></a><span class="cm"> * 1. Redistributions of source code must retain the above copyright</span>
+<a name="line-9"></a><span class="cm"> *    notice, this list of conditions and the following disclaimer.</span>
+<a name="line-10"></a><span class="cm"> * 2. Redistributions in binary form must reproduce the above copyright</span>
+<a name="line-11"></a><span class="cm"> *    notice, this list of conditions and the following disclaimer in the</span>
+<a name="line-12"></a><span class="cm"> *    documentation and/or other materials provided with the distribution.</span>
+<a name="line-13"></a><span class="cm"> * 3. All advertising materials mentioning features or use of this software</span>
+<a name="line-14"></a><span class="cm"> *    must display the following acknowledgement:</span>
+<a name="line-15"></a><span class="cm"> *	This product includes software developed by Bill Paul.</span>
+<a name="line-16"></a><span class="cm"> * 4. Neither the name of the author nor the names of any co-contributors</span>
+<a name="line-17"></a><span class="cm"> *    may be used to endorse or promote products derived from this software</span>
+<a name="line-18"></a><span class="cm"> *    without specific prior written permission.</span>
+<a name="line-19"></a><span class="cm"> *</span>
+<a name="line-20"></a><span class="cm"> * THIS SOFTWARE IS PROVIDED BY Bill Paul AND CONTRIBUTORS ``AS IS&#39;&#39; AND</span>
+<a name="line-21"></a><span class="cm"> * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</span>
+<a name="line-22"></a><span class="cm"> * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</span>
+<a name="line-23"></a><span class="cm"> * ARE DISCLAIMED.  IN NO EVENT SHALL Bill Paul OR THE VOICES IN HIS HEAD</span>
+<a name="line-24"></a><span class="cm"> * BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR</span>
+<a name="line-25"></a><span class="cm"> * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF</span>
+<a name="line-26"></a><span class="cm"> * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS</span>
+<a name="line-27"></a><span class="cm"> * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN</span>
+<a name="line-28"></a><span class="cm"> * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)</span>
+<a name="line-29"></a><span class="cm"> * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF</span>
+<a name="line-30"></a><span class="cm"> * THE POSSIBILITY OF SUCH DAMAGE.</span>
+<a name="line-31"></a><span class="cm"> */</span>
+<a name="line-32"></a>
+<a name="line-33"></a><span class="cp">#include</span> <span class="cpf">&lt;sys/cdefs.h&gt;</span><span class="cp"></span>
+<a name="line-34"></a><span class="n">__FBSDID</span><span class="p">(</span><span class="s">&quot;$FreeBSD: releng/11.4/sys/dev/usb/net/if_axe.c 331722 2018-03-29 02:50:57Z eadler $&quot;</span><span class="p">);</span>
+<a name="line-35"></a>
+<a name="line-36"></a><span class="cm">/*</span>
+<a name="line-37"></a><span class="cm"> * ASIX Electronics AX88172/AX88178/AX88778 USB 2.0 ethernet driver.</span>
+<a name="line-38"></a><span class="cm"> * Used in the LinkSys USB200M and various other adapters.</span>
+<a name="line-39"></a><span class="cm"> *</span>
+<a name="line-40"></a><span class="cm"> * Manuals available from:</span>
+<a name="line-41"></a><span class="cm"> * http://www.asix.com.tw/datasheet/mac/Ax88172.PDF</span>
+<a name="line-42"></a><span class="cm"> * Note: you need the manual for the AX88170 chip (USB 1.x ethernet</span>
+<a name="line-43"></a><span class="cm"> * controller) to find the definitions for the RX control register.</span>
+<a name="line-44"></a><span class="cm"> * http://www.asix.com.tw/datasheet/mac/Ax88170.PDF</span>
+<a name="line-45"></a><span class="cm"> *</span>
+<a name="line-46"></a><span class="cm"> * Written by Bill Paul &lt;wpaul@windriver.com&gt;</span>
+<a name="line-47"></a><span class="cm"> * Senior Engineer</span>
+<a name="line-48"></a><span class="cm"> * Wind River Systems</span>
+<a name="line-49"></a><span class="cm"> */</span>
+<a name="line-50"></a>
+<a name="line-51"></a><span class="cm">/*</span>
+<a name="line-52"></a><span class="cm"> * The AX88172 provides USB ethernet supports at 10 and 100Mbps.</span>
+<a name="line-53"></a><span class="cm"> * It uses an external PHY (reference designs use a RealTek chip),</span>
+<a name="line-54"></a><span class="cm"> * and has a 64-bit multicast hash filter. There is some information</span>
+<a name="line-55"></a><span class="cm"> * missing from the manual which one needs to know in order to make</span>
+<a name="line-56"></a><span class="cm"> * the chip function:</span>
+<a name="line-57"></a><span class="cm"> *</span>
+<a name="line-58"></a><span class="cm"> * - You must set bit 7 in the RX control register, otherwise the</span>
+<a name="line-59"></a><span class="cm"> *   chip won&#39;t receive any packets.</span>
+<a name="line-60"></a><span class="cm"> * - You must initialize all 3 IPG registers, or you won&#39;t be able</span>
+<a name="line-61"></a><span class="cm"> *   to send any packets.</span>
+<a name="line-62"></a><span class="cm"> *</span>
+<a name="line-63"></a><span class="cm"> * Note that this device appears to only support loading the station</span>
+<a name="line-64"></a><span class="cm"> * address via autload from the EEPROM (i.e. there&#39;s no way to manaully</span>
+<a name="line-65"></a><span class="cm"> * set it).</span>
+<a name="line-66"></a><span class="cm"> *</span>
+<a name="line-67"></a><span class="cm"> * (Adam Weinberger wanted me to name this driver if_gir.c.)</span>
+<a name="line-68"></a><span class="cm"> */</span>
+<a name="line-69"></a>
+<a name="line-70"></a><span class="cm">/*</span>
+<a name="line-71"></a><span class="cm"> * Ax88178 and Ax88772 support backported from the OpenBSD driver.</span>
+<a name="line-72"></a><span class="cm"> * 2007/02/12, J.R. Oldroyd, fbsd@opal.com</span>
+<a name="line-73"></a><span class="cm"> *</span>
+<a name="line-74"></a><span class="cm"> * Manual here:</span>
+<a name="line-75"></a><span class="cm"> * http://www.asix.com.tw/FrootAttach/datasheet/AX88178_datasheet_Rev10.pdf</span>
+<a name="line-76"></a><span class="cm"> * http://www.asix.com.tw/FrootAttach/datasheet/AX88772_datasheet_Rev10.pdf</span>
+<a name="line-77"></a><span class="cm"> */</span>
+<a name="line-78"></a>
+<a name="line-79"></a><span class="cp">#include</span> <span class="cpf">&lt;lwip/netif.h&gt;</span><span class="cp"></span>
+<a name="line-80"></a><span class="cp">#include</span> <span class="cpf">&lt;lwip/dhcp.h&gt;</span><span class="cp"></span>
+<a name="line-81"></a><span class="cp">#include</span> <span class="cpf">&lt;lwip/netifapi.h&gt;</span><span class="cp"></span>
+<a name="line-82"></a><span class="cp">#include</span> <span class="cpf">&lt;lwip/inet.h&gt;</span><span class="cp"></span>
+<a name="line-83"></a>
+<a name="line-84"></a><span class="cp">#include</span> <span class="cpf">&quot;implementation/global_implementation.h&quot;</span><span class="cp"></span>
+<a name="line-85"></a><span class="cp">#include</span> <span class="cpf">&quot;usb_ethernet.h&quot;</span><span class="cp"></span>
+<a name="line-86"></a><span class="cp">#include</span> <span class="cpf">&quot;if_axereg.h&quot;</span><span class="cp"></span>
+<a name="line-87"></a><span class="cp">#include</span> <span class="cpf">&quot;mii.h&quot;</span><span class="cp"></span>
+<a name="line-88"></a>
+<a name="line-89"></a><span class="cm">/*</span>
+<a name="line-90"></a><span class="cm"> * AXE_178_MAX_FRAME_BURST</span>
+<a name="line-91"></a><span class="cm"> * max frame burst size for Ax88178 and Ax88772</span>
+<a name="line-92"></a><span class="cm"> * 0	2048 bytes</span>
+<a name="line-93"></a><span class="cm"> * 1	4096 bytes</span>
+<a name="line-94"></a><span class="cm"> * 2	8192 bytes</span>
+<a name="line-95"></a><span class="cm"> * 3	16384 bytes</span>
+<a name="line-96"></a><span class="cm"> * use the largest your system can handle without USB stalling.</span>
+<a name="line-97"></a><span class="cm"> *</span>
+<a name="line-98"></a><span class="cm"> * NB: 88772 parts appear to generate lots of input errors with</span>
+<a name="line-99"></a><span class="cm"> * a 2K rx buffer and 8K is only slightly faster than 4K on an</span>
+<a name="line-100"></a><span class="cm"> * EHCI port on a T42 so change at your own risk.</span>
+<a name="line-101"></a><span class="cm"> */</span>
+<a name="line-102"></a>
+<a name="line-103"></a><span class="cp">#define	AXE_178_MAX_FRAME_BURST	1</span>
+<a name="line-104"></a><span class="cp">#define	AXE_CSUM_FEATURES		(CSUM_IP | CSUM_TCP | CSUM_UDP)</span>
+<a name="line-105"></a>
+<a name="line-106"></a><span class="cp">#undef USB_DEBUG_VAR</span>
+<a name="line-107"></a><span class="cp">#define	USB_DEBUG_VAR	axe_debug</span>
+<a name="line-108"></a><span class="cp">#ifdef LOSCFG_USB_DEBUG</span>
+<a name="line-109"></a><span class="k">static</span> <span class="kt">int</span> <span class="n">axe_debug</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-110"></a><span class="kt">void</span>
+<a name="line-111"></a><span class="nf">usb_axe_debug_func</span><span class="p">(</span><span class="kt">int</span> <span class="n">level</span><span class="p">)</span>
+<a name="line-112"></a><span class="p">{</span>
+<a name="line-113"></a>	<span class="n">axe_debug</span> <span class="o">=</span> <span class="n">level</span><span class="p">;</span>
+<a name="line-114"></a>	<span class="n">PRINTK</span><span class="p">(</span><span class="s">&quot;The level of usb axe debug is %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">level</span><span class="p">);</span>
+<a name="line-115"></a><span class="p">}</span>
+<a name="line-116"></a><span class="n">DEBUG_MODULE</span><span class="p">(</span><span class="n">axe</span><span class="p">,</span> <span class="n">usb_axe_debug_func</span><span class="p">);</span>
+<a name="line-117"></a><span class="cp">#endif</span>
+<a name="line-118"></a>
+<a name="line-119"></a><span class="cp">#define	IFF_DRV_OACTIVE  IFF_MASTER</span>
+<a name="line-120"></a><span class="cp">#define	IFF_SIMPLEX		IFF_SLAVE</span>
+<a name="line-121"></a>
+<a name="line-122"></a><span class="cm">/*</span>
+<a name="line-123"></a><span class="cm"> * Various supported device vendors/products.</span>
+<a name="line-124"></a><span class="cm"> */</span>
+<a name="line-125"></a><span class="k">static</span> <span class="k">const</span> <span class="n">STRUCT_USB_HOST_ID</span> <span class="n">axe_devs</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+<a name="line-126"></a>	<span class="p">{</span> <span class="n">USB_VPI</span><span class="p">(</span><span class="mh">0x0B95</span><span class="p">,</span> <span class="mh">0x772B</span><span class="p">,</span> <span class="n">AXE_FLAG_772B</span><span class="p">)</span> <span class="p">},</span>
+<a name="line-127"></a>	<span class="p">{</span> <span class="n">USB_VPI</span><span class="p">(</span><span class="mh">0x0B95</span><span class="p">,</span> <span class="mh">0x772A</span><span class="p">,</span> <span class="n">AXE_FLAG_772A</span><span class="p">)</span> <span class="p">},</span>
+<a name="line-128"></a><span class="p">};</span>
+<a name="line-129"></a>
+<a name="line-130"></a><span class="k">static</span> <span class="n">device_probe_t</span> <span class="n">axe_probe</span><span class="p">;</span>
+<a name="line-131"></a><span class="k">static</span> <span class="n">device_attach_t</span> <span class="n">axe_attach</span><span class="p">;</span>
+<a name="line-132"></a><span class="k">static</span> <span class="n">device_detach_t</span> <span class="n">axe_detach</span><span class="p">;</span>
+<a name="line-133"></a>
+<a name="line-134"></a><span class="k">static</span> <span class="n">usb_callback_t</span> <span class="n">axe_bulk_read_callback</span><span class="p">;</span>
+<a name="line-135"></a><span class="k">static</span> <span class="n">usb_callback_t</span> <span class="n">axe_bulk_write_callback</span><span class="p">;</span>
+<a name="line-136"></a>
+<a name="line-137"></a><span class="k">static</span> <span class="kt">int</span> <span class="nf">axe_miibus_writereg</span><span class="p">(</span><span class="k">struct</span> <span class="n">axe_softc</span> <span class="o">*</span><span class="n">sc</span><span class="p">,</span> <span class="kt">int</span> <span class="n">reg</span><span class="p">,</span> <span class="kt">int</span> <span class="n">val</span><span class="p">);</span>
+<a name="line-138"></a><span class="k">static</span> <span class="kt">uint16_t</span> <span class="nf">axe_miibus_readreg</span><span class="p">(</span><span class="k">struct</span> <span class="n">axe_softc</span> <span class="o">*</span><span class="n">sc</span><span class="p">,</span> <span class="kt">int</span> <span class="n">reg</span><span class="p">);</span>
+<a name="line-139"></a>
+<a name="line-140"></a><span class="k">static</span> <span class="n">uether_fn_t</span> <span class="n">axe_attach_post</span><span class="p">;</span>
+<a name="line-141"></a><span class="k">static</span> <span class="n">uether_fn_t</span> <span class="n">axe_init</span><span class="p">;</span>
+<a name="line-142"></a><span class="k">static</span> <span class="n">uether_fn_t</span> <span class="n">axe_stop</span><span class="p">;</span>
+<a name="line-143"></a><span class="k">static</span> <span class="n">uether_fn_t</span> <span class="n">axe_start</span><span class="p">;</span>
+<a name="line-144"></a><span class="k">static</span> <span class="n">uether_fn_t</span> <span class="n">axe_setmulti</span><span class="p">;</span>
+<a name="line-145"></a><span class="k">static</span> <span class="n">uether_fn_t</span> <span class="n">axe_setpromisc</span><span class="p">;</span>
+<a name="line-146"></a><span class="k">static</span> <span class="n">uether_fn_t</span> <span class="n">axe_tick</span><span class="p">;</span>
+<a name="line-147"></a>
+<a name="line-148"></a><span class="k">static</span> <span class="kt">void</span> <span class="nf">axe_cmd</span><span class="p">(</span><span class="k">struct</span> <span class="n">axe_softc</span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="p">);</span>
+<a name="line-149"></a><span class="k">static</span> <span class="kt">void</span> <span class="nf">axe_ax88178_init</span><span class="p">(</span><span class="k">struct</span> <span class="n">axe_softc</span> <span class="o">*</span><span class="p">);</span>
+<a name="line-150"></a><span class="k">static</span> <span class="kt">void</span> <span class="nf">axe_ax88772_init</span><span class="p">(</span><span class="k">struct</span> <span class="n">axe_softc</span> <span class="o">*</span><span class="p">);</span>
+<a name="line-151"></a><span class="k">static</span> <span class="kt">void</span> <span class="nf">axe_ax88772_phywake</span><span class="p">(</span><span class="k">struct</span> <span class="n">axe_softc</span> <span class="o">*</span><span class="p">);</span>
+<a name="line-152"></a><span class="k">static</span> <span class="kt">void</span> <span class="nf">axe_ax88772b_init</span><span class="p">(</span><span class="k">struct</span> <span class="n">axe_softc</span> <span class="o">*</span><span class="p">);</span>
+<a name="line-153"></a><span class="k">static</span> <span class="kt">int</span> <span class="nf">axe_get_phyno</span><span class="p">(</span><span class="k">struct</span> <span class="n">axe_softc</span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+<a name="line-154"></a><span class="k">static</span> <span class="kt">int</span> <span class="nf">axe_rx_frame</span><span class="p">(</span><span class="k">struct</span> <span class="n">usb_ether</span> <span class="o">*</span><span class="p">,</span> <span class="k">struct</span> <span class="n">usb_page_cache</span> <span class="o">*</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+<a name="line-155"></a><span class="k">static</span> <span class="kt">int</span> <span class="nf">axe_rxeof</span><span class="p">(</span><span class="k">struct</span> <span class="n">usb_ether</span> <span class="o">*</span><span class="p">,</span> <span class="k">struct</span> <span class="n">usb_page_cache</span> <span class="o">*</span><span class="p">,</span>
+<a name="line-156"></a>				    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">offset</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span><span class="p">,</span> <span class="k">struct</span> <span class="n">axe_csum_hdr</span> <span class="o">*</span><span class="p">);</span>
+<a name="line-157"></a><span class="k">static</span> <span class="kt">void</span> <span class="nf">axe_csum_cfg</span><span class="p">(</span><span class="k">struct</span> <span class="n">usb_ether</span> <span class="o">*</span><span class="p">);</span>
+<a name="line-158"></a>
+<a name="line-159"></a><span class="k">static</span> <span class="k">const</span> <span class="k">struct</span> <span class="n">usb_config</span> <span class="n">axe_config</span><span class="p">[</span><span class="n">AXE_N_TRANSFER</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+<a name="line-160"></a>	<span class="p">{</span> <span class="cm">/* [AXE_BULK_DT_WR] = */</span>
+<a name="line-161"></a>		<span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">UE_BULK</span><span class="p">,</span>
+<a name="line-162"></a>		<span class="p">.</span><span class="n">endpoint</span> <span class="o">=</span> <span class="n">UE_ADDR_ANY</span><span class="p">,</span>
+<a name="line-163"></a>		<span class="p">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">UE_DIR_OUT</span><span class="p">,</span>
+<a name="line-164"></a>		<span class="p">.</span><span class="n">frames</span> <span class="o">=</span> <span class="n">USB_AXE_MAX_FRAMES</span><span class="p">,</span>
+<a name="line-165"></a>		<span class="p">.</span><span class="n">bufsize</span> <span class="o">=</span> <span class="n">USB_AXE_MAX_FRAMES</span> <span class="o">*</span> <span class="n">MCLBYTES</span><span class="p">,</span>
+<a name="line-166"></a>		<span class="p">.</span><span class="n">flags</span> <span class="o">=</span> <span class="p">{.</span><span class="n">pipe_bof</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,.</span><span class="n">force_short_xfer</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,},</span>
+<a name="line-167"></a>		<span class="p">.</span><span class="n">callback</span> <span class="o">=</span> <span class="n">axe_bulk_write_callback</span><span class="p">,</span>
+<a name="line-168"></a>		<span class="p">.</span><span class="n">timeout</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">,</span>	<span class="cm">/* 10 seconds */</span>
+<a name="line-169"></a>	<span class="p">},</span>
+<a name="line-170"></a>	<span class="p">{</span> <span class="cm">/* [AXE_BULK_DT_RD] = */</span>
+<a name="line-171"></a>		<span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">UE_BULK</span><span class="p">,</span>
+<a name="line-172"></a>		<span class="p">.</span><span class="n">endpoint</span> <span class="o">=</span> <span class="n">UE_ADDR_ANY</span><span class="p">,</span>
+<a name="line-173"></a>		<span class="p">.</span><span class="n">direction</span> <span class="o">=</span> <span class="n">UE_DIR_IN</span><span class="p">,</span>
+<a name="line-174"></a>		<span class="p">.</span><span class="n">bufsize</span> <span class="o">=</span> <span class="mi">16</span> <span class="o">*</span> <span class="n">MCLBYTES</span><span class="p">,</span>	<span class="cm">/* bytes */</span>
+<a name="line-175"></a>		<span class="p">.</span><span class="n">flags</span> <span class="o">=</span> <span class="p">{.</span><span class="n">pipe_bof</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,.</span><span class="n">short_xfer_ok</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,},</span>
+<a name="line-176"></a>		<span class="p">.</span><span class="n">callback</span> <span class="o">=</span> <span class="n">axe_bulk_read_callback</span><span class="p">,</span>
+<a name="line-177"></a>		<span class="p">.</span><span class="n">timeout</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>	<span class="cm">/* no timeout */</span>
+<a name="line-178"></a>	<span class="p">},</span>
+<a name="line-179"></a><span class="p">};</span>
+<a name="line-180"></a>
+<a name="line-181"></a><span class="k">static</span> <span class="k">const</span> <span class="k">struct</span> <span class="n">ax88772b_mfb</span> <span class="n">ax88772b_mfb_table</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+<a name="line-182"></a>	<span class="p">{</span> <span class="mh">0x8000</span><span class="p">,</span> <span class="mh">0x8001</span><span class="p">,</span> <span class="mi">2048</span> <span class="p">},</span>
+<a name="line-183"></a>	<span class="p">{</span> <span class="mh">0x8100</span><span class="p">,</span> <span class="mh">0x8147</span><span class="p">,</span> <span class="mi">4096</span> <span class="p">},</span>
+<a name="line-184"></a>	<span class="p">{</span> <span class="mh">0x8200</span><span class="p">,</span> <span class="mh">0x81EB</span><span class="p">,</span> <span class="mi">6144</span> <span class="p">},</span>
+<a name="line-185"></a>	<span class="p">{</span> <span class="mh">0x8300</span><span class="p">,</span> <span class="mh">0x83D7</span><span class="p">,</span> <span class="mi">8192</span> <span class="p">},</span>
+<a name="line-186"></a>	<span class="p">{</span> <span class="mh">0x84C0</span><span class="p">,</span> <span class="mh">0x861E</span><span class="p">,</span> <span class="mi">16384</span> <span class="p">},</span>
+<a name="line-187"></a>	<span class="p">{</span> <span class="mh">0x8500</span><span class="p">,</span> <span class="mh">0x8666</span><span class="p">,</span> <span class="mi">20480</span> <span class="p">},</span>
+<a name="line-188"></a>	<span class="p">{</span> <span class="mh">0x8600</span><span class="p">,</span> <span class="mh">0x87AE</span><span class="p">,</span> <span class="mi">24576</span> <span class="p">},</span>
+<a name="line-189"></a>	<span class="p">{</span> <span class="mh">0x8700</span><span class="p">,</span> <span class="mh">0x851E</span><span class="p">,</span> <span class="mi">32768</span> <span class="p">}</span>
+<a name="line-190"></a><span class="p">};</span>
+<a name="line-191"></a>
+<a name="line-192"></a><span class="k">static</span> <span class="n">device_method_t</span> <span class="n">axe_methods</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
+<a name="line-193"></a>	<span class="cm">/* Device interface */</span>
+<a name="line-194"></a>	<span class="n">DEVMETHOD</span><span class="p">(</span><span class="n">device_probe</span><span class="p">,</span> <span class="n">axe_probe</span><span class="p">),</span>
+<a name="line-195"></a>	<span class="n">DEVMETHOD</span><span class="p">(</span><span class="n">device_attach</span><span class="p">,</span> <span class="n">axe_attach</span><span class="p">),</span>
+<a name="line-196"></a>	<span class="n">DEVMETHOD</span><span class="p">(</span><span class="n">device_detach</span><span class="p">,</span> <span class="n">axe_detach</span><span class="p">),</span>
+<a name="line-197"></a>	<span class="n">DEVMETHOD_END</span>
+<a name="line-198"></a><span class="p">};</span>
+<a name="line-199"></a>
+<a name="line-200"></a><span class="k">static</span> <span class="n">driver_t</span> <span class="n">axe_driver</span> <span class="o">=</span> <span class="p">{</span>
+<a name="line-201"></a>	<span class="p">.</span><span class="n">name</span> <span class="o">=</span> <span class="s">&quot;USB_AXE&quot;</span><span class="p">,</span>
+<a name="line-202"></a>	<span class="p">.</span><span class="n">methods</span> <span class="o">=</span> <span class="n">axe_methods</span><span class="p">,</span>
+<a name="line-203"></a>	<span class="p">.</span><span class="n">size</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="n">axe_softc</span><span class="p">),</span>
+<a name="line-204"></a><span class="p">};</span>
+<a name="line-205"></a>
+<a name="line-206"></a><span class="k">static</span> <span class="n">devclass_t</span> <span class="n">axe_devclass</span><span class="p">;</span>
+<a name="line-207"></a><span class="n">DRIVER_MODULE</span><span class="p">(</span><span class="n">axe</span><span class="p">,</span> <span class="n">uhub</span><span class="p">,</span> <span class="n">axe_driver</span><span class="p">,</span> <span class="n">axe_devclass</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<a name="line-208"></a>
+<a name="line-209"></a><span class="k">static</span> <span class="k">const</span> <span class="k">struct</span> <span class="n">usb_ether_methods</span> <span class="n">axe_ue_methods</span> <span class="o">=</span> <span class="p">{</span>
+<a name="line-210"></a>	<span class="p">.</span><span class="n">ue_attach_post</span> <span class="o">=</span> <span class="n">axe_attach_post</span><span class="p">,</span>
+<a name="line-211"></a>	<span class="p">.</span><span class="n">ue_start</span> <span class="o">=</span> <span class="n">axe_start</span><span class="p">,</span>
+<a name="line-212"></a>	<span class="p">.</span><span class="n">ue_init</span> <span class="o">=</span> <span class="n">axe_init</span><span class="p">,</span>
+<a name="line-213"></a>	<span class="p">.</span><span class="n">ue_stop</span> <span class="o">=</span> <span class="n">axe_stop</span><span class="p">,</span>
+<a name="line-214"></a>	<span class="p">.</span><span class="n">ue_setmulti</span> <span class="o">=</span> <span class="n">axe_setmulti</span><span class="p">,</span>
+<a name="line-215"></a>	<span class="p">.</span><span class="n">ue_setpromisc</span> <span class="o">=</span> <span class="n">axe_setpromisc</span><span class="p">,</span>
+<a name="line-216"></a>	<span class="p">.</span><span class="n">ue_tick</span> <span class="o">=</span> <span class="n">axe_tick</span><span class="p">,</span>
+<a name="line-217"></a><span class="p">};</span>
+<a name="line-218"></a>
+<a name="line-219"></a><span class="k">static</span> <span class="kt">void</span>
+<a name="line-220"></a><span class="nf">axe_cmd</span><span class="p">(</span><span class="k">struct</span> <span class="n">axe_softc</span> <span class="o">*</span><span class="n">sc</span><span class="p">,</span> <span class="kt">int</span> <span class="n">cmd</span><span class="p">,</span> <span class="kt">int</span> <span class="n">index</span><span class="p">,</span> <span class="kt">int</span> <span class="n">val</span><span class="p">,</span> <span class="kt">void</span> <span class="o">*</span><span class="n">buf</span><span class="p">)</span>
+<a name="line-221"></a><span class="p">{</span>
+<a name="line-222"></a>	<span class="k">struct</span> <span class="n">usb_device_request</span> <span class="n">req</span><span class="p">;</span>
+<a name="line-223"></a>	<span class="n">usb_error_t</span> <span class="n">err</span><span class="p">;</span>
+<a name="line-224"></a>
+<a name="line-225"></a>	<span class="n">AXE_LOCK_ASSERT</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">MA_OWNED</span><span class="p">);</span>
+<a name="line-226"></a>
+<a name="line-227"></a>	<span class="n">req</span><span class="p">.</span><span class="n">bmRequestType</span> <span class="o">=</span> <span class="p">(</span><span class="n">AXE_CMD_IS_WRITE</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span> <span class="o">?</span>
+<a name="line-228"></a>	    <span class="nl">UT_WRITE_VENDOR_DEVICE</span> <span class="p">:</span>
+<a name="line-229"></a>	    <span class="n">UT_READ_VENDOR_DEVICE</span><span class="p">);</span>
+<a name="line-230"></a>	<span class="n">req</span><span class="p">.</span><span class="n">bRequest</span> <span class="o">=</span> <span class="n">AXE_CMD_CMD</span><span class="p">(</span><span class="n">cmd</span><span class="p">);</span>
+<a name="line-231"></a>	<span class="n">USETW</span><span class="p">(</span><span class="n">req</span><span class="p">.</span><span class="n">wValue</span><span class="p">,</span> <span class="n">val</span><span class="p">);</span>
+<a name="line-232"></a>	<span class="n">USETW</span><span class="p">(</span><span class="n">req</span><span class="p">.</span><span class="n">wIndex</span><span class="p">,</span> <span class="n">index</span><span class="p">);</span>
+<a name="line-233"></a>	<span class="n">USETW</span><span class="p">(</span><span class="n">req</span><span class="p">.</span><span class="n">wLength</span><span class="p">,</span> <span class="n">AXE_CMD_LEN</span><span class="p">(</span><span class="n">cmd</span><span class="p">));</span>
+<a name="line-234"></a>
+<a name="line-235"></a>	<span class="n">err</span> <span class="o">=</span> <span class="n">uether_do_request</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ue</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">req</span><span class="p">,</span> <span class="n">buf</span><span class="p">,</span> <span class="mi">10000</span><span class="p">);</span>
+<a name="line-236"></a>	<span class="k">if</span> <span class="p">(</span><span class="n">err</span> <span class="o">!=</span> <span class="n">USB_ERR_NORMAL_COMPLETION</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-237"></a>		<span class="n">dprintf</span><span class="p">(</span><span class="s">&quot;Fatal Error in function [%s]! err:%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">__FUNCTION__</span><span class="p">,</span> <span class="n">err</span><span class="p">);</span>
+<a name="line-238"></a>	<span class="p">}</span>
+<a name="line-239"></a><span class="p">}</span>
+<a name="line-240"></a>
+<a name="line-241"></a><span class="k">static</span> <span class="kt">uint16_t</span>
+<a name="line-242"></a><span class="nf">axe_miibus_readreg</span><span class="p">(</span><span class="k">struct</span> <span class="n">axe_softc</span> <span class="o">*</span><span class="n">sc</span><span class="p">,</span> <span class="kt">int</span> <span class="n">reg</span><span class="p">)</span>
+<a name="line-243"></a><span class="p">{</span>
+<a name="line-244"></a>	<span class="kt">uint16_t</span> <span class="n">val</span><span class="p">;</span>
+<a name="line-245"></a>
+<a name="line-246"></a>	<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_MII_OPMODE_SW</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-247"></a>	<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_MII_READ_REG</span><span class="p">,</span> <span class="n">reg</span><span class="p">,</span> <span class="mh">0x10</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">val</span><span class="p">);</span>
+<a name="line-248"></a>	<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_MII_OPMODE_HW</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-249"></a>
+<a name="line-250"></a>	<span class="n">val</span> <span class="o">=</span> <span class="n">le16toh</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+<a name="line-251"></a>	<span class="k">if</span> <span class="p">(</span><span class="n">AXE_IS_772</span><span class="p">(</span><span class="n">sc</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="n">reg</span> <span class="o">==</span> <span class="n">MII_BMSR</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-252"></a>		<span class="cm">/*</span>
+<a name="line-253"></a><span class="cm">		 * BMSR of AX88772 indicates that it supports extended</span>
+<a name="line-254"></a><span class="cm">		 * capability but the extended status register is</span>
+<a name="line-255"></a><span class="cm">		 * revered for embedded ethernet PHY. So clear the</span>
+<a name="line-256"></a><span class="cm">		 * extended capability bit of BMSR.</span>
+<a name="line-257"></a><span class="cm">		 */</span>
+<a name="line-258"></a>		<span class="n">val</span> <span class="o">&amp;=</span> <span class="o">~</span><span class="n">BMSR_EXTCAP</span><span class="p">;</span>
+<a name="line-259"></a>	<span class="p">}</span>
+<a name="line-260"></a>	<span class="k">return</span> <span class="p">(</span><span class="n">val</span><span class="p">);</span>
+<a name="line-261"></a><span class="p">}</span>
+<a name="line-262"></a>
+<a name="line-263"></a><span class="k">static</span> <span class="kt">int</span>
+<a name="line-264"></a><span class="nf">axe_miibus_writereg</span><span class="p">(</span><span class="k">struct</span> <span class="n">axe_softc</span> <span class="o">*</span><span class="n">sc</span><span class="p">,</span> <span class="kt">int</span> <span class="n">reg</span><span class="p">,</span> <span class="kt">int</span> <span class="n">val</span><span class="p">)</span>
+<a name="line-265"></a><span class="p">{</span>
+<a name="line-266"></a>	<span class="n">val</span> <span class="o">=</span> <span class="n">htole32</span><span class="p">(</span><span class="n">val</span><span class="p">);</span>
+<a name="line-267"></a>
+<a name="line-268"></a>	<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_MII_OPMODE_SW</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-269"></a>	<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_MII_WRITE_REG</span><span class="p">,</span> <span class="n">reg</span><span class="p">,</span> <span class="mh">0x10</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">val</span><span class="p">);</span>
+<a name="line-270"></a>	<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_MII_OPMODE_HW</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-271"></a>	<span class="k">return</span> <span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<a name="line-272"></a><span class="p">}</span>
+<a name="line-273"></a>
+<a name="line-274"></a><span class="k">static</span> <span class="kt">int</span>
+<a name="line-275"></a><span class="nf">axe_setmedium</span><span class="p">(</span><span class="k">struct</span> <span class="n">axe_softc</span> <span class="o">*</span><span class="n">sc</span><span class="p">)</span>
+<a name="line-276"></a><span class="p">{</span>
+<a name="line-277"></a>	<span class="kt">uint16_t</span> <span class="n">val</span> <span class="o">=</span> <span class="n">AXE_178_MEDIA_RX_EN</span> <span class="o">|</span> <span class="n">AXE_178_MEDIA_MAGIC</span><span class="p">;</span>
+<a name="line-278"></a>	<span class="kt">uint16_t</span> <span class="n">bmcr</span><span class="p">;</span>
+<a name="line-279"></a>	<span class="kt">int</span> <span class="n">b100</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-280"></a>	<span class="kt">int</span> <span class="n">bfull</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-281"></a>
+<a name="line-282"></a>	<span class="n">bmcr</span> <span class="o">=</span> <span class="n">axe_miibus_readreg</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<a name="line-283"></a>
+<a name="line-284"></a>	<span class="k">if</span> <span class="p">(</span><span class="n">bmcr</span> <span class="o">&amp;</span> <span class="mh">0x2000</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* 100Mbps */</span>
+<a name="line-285"></a>		<span class="n">val</span> <span class="o">|=</span> <span class="n">AXE_178_MEDIA_100TX</span><span class="p">;</span>
+<a name="line-286"></a>		<span class="n">b100</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<a name="line-287"></a>	<span class="p">}</span>
+<a name="line-288"></a>
+<a name="line-289"></a>	<span class="k">if</span> <span class="p">(</span><span class="n">bmcr</span> <span class="o">&amp;</span> <span class="mh">0x100</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* full-duplex */</span>
+<a name="line-290"></a>		<span class="n">val</span> <span class="o">|=</span> <span class="n">AXE_MEDIA_FULL_DUPLEX</span> <span class="o">|</span> <span class="n">AXE_178_MEDIA_TXFLOW_CONTROL_EN</span> <span class="o">|</span> <span class="n">AXE_178_MEDIA_RXFLOW_CONTROL_EN</span><span class="p">;</span>
+<a name="line-291"></a>		<span class="n">bfull</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<a name="line-292"></a>	<span class="p">}</span>
+<a name="line-293"></a>
+<a name="line-294"></a>	<span class="k">if</span> <span class="p">(</span><span class="n">b100</span><span class="p">)</span>
+<a name="line-295"></a>		<span class="n">PRINTK</span><span class="p">(</span><span class="s">&quot;- 100Mbps/&quot;</span><span class="p">);</span>
+<a name="line-296"></a>	<span class="k">else</span>
+<a name="line-297"></a>		<span class="n">PRINTK</span><span class="p">(</span><span class="s">&quot;- 10Mbps/&quot;</span><span class="p">);</span>
+<a name="line-298"></a>
+<a name="line-299"></a>	<span class="k">if</span> <span class="p">(</span><span class="n">bfull</span><span class="p">)</span>
+<a name="line-300"></a>		<span class="n">PRINTK</span><span class="p">(</span><span class="s">&quot;Full</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<a name="line-301"></a>	<span class="k">else</span>
+<a name="line-302"></a>		<span class="n">PRINTK</span><span class="p">(</span><span class="s">&quot;Half</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<a name="line-303"></a>
+<a name="line-304"></a>	<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_WRITE_MEDIA</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">val</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-305"></a>	<span class="k">return</span> <span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<a name="line-306"></a><span class="p">}</span>
+<a name="line-307"></a>
+<a name="line-308"></a><span class="k">static</span> <span class="kt">void</span>
+<a name="line-309"></a><span class="nf">axe_setmulti</span><span class="p">(</span><span class="k">struct</span> <span class="n">usb_ether</span> <span class="o">*</span><span class="n">ue</span><span class="p">)</span>
+<a name="line-310"></a><span class="p">{</span>
+<a name="line-311"></a><span class="p">}</span>
+<a name="line-312"></a>
+<a name="line-313"></a><span class="k">static</span> <span class="kt">int</span>
+<a name="line-314"></a><span class="nf">axe_get_phyno</span><span class="p">(</span><span class="k">struct</span> <span class="n">axe_softc</span> <span class="o">*</span><span class="n">sc</span><span class="p">,</span> <span class="kt">int</span> <span class="n">sel</span><span class="p">)</span>
+<a name="line-315"></a><span class="p">{</span>
+<a name="line-316"></a>	<span class="kt">int</span> <span class="n">phyno</span><span class="p">;</span>
+<a name="line-317"></a>
+<a name="line-318"></a>	<span class="k">switch</span> <span class="p">(</span><span class="n">AXE_PHY_TYPE</span><span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_phyaddrs</span><span class="p">[</span><span class="n">sel</span><span class="p">]))</span> <span class="p">{</span>
+<a name="line-319"></a>	<span class="k">case</span> <span class="nl">PHY_TYPE_100_HOME</span><span class="p">:</span>
+<a name="line-320"></a>	<span class="k">case</span> <span class="nl">PHY_TYPE_GIG</span><span class="p">:</span>
+<a name="line-321"></a>		<span class="n">phyno</span> <span class="o">=</span> <span class="n">AXE_PHY_NO</span><span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_phyaddrs</span><span class="p">[</span><span class="n">sel</span><span class="p">]);</span>
+<a name="line-322"></a>		<span class="k">break</span><span class="p">;</span>
+<a name="line-323"></a>	<span class="k">case</span> <span class="nl">PHY_TYPE_SPECIAL</span><span class="p">:</span>
+<a name="line-324"></a>		<span class="cm">/* FALLTHROUGH */</span>
+<a name="line-325"></a>	<span class="k">case</span> <span class="nl">PHY_TYPE_RSVD</span><span class="p">:</span>
+<a name="line-326"></a>		<span class="cm">/* FALLTHROUGH */</span>
+<a name="line-327"></a>	<span class="k">case</span> <span class="nl">PHY_TYPE_NON_SUP</span><span class="p">:</span>
+<a name="line-328"></a>		<span class="cm">/* FALLTHROUGH */</span>
+<a name="line-329"></a>	<span class="k">default</span><span class="o">:</span>
+<a name="line-330"></a>		<span class="n">phyno</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">;</span>
+<a name="line-331"></a>		<span class="k">break</span><span class="p">;</span>
+<a name="line-332"></a>	<span class="p">}</span>
+<a name="line-333"></a>
+<a name="line-334"></a>	<span class="k">return</span> <span class="p">(</span><span class="n">phyno</span><span class="p">);</span>
+<a name="line-335"></a><span class="p">}</span>
+<a name="line-336"></a>
+<a name="line-337"></a><span class="k">static</span> <span class="kt">void</span>
+<a name="line-338"></a><span class="nf">axe_uether_pause</span><span class="p">(</span><span class="k">struct</span> <span class="n">usb_ether</span> <span class="o">*</span> <span class="n">usbe</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">t_ick</span><span class="p">)</span>
+<a name="line-339"></a><span class="p">{</span>
+<a name="line-340"></a>	<span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n">uether_pause</span><span class="p">(</span><span class="n">usbe</span><span class="p">,</span> <span class="n">t_ick</span><span class="p">);</span>
+<a name="line-341"></a><span class="p">}</span>
+<a name="line-342"></a>
+<a name="line-343"></a><span class="cp">#define	AXE_GPIO_WRITE(x, y)	do { \</span>
+<a name="line-344"></a><span class="cp">	axe_cmd(sc, AXE_CMD_WRITE_GPIO, 0, (x), NULL); \</span>
+<a name="line-345"></a><span class="cp">	axe_uether_pause(ue, (y)); \</span>
+<a name="line-346"></a><span class="cp">} while (0)</span>
+<a name="line-347"></a>
+<a name="line-348"></a><span class="k">static</span> <span class="kt">void</span>
+<a name="line-349"></a><span class="nf">axe_ax88178_init</span><span class="p">(</span><span class="k">struct</span> <span class="n">axe_softc</span> <span class="o">*</span><span class="n">sc</span><span class="p">)</span>
+<a name="line-350"></a><span class="p">{</span>
+<a name="line-351"></a>	<span class="k">struct</span> <span class="n">usb_ether</span> <span class="o">*</span><span class="n">ue</span><span class="p">;</span>
+<a name="line-352"></a>	<span class="kt">int</span> <span class="n">gpio0</span><span class="p">,</span> <span class="n">ledmode</span><span class="p">,</span> <span class="n">phymode</span><span class="p">;</span>
+<a name="line-353"></a>	<span class="kt">uint16_t</span> <span class="n">eeprom</span><span class="p">,</span> <span class="n">val</span><span class="p">;</span>
+<a name="line-354"></a>
+<a name="line-355"></a>	<span class="n">ue</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ue</span><span class="p">;</span>
+<a name="line-356"></a>	<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_SROM_WR_ENABLE</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-357"></a>	<span class="cm">/* XXX magic */</span>
+<a name="line-358"></a>	<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_SROM_READ</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mh">0x0017</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">eeprom</span><span class="p">);</span>
+<a name="line-359"></a>	<span class="n">eeprom</span> <span class="o">=</span> <span class="n">le16toh</span><span class="p">(</span><span class="n">eeprom</span><span class="p">);</span>
+<a name="line-360"></a>	<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_SROM_WR_DISABLE</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-361"></a>
+<a name="line-362"></a>	<span class="cm">/* if EEPROM is invalid we have to use to GPIO0 */</span>
+<a name="line-363"></a>	<span class="k">if</span> <span class="p">(</span><span class="n">eeprom</span> <span class="o">==</span> <span class="mh">0xffff</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-364"></a>		<span class="n">phymode</span> <span class="o">=</span> <span class="n">AXE_PHY_MODE_MARVELL</span><span class="p">;</span>
+<a name="line-365"></a>		<span class="n">gpio0</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<a name="line-366"></a>		<span class="n">ledmode</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-367"></a>	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a name="line-368"></a>		<span class="n">phymode</span> <span class="o">=</span> <span class="n">eeprom</span> <span class="o">&amp;</span> <span class="mh">0x7f</span><span class="p">;</span>
+<a name="line-369"></a>		<span class="n">gpio0</span> <span class="o">=</span> <span class="p">(</span><span class="n">eeprom</span> <span class="o">&amp;</span> <span class="mh">0x80</span><span class="p">)</span> <span class="o">?</span> <span class="mi">0</span> <span class="o">:</span> <span class="mi">1</span><span class="p">;</span>
+<a name="line-370"></a>		<span class="n">ledmode</span> <span class="o">=</span> <span class="n">eeprom</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">;</span>
+<a name="line-371"></a>	<span class="p">}</span>
+<a name="line-372"></a>
+<a name="line-373"></a>	<span class="cm">/* Program GPIOs depending on PHY hardware. */</span>
+<a name="line-374"></a>	<span class="k">switch</span> <span class="p">(</span><span class="n">phymode</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-375"></a>	<span class="k">case</span> <span class="nl">AXE_PHY_MODE_MARVELL</span><span class="p">:</span>
+<a name="line-376"></a>		<span class="k">if</span> <span class="p">(</span><span class="n">gpio0</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-377"></a>			<span class="n">AXE_GPIO_WRITE</span><span class="p">(</span><span class="n">AXE_GPIO_RELOAD_EEPROM</span> <span class="o">|</span> <span class="n">AXE_GPIO0_EN</span><span class="p">,</span>
+<a name="line-378"></a>			    <span class="n">hz</span> <span class="o">/</span> <span class="mi">32</span><span class="p">);</span>
+<a name="line-379"></a>			<span class="n">AXE_GPIO_WRITE</span><span class="p">(</span><span class="n">AXE_GPIO0_EN</span> <span class="o">|</span> <span class="n">AXE_GPIO2</span> <span class="o">|</span> <span class="n">AXE_GPIO2_EN</span><span class="p">,</span>
+<a name="line-380"></a>			    <span class="n">hz</span> <span class="o">/</span> <span class="mi">32</span><span class="p">);</span>
+<a name="line-381"></a>			<span class="n">AXE_GPIO_WRITE</span><span class="p">(</span><span class="n">AXE_GPIO0_EN</span> <span class="o">|</span> <span class="n">AXE_GPIO2_EN</span><span class="p">,</span> <span class="n">hz</span> <span class="o">/</span> <span class="mi">4</span><span class="p">);</span>
+<a name="line-382"></a>			<span class="n">AXE_GPIO_WRITE</span><span class="p">(</span><span class="n">AXE_GPIO0_EN</span> <span class="o">|</span> <span class="n">AXE_GPIO2</span> <span class="o">|</span> <span class="n">AXE_GPIO2_EN</span><span class="p">,</span>
+<a name="line-383"></a>			    <span class="n">hz</span> <span class="o">/</span> <span class="mi">32</span><span class="p">);</span>
+<a name="line-384"></a>		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a name="line-385"></a>			<span class="n">AXE_GPIO_WRITE</span><span class="p">(</span><span class="n">AXE_GPIO_RELOAD_EEPROM</span> <span class="o">|</span> <span class="n">AXE_GPIO1</span> <span class="o">|</span>
+<a name="line-386"></a>			    <span class="n">AXE_GPIO1_EN</span><span class="p">,</span> <span class="n">hz</span> <span class="o">/</span> <span class="mi">3</span><span class="p">);</span>
+<a name="line-387"></a>			<span class="k">if</span> <span class="p">(</span><span class="n">ledmode</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-388"></a>				<span class="n">AXE_GPIO_WRITE</span><span class="p">(</span><span class="n">AXE_GPIO1_EN</span><span class="p">,</span> <span class="n">hz</span> <span class="o">/</span> <span class="mi">3</span><span class="p">);</span>
+<a name="line-389"></a>				<span class="n">AXE_GPIO_WRITE</span><span class="p">(</span><span class="n">AXE_GPIO1</span> <span class="o">|</span> <span class="n">AXE_GPIO1_EN</span><span class="p">,</span>
+<a name="line-390"></a>				    <span class="n">hz</span> <span class="o">/</span> <span class="mi">3</span><span class="p">);</span>
+<a name="line-391"></a>			<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a name="line-392"></a>				<span class="n">AXE_GPIO_WRITE</span><span class="p">(</span><span class="n">AXE_GPIO1</span> <span class="o">|</span> <span class="n">AXE_GPIO1_EN</span> <span class="o">|</span>
+<a name="line-393"></a>				    <span class="n">AXE_GPIO2</span> <span class="o">|</span> <span class="n">AXE_GPIO2_EN</span><span class="p">,</span> <span class="n">hz</span> <span class="o">/</span> <span class="mi">32</span><span class="p">);</span>
+<a name="line-394"></a>				<span class="n">AXE_GPIO_WRITE</span><span class="p">(</span><span class="n">AXE_GPIO1</span> <span class="o">|</span> <span class="n">AXE_GPIO1_EN</span> <span class="o">|</span>
+<a name="line-395"></a>				    <span class="n">AXE_GPIO2_EN</span><span class="p">,</span> <span class="n">hz</span> <span class="o">/</span> <span class="mi">4</span><span class="p">);</span>
+<a name="line-396"></a>				<span class="n">AXE_GPIO_WRITE</span><span class="p">(</span><span class="n">AXE_GPIO1</span> <span class="o">|</span> <span class="n">AXE_GPIO1_EN</span> <span class="o">|</span>
+<a name="line-397"></a>				    <span class="n">AXE_GPIO2</span> <span class="o">|</span> <span class="n">AXE_GPIO2_EN</span><span class="p">,</span> <span class="n">hz</span> <span class="o">/</span> <span class="mi">32</span><span class="p">);</span>
+<a name="line-398"></a>			<span class="p">}</span>
+<a name="line-399"></a>		<span class="p">}</span>
+<a name="line-400"></a>		<span class="k">break</span><span class="p">;</span>
+<a name="line-401"></a>	<span class="k">case</span> <span class="nl">AXE_PHY_MODE_CICADA</span><span class="p">:</span>
+<a name="line-402"></a>	<span class="k">case</span> <span class="nl">AXE_PHY_MODE_CICADA_V2</span><span class="p">:</span>
+<a name="line-403"></a>	<span class="k">case</span> <span class="nl">AXE_PHY_MODE_CICADA_V2_ASIX</span><span class="p">:</span>
+<a name="line-404"></a>		<span class="k">if</span> <span class="p">(</span><span class="n">gpio0</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+<a name="line-405"></a>			<span class="n">AXE_GPIO_WRITE</span><span class="p">(</span><span class="n">AXE_GPIO_RELOAD_EEPROM</span> <span class="o">|</span> <span class="n">AXE_GPIO0</span> <span class="o">|</span>
+<a name="line-406"></a>			    <span class="n">AXE_GPIO0_EN</span><span class="p">,</span> <span class="n">hz</span> <span class="o">/</span> <span class="mi">32</span><span class="p">);</span>
+<a name="line-407"></a>		<span class="k">else</span>
+<a name="line-408"></a>			<span class="n">AXE_GPIO_WRITE</span><span class="p">(</span><span class="n">AXE_GPIO_RELOAD_EEPROM</span> <span class="o">|</span> <span class="n">AXE_GPIO1</span> <span class="o">|</span>
+<a name="line-409"></a>			    <span class="n">AXE_GPIO1_EN</span><span class="p">,</span> <span class="n">hz</span> <span class="o">/</span> <span class="mi">32</span><span class="p">);</span>
+<a name="line-410"></a>		<span class="k">break</span><span class="p">;</span>
+<a name="line-411"></a>	<span class="k">case</span> <span class="nl">AXE_PHY_MODE_AGERE</span><span class="p">:</span>
+<a name="line-412"></a>		<span class="n">AXE_GPIO_WRITE</span><span class="p">(</span><span class="n">AXE_GPIO_RELOAD_EEPROM</span> <span class="o">|</span> <span class="n">AXE_GPIO1</span> <span class="o">|</span>
+<a name="line-413"></a>		    <span class="n">AXE_GPIO1_EN</span><span class="p">,</span> <span class="n">hz</span> <span class="o">/</span> <span class="mi">32</span><span class="p">);</span>
+<a name="line-414"></a>		<span class="n">AXE_GPIO_WRITE</span><span class="p">(</span><span class="n">AXE_GPIO1</span> <span class="o">|</span> <span class="n">AXE_GPIO1_EN</span> <span class="o">|</span> <span class="n">AXE_GPIO2</span> <span class="o">|</span>
+<a name="line-415"></a>		    <span class="n">AXE_GPIO2_EN</span><span class="p">,</span> <span class="n">hz</span> <span class="o">/</span> <span class="mi">32</span><span class="p">);</span>
+<a name="line-416"></a>		<span class="n">AXE_GPIO_WRITE</span><span class="p">(</span><span class="n">AXE_GPIO1</span> <span class="o">|</span> <span class="n">AXE_GPIO1_EN</span> <span class="o">|</span> <span class="n">AXE_GPIO2_EN</span><span class="p">,</span> <span class="n">hz</span> <span class="o">/</span> <span class="mi">4</span><span class="p">);</span>
+<a name="line-417"></a>		<span class="n">AXE_GPIO_WRITE</span><span class="p">(</span><span class="n">AXE_GPIO1</span> <span class="o">|</span> <span class="n">AXE_GPIO1_EN</span> <span class="o">|</span> <span class="n">AXE_GPIO2</span> <span class="o">|</span>
+<a name="line-418"></a>		    <span class="n">AXE_GPIO2_EN</span><span class="p">,</span> <span class="n">hz</span> <span class="o">/</span> <span class="mi">32</span><span class="p">);</span>
+<a name="line-419"></a>		<span class="k">break</span><span class="p">;</span>
+<a name="line-420"></a>	<span class="k">case</span> <span class="nl">AXE_PHY_MODE_REALTEK_8211CL</span><span class="p">:</span>
+<a name="line-421"></a>	<span class="k">case</span> <span class="nl">AXE_PHY_MODE_REALTEK_8211BN</span><span class="p">:</span>
+<a name="line-422"></a>	<span class="k">case</span> <span class="nl">AXE_PHY_MODE_REALTEK_8251CL</span><span class="p">:</span>
+<a name="line-423"></a>		<span class="n">val</span> <span class="o">=</span> <span class="n">gpio0</span> <span class="o">==</span> <span class="mi">1</span> <span class="o">?</span> <span class="n">AXE_GPIO0</span> <span class="o">|</span> <span class="nl">AXE_GPIO0_EN</span> <span class="p">:</span>
+<a name="line-424"></a>		    <span class="n">AXE_GPIO1</span> <span class="o">|</span> <span class="n">AXE_GPIO1_EN</span><span class="p">;</span>
+<a name="line-425"></a>		<span class="n">AXE_GPIO_WRITE</span><span class="p">(</span><span class="n">val</span><span class="p">,</span> <span class="n">hz</span> <span class="o">/</span> <span class="mi">32</span><span class="p">);</span>
+<a name="line-426"></a>		<span class="n">AXE_GPIO_WRITE</span><span class="p">(</span><span class="n">val</span> <span class="o">|</span> <span class="n">AXE_GPIO2</span> <span class="o">|</span> <span class="n">AXE_GPIO2_EN</span><span class="p">,</span> <span class="n">hz</span> <span class="o">/</span> <span class="mi">32</span><span class="p">);</span>
+<a name="line-427"></a>		<span class="n">AXE_GPIO_WRITE</span><span class="p">(</span><span class="n">val</span> <span class="o">|</span> <span class="n">AXE_GPIO2_EN</span><span class="p">,</span> <span class="n">hz</span> <span class="o">/</span> <span class="mi">4</span><span class="p">);</span>
+<a name="line-428"></a>		<span class="n">AXE_GPIO_WRITE</span><span class="p">(</span><span class="n">val</span> <span class="o">|</span> <span class="n">AXE_GPIO2</span> <span class="o">|</span> <span class="n">AXE_GPIO2_EN</span><span class="p">,</span> <span class="n">hz</span> <span class="o">/</span> <span class="mi">32</span><span class="p">);</span>
+<a name="line-429"></a>		<span class="k">if</span> <span class="p">(</span><span class="n">phymode</span> <span class="o">==</span> <span class="n">AXE_PHY_MODE_REALTEK_8211CL</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-430"></a>			<span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n">axe_miibus_writereg</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="mh">0x1F</span><span class="p">,</span> <span class="mh">0x0005</span><span class="p">);</span>
+<a name="line-431"></a>			<span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n">axe_miibus_writereg</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="mh">0x0C</span><span class="p">,</span> <span class="mh">0x0000</span><span class="p">);</span>
+<a name="line-432"></a>			<span class="n">val</span> <span class="o">=</span> <span class="n">axe_miibus_readreg</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="mh">0x0001</span><span class="p">);</span>
+<a name="line-433"></a>			<span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n">axe_miibus_writereg</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="mh">0x01</span><span class="p">,</span> <span class="n">val</span> <span class="o">|</span> <span class="mh">0x0080</span><span class="p">);</span>
+<a name="line-434"></a>			<span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n">axe_miibus_writereg</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="mh">0x1F</span><span class="p">,</span> <span class="mh">0x0000</span><span class="p">);</span>
+<a name="line-435"></a>		<span class="p">}</span>
+<a name="line-436"></a>		<span class="k">break</span><span class="p">;</span>
+<a name="line-437"></a>	<span class="k">default</span><span class="o">:</span>
+<a name="line-438"></a>		<span class="cm">/* Unknown PHY model or no need to program GPIOs. */</span>
+<a name="line-439"></a>		<span class="k">break</span><span class="p">;</span>
+<a name="line-440"></a>	<span class="p">}</span>
+<a name="line-441"></a>
+<a name="line-442"></a>	<span class="cm">/* soft reset */</span>
+<a name="line-443"></a>	<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_SW_RESET_REG</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">AXE_SW_RESET_CLEAR</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-444"></a>	<span class="n">axe_uether_pause</span><span class="p">(</span><span class="n">ue</span><span class="p">,</span> <span class="n">hz</span> <span class="o">/</span> <span class="mi">4</span><span class="p">);</span>
+<a name="line-445"></a>
+<a name="line-446"></a>	<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_SW_RESET_REG</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+<a name="line-447"></a>		<span class="n">AXE_SW_RESET_PRL</span> <span class="o">|</span> <span class="n">AXE_178_RESET_MAGIC</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-448"></a>	<span class="n">axe_uether_pause</span><span class="p">(</span><span class="n">ue</span><span class="p">,</span> <span class="n">hz</span> <span class="o">/</span> <span class="mi">4</span><span class="p">);</span>
+<a name="line-449"></a>	<span class="cm">/* Enable MII/GMII/RGMII interface to work with external PHY. */</span>
+<a name="line-450"></a>	<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_SW_PHY_SELECT</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-451"></a>	<span class="n">axe_uether_pause</span><span class="p">(</span><span class="n">ue</span><span class="p">,</span> <span class="n">hz</span> <span class="o">/</span> <span class="mi">4</span><span class="p">);</span>
+<a name="line-452"></a>
+<a name="line-453"></a>	<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_RXCTL_WRITE</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-454"></a><span class="p">}</span>
+<a name="line-455"></a>
+<a name="line-456"></a><span class="k">static</span> <span class="kt">void</span>
+<a name="line-457"></a><span class="nf">axe_ax88772_init</span><span class="p">(</span><span class="k">struct</span> <span class="n">axe_softc</span> <span class="o">*</span><span class="n">sc</span><span class="p">)</span>
+<a name="line-458"></a><span class="p">{</span>
+<a name="line-459"></a>	<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_WRITE_GPIO</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mh">0x00b0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-460"></a>	<span class="n">axe_uether_pause</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ue</span><span class="p">,</span> <span class="n">hz</span> <span class="o">/</span> <span class="mi">16</span><span class="p">);</span>
+<a name="line-461"></a>
+<a name="line-462"></a>	<span class="k">if</span> <span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_phyno</span> <span class="o">==</span> <span class="n">AXE_772_PHY_NO_EPHY</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-463"></a>		<span class="cm">/* ask for the embedded PHY */</span>
+<a name="line-464"></a>		<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_SW_PHY_SELECT</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mh">0x01</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-465"></a>		<span class="n">axe_uether_pause</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ue</span><span class="p">,</span> <span class="n">hz</span> <span class="o">/</span> <span class="mi">64</span><span class="p">);</span>
+<a name="line-466"></a>
+<a name="line-467"></a>		<span class="cm">/* power down and reset state, pin reset state */</span>
+<a name="line-468"></a>		<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_SW_RESET_REG</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+<a name="line-469"></a>		    <span class="n">AXE_SW_RESET_CLEAR</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-470"></a>		<span class="n">axe_uether_pause</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ue</span><span class="p">,</span> <span class="n">hz</span> <span class="o">/</span> <span class="mi">16</span><span class="p">);</span>
+<a name="line-471"></a>
+<a name="line-472"></a>		<span class="cm">/* power down/reset state, pin operating state */</span>
+<a name="line-473"></a>		<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_SW_RESET_REG</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+<a name="line-474"></a>		    <span class="n">AXE_SW_RESET_IPPD</span> <span class="o">|</span> <span class="n">AXE_SW_RESET_PRL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-475"></a>		<span class="n">axe_uether_pause</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ue</span><span class="p">,</span> <span class="n">hz</span> <span class="o">/</span> <span class="mi">4</span><span class="p">);</span>
+<a name="line-476"></a>
+<a name="line-477"></a>		<span class="cm">/* power up, reset */</span>
+<a name="line-478"></a>		<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_SW_RESET_REG</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">AXE_SW_RESET_PRL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-479"></a>
+<a name="line-480"></a>		<span class="cm">/* power up, operating */</span>
+<a name="line-481"></a>		<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_SW_RESET_REG</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+<a name="line-482"></a>		    <span class="n">AXE_SW_RESET_IPRL</span> <span class="o">|</span> <span class="n">AXE_SW_RESET_PRL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-483"></a>	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a name="line-484"></a>		<span class="cm">/* ask for external PHY */</span>
+<a name="line-485"></a>		<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_SW_PHY_SELECT</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-486"></a>		<span class="n">axe_uether_pause</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ue</span><span class="p">,</span> <span class="n">hz</span> <span class="o">/</span> <span class="mi">64</span><span class="p">);</span>
+<a name="line-487"></a>
+<a name="line-488"></a>		<span class="cm">/* power down internal PHY */</span>
+<a name="line-489"></a>		<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_SW_RESET_REG</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+<a name="line-490"></a>		    <span class="n">AXE_SW_RESET_IPPD</span> <span class="o">|</span> <span class="n">AXE_SW_RESET_PRL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-491"></a>	<span class="p">}</span>
+<a name="line-492"></a>
+<a name="line-493"></a>	<span class="n">axe_uether_pause</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ue</span><span class="p">,</span> <span class="n">hz</span> <span class="o">/</span> <span class="mi">4</span><span class="p">);</span>
+<a name="line-494"></a>	<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_RXCTL_WRITE</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-495"></a><span class="p">}</span>
+<a name="line-496"></a>
+<a name="line-497"></a><span class="k">static</span> <span class="kt">void</span>
+<a name="line-498"></a><span class="nf">axe_ax88772_phywake</span><span class="p">(</span><span class="k">struct</span> <span class="n">axe_softc</span> <span class="o">*</span><span class="n">sc</span><span class="p">)</span>
+<a name="line-499"></a><span class="p">{</span>
+<a name="line-500"></a>	<span class="k">if</span> <span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_phyno</span> <span class="o">==</span> <span class="n">AXE_772_PHY_NO_EPHY</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-501"></a>		<span class="cm">/* Manually select internal(embedded) PHY - MAC mode. */</span>
+<a name="line-502"></a>		<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_SW_PHY_SELECT</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">AXE_SW_PHY_SELECT_SS_ENB</span> <span class="o">|</span>
+<a name="line-503"></a>		    <span class="n">AXE_SW_PHY_SELECT_EMBEDDED</span> <span class="o">|</span> <span class="n">AXE_SW_PHY_SELECT_SS_MII</span><span class="p">,</span>
+<a name="line-504"></a>		    <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-505"></a>		<span class="n">axe_uether_pause</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ue</span><span class="p">,</span> <span class="n">hz</span> <span class="o">/</span> <span class="mi">32</span><span class="p">);</span>
+<a name="line-506"></a>	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a name="line-507"></a>		<span class="cm">/*</span>
+<a name="line-508"></a><span class="cm">		 * Manually select external PHY - MAC mode.</span>
+<a name="line-509"></a><span class="cm">		 * Reverse MII/RMII is for AX88772A PHY mode.</span>
+<a name="line-510"></a><span class="cm">		 */</span>
+<a name="line-511"></a>		<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_SW_PHY_SELECT</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">AXE_SW_PHY_SELECT_SS_ENB</span> <span class="o">|</span>
+<a name="line-512"></a>		    <span class="n">AXE_SW_PHY_SELECT_EXT</span> <span class="o">|</span> <span class="n">AXE_SW_PHY_SELECT_SS_MII</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-513"></a>		<span class="n">axe_uether_pause</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ue</span><span class="p">,</span> <span class="n">hz</span> <span class="o">/</span> <span class="mi">32</span><span class="p">);</span>
+<a name="line-514"></a>	<span class="p">}</span>
+<a name="line-515"></a>	<span class="cm">/* Take PHY out of power down. */</span>
+<a name="line-516"></a>	<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_SW_RESET_REG</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">AXE_SW_RESET_IPPD</span> <span class="o">|</span>
+<a name="line-517"></a>	    <span class="n">AXE_SW_RESET_IPRL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-518"></a>	<span class="n">axe_uether_pause</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ue</span><span class="p">,</span> <span class="n">hz</span> <span class="o">/</span> <span class="mi">4</span><span class="p">);</span>
+<a name="line-519"></a>	<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_SW_RESET_REG</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">AXE_SW_RESET_IPRL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-520"></a>	<span class="n">axe_uether_pause</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ue</span><span class="p">,</span> <span class="n">hz</span><span class="p">);</span>
+<a name="line-521"></a>	<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_SW_RESET_REG</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">AXE_SW_RESET_CLEAR</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-522"></a>	<span class="n">axe_uether_pause</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ue</span><span class="p">,</span> <span class="n">hz</span> <span class="o">/</span> <span class="mi">32</span><span class="p">);</span>
+<a name="line-523"></a>	<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_SW_RESET_REG</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">AXE_SW_RESET_IPRL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-524"></a>	<span class="n">axe_uether_pause</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ue</span><span class="p">,</span> <span class="n">hz</span> <span class="o">/</span> <span class="mi">32</span><span class="p">);</span>
+<a name="line-525"></a><span class="p">}</span>
+<a name="line-526"></a>
+<a name="line-527"></a><span class="k">static</span> <span class="kt">void</span>
+<a name="line-528"></a><span class="nf">axe_ax88772b_init</span><span class="p">(</span><span class="k">struct</span> <span class="n">axe_softc</span> <span class="o">*</span><span class="n">sc</span><span class="p">)</span>
+<a name="line-529"></a><span class="p">{</span>
+<a name="line-530"></a>	<span class="k">struct</span> <span class="n">usb_ether</span> <span class="o">*</span><span class="n">ue</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ue</span><span class="p">;</span>
+<a name="line-531"></a>	<span class="kt">uint16_t</span> <span class="n">eeprom</span><span class="p">;</span>
+<a name="line-532"></a>	<span class="kt">uint8_t</span> <span class="o">*</span><span class="n">eaddr</span><span class="p">;</span>
+<a name="line-533"></a>	<span class="kt">uint8_t</span> <span class="o">*</span><span class="n">tmp</span><span class="p">;</span>
+<a name="line-534"></a>	<span class="kt">uint8_t</span> <span class="n">i</span><span class="p">;</span>
+<a name="line-535"></a>	<span class="k">struct</span> <span class="n">los_eth_driver</span> <span class="o">*</span><span class="n">ifp</span> <span class="o">=</span> <span class="n">ue</span><span class="o">-&gt;</span><span class="n">ue_drv_sc</span><span class="p">;</span>
+<a name="line-536"></a>
+<a name="line-537"></a>	<span class="cm">/* Reload EEPROM. */</span>
+<a name="line-538"></a>	<span class="n">AXE_GPIO_WRITE</span><span class="p">(</span><span class="n">AXE_GPIO_RELOAD_EEPROM</span><span class="p">,</span> <span class="n">hz</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+<a name="line-539"></a>	<span class="cm">/*</span>
+<a name="line-540"></a><span class="cm">	 * Save PHY power saving configuration(high byte) and</span>
+<a name="line-541"></a><span class="cm">	 * clear EEPROM checksum value(low byte).</span>
+<a name="line-542"></a><span class="cm">	 */</span>
+<a name="line-543"></a>	<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_SROM_READ</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">AXE_EEPROM_772B_PHY_PWRCFG</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">eeprom</span><span class="p">);</span>
+<a name="line-544"></a>	<span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_pwrcfg</span> <span class="o">=</span> <span class="n">le16toh</span><span class="p">(</span><span class="n">eeprom</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF00</span><span class="p">;</span>
+<a name="line-545"></a>
+<a name="line-546"></a>	<span class="cm">/*</span>
+<a name="line-547"></a><span class="cm">	 * Auto-loaded default station address from internal ROM is</span>
+<a name="line-548"></a><span class="cm">	 * 00:00:00:00:00:00 such that an explicit access to EEPROM</span>
+<a name="line-549"></a><span class="cm">	 * is required to get real station address.</span>
+<a name="line-550"></a><span class="cm">	 */</span>
+<a name="line-551"></a>	<span class="n">eaddr</span> <span class="o">=</span> <span class="n">ue</span><span class="o">-&gt;</span><span class="n">ue_eaddr</span><span class="p">;</span>
+<a name="line-552"></a>	<span class="n">ifp</span><span class="o">-&gt;</span><span class="n">ac_if</span><span class="p">.</span><span class="n">hwaddr_len</span> <span class="o">=</span> <span class="n">NETIF_MAX_HWADDR_LEN</span><span class="p">;</span>
+<a name="line-553"></a>	<span class="n">tmp</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uint8_t</span> <span class="o">*</span><span class="p">)</span> <span class="n">ifp</span><span class="o">-&gt;</span><span class="n">ac_if</span><span class="p">.</span><span class="n">hwaddr</span><span class="p">;</span>
+<a name="line-554"></a>	<span class="k">for</span> <span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">NETIF_MAX_HWADDR_LEN</span> <span class="o">/</span> <span class="mi">2</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-555"></a>		<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_SROM_READ</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">AXE_EEPROM_772B_NODE_ID</span> <span class="o">+</span> <span class="n">i</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">eeprom</span><span class="p">);</span>
+<a name="line-556"></a>		<span class="n">eeprom</span> <span class="o">=</span> <span class="n">le16toh</span><span class="p">(</span><span class="n">eeprom</span><span class="p">);</span>
+<a name="line-557"></a>		<span class="o">*</span><span class="n">eaddr</span><span class="o">++</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uint8_t</span><span class="p">)(</span><span class="n">eeprom</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">);</span>
+<a name="line-558"></a>		<span class="o">*</span><span class="n">eaddr</span><span class="o">++</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uint8_t</span><span class="p">)((</span><span class="n">eeprom</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">);</span>
+<a name="line-559"></a>		<span class="o">*</span><span class="n">tmp</span><span class="o">++</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uint8_t</span><span class="p">)(</span><span class="n">eeprom</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">);</span>
+<a name="line-560"></a>		<span class="o">*</span><span class="n">tmp</span><span class="o">++</span> <span class="o">=</span> <span class="p">(</span><span class="kt">uint8_t</span><span class="p">)((</span><span class="n">eeprom</span> <span class="o">&gt;&gt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mh">0xFF</span><span class="p">);</span>
+<a name="line-561"></a>	<span class="p">}</span>
+<a name="line-562"></a>	<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_178_CMD_WRITE_NODEID</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ue</span><span class="o">-&gt;</span><span class="n">ue_eaddr</span><span class="p">);</span>
+<a name="line-563"></a>
+<a name="line-564"></a>	<span class="n">axe_attach_post</span><span class="p">(</span><span class="n">ue</span><span class="p">);</span>
+<a name="line-565"></a>
+<a name="line-566"></a>	<span class="cm">/* Wakeup PHY. */</span>
+<a name="line-567"></a>	<span class="n">axe_ax88772_phywake</span><span class="p">(</span><span class="n">sc</span><span class="p">);</span>
+<a name="line-568"></a>	<span class="cm">/* Stop MAC. */</span>
+<a name="line-569"></a>	<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_RXCTL_WRITE</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-570"></a>
+<a name="line-571"></a>	<span class="n">ifp</span> <span class="o">=</span> <span class="n">ue</span><span class="o">-&gt;</span><span class="n">ue_drv_sc</span><span class="p">;</span>
+<a name="line-572"></a>	<span class="n">ifp</span><span class="o">-&gt;</span><span class="n">ac_if</span><span class="p">.</span><span class="n">flags</span> <span class="o">|=</span> <span class="n">NETIF_FLAG_UP</span> <span class="o">|</span> <span class="n">NETIF_FLAG_BROADCAST</span> <span class="o">|</span> <span class="n">NETIF_FLAG_ETHARP</span> <span class="o">|</span> <span class="n">NETIF_FLAG_ETHERNET</span><span class="p">;</span>
+<a name="line-573"></a>	<span class="n">ifp</span><span class="o">-&gt;</span><span class="n">ac_if</span><span class="p">.</span><span class="n">flags</span> <span class="o">&amp;=</span> <span class="o">~</span><span class="n">NETIF_FLAG_LINK_UP</span><span class="p">;</span>
+<a name="line-574"></a>	<span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_flags</span> <span class="o">&amp;=</span> <span class="o">~</span><span class="n">AXE_FLAG_LINK</span><span class="p">;</span>
+<a name="line-575"></a>
+<a name="line-576"></a>	<span class="n">usbd_transfer_start</span><span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_xfer</span><span class="p">[</span><span class="n">AXE_BULK_DT_RD</span><span class="p">]);</span>
+<a name="line-577"></a><span class="p">}</span>
+<a name="line-578"></a>
+<a name="line-579"></a><span class="cp">#undef	AXE_GPIO_WRITE</span>
+<a name="line-580"></a>
+<a name="line-581"></a><span class="k">static</span> <span class="kt">void</span>
+<a name="line-582"></a><span class="nf">axe_reset</span><span class="p">(</span><span class="k">struct</span> <span class="n">axe_softc</span> <span class="o">*</span><span class="n">sc</span><span class="p">)</span>
+<a name="line-583"></a><span class="p">{</span>
+<a name="line-584"></a>	<span class="k">struct</span> <span class="n">usb_config_descriptor</span> <span class="o">*</span><span class="n">cd</span><span class="p">;</span>
+<a name="line-585"></a>	<span class="n">usb_error_t</span> <span class="n">err</span><span class="p">;</span>
+<a name="line-586"></a>
+<a name="line-587"></a>	<span class="n">cd</span> <span class="o">=</span> <span class="n">usbd_get_config_descriptor</span><span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ue</span><span class="p">.</span><span class="n">ue_udev</span><span class="p">);</span>
+<a name="line-588"></a>	<span class="n">err</span> <span class="o">=</span> <span class="n">usbd_req_set_config</span><span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ue</span><span class="p">.</span><span class="n">ue_udev</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_mtx</span><span class="p">,</span>
+<a name="line-589"></a>							    <span class="n">cd</span><span class="o">-&gt;</span><span class="n">bConfigurationValue</span><span class="p">);</span>
+<a name="line-590"></a>	<span class="k">if</span> <span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<a name="line-591"></a>		<span class="n">DPRINTF</span><span class="p">(</span><span class="s">&quot;reset failed (ignored)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<a name="line-592"></a>
+<a name="line-593"></a>	<span class="cm">/* Wait a little while for the chip to get its brains in order. */</span>
+<a name="line-594"></a>	<span class="n">axe_uether_pause</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ue</span><span class="p">,</span> <span class="n">hz</span> <span class="o">/</span> <span class="mi">100</span><span class="p">);</span>
+<a name="line-595"></a>	<span class="cm">/* Reinitialize controller to achieve full reset. */</span>
+<a name="line-596"></a>	<span class="k">if</span> <span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_flags</span> <span class="o">&amp;</span> <span class="n">AXE_FLAG_178</span><span class="p">)</span>
+<a name="line-597"></a>		<span class="n">axe_ax88178_init</span><span class="p">(</span><span class="n">sc</span><span class="p">);</span>
+<a name="line-598"></a>	<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_flags</span> <span class="o">&amp;</span> <span class="n">AXE_FLAG_772</span><span class="p">)</span>
+<a name="line-599"></a>		<span class="n">axe_ax88772_init</span><span class="p">(</span><span class="n">sc</span><span class="p">);</span>
+<a name="line-600"></a>	<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_flags</span> <span class="o">&amp;</span> <span class="n">AXE_FLAG_772A</span><span class="p">)</span>
+<a name="line-601"></a>		<span class="n">axe_ax88772b_init</span><span class="p">(</span><span class="n">sc</span><span class="p">);</span>
+<a name="line-602"></a>	<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_flags</span> <span class="o">&amp;</span> <span class="n">AXE_FLAG_772B</span><span class="p">)</span>
+<a name="line-603"></a>		<span class="n">axe_ax88772b_init</span><span class="p">(</span><span class="n">sc</span><span class="p">);</span>
+<a name="line-604"></a>
+<a name="line-605"></a>	<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_WRITE_MEDIA</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span>
+<a name="line-606"></a>		<span class="n">AXE_MEDIA_FULL_DUPLEX</span> <span class="o">|</span> <span class="n">AXE_178_MEDIA_TXFLOW_CONTROL_EN</span> <span class="o">|</span> <span class="n">AXE_178_MEDIA_RXFLOW_CONTROL_EN</span>
+<a name="line-607"></a>		<span class="o">|</span> <span class="n">AXE_178_MEDIA_RX_EN</span> <span class="o">|</span> <span class="n">AXE_178_MEDIA_MAGIC</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-608"></a><span class="p">}</span>
+<a name="line-609"></a>
+<a name="line-610"></a><span class="k">static</span> <span class="kt">void</span>
+<a name="line-611"></a><span class="nf">axe_attach_post</span><span class="p">(</span><span class="k">struct</span> <span class="n">usb_ether</span> <span class="o">*</span><span class="n">ue</span><span class="p">)</span>
+<a name="line-612"></a><span class="p">{</span>
+<a name="line-613"></a>	<span class="k">struct</span> <span class="n">axe_softc</span> <span class="o">*</span><span class="n">sc</span> <span class="o">=</span> <span class="n">uether_getsc</span><span class="p">(</span><span class="n">ue</span><span class="p">);</span>
+<a name="line-614"></a>	<span class="cm">/*</span>
+<a name="line-615"></a><span class="cm">	 * Load PHY indexes first. Needed by axe_xxx_init().</span>
+<a name="line-616"></a><span class="cm">	 */</span>
+<a name="line-617"></a>	<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_READ_PHYID</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_phyaddrs</span><span class="p">);</span>
+<a name="line-618"></a>	<span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_phyno</span> <span class="o">=</span> <span class="n">axe_get_phyno</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_PHY_SEL_PRI</span><span class="p">);</span>
+<a name="line-619"></a>	<span class="k">if</span> <span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_phyno</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<a name="line-620"></a>		<span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_phyno</span> <span class="o">=</span> <span class="n">axe_get_phyno</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_PHY_SEL_SEC</span><span class="p">);</span>
+<a name="line-621"></a>	<span class="k">if</span> <span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_phyno</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-622"></a>		<span class="n">device_printf</span><span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ue</span><span class="p">.</span><span class="n">ue_dev</span><span class="p">,</span>
+<a name="line-623"></a>					    <span class="s">&quot;no valid PHY address found, assuming PHY address 0</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<a name="line-624"></a>		<span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_phyno</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-625"></a>	<span class="p">}</span>
+<a name="line-626"></a>	<span class="cm">/*</span>
+<a name="line-627"></a><span class="cm">	 * Fetch IPG values.</span>
+<a name="line-628"></a><span class="cm">	 */</span>
+<a name="line-629"></a>	<span class="k">if</span> <span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_flags</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">AXE_FLAG_772A</span> <span class="o">|</span> <span class="n">AXE_FLAG_772B</span><span class="p">))</span> <span class="p">{</span>
+<a name="line-630"></a>		<span class="cm">/* Set IPG values. */</span>
+<a name="line-631"></a>		<span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ipgs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x15</span><span class="p">;</span>
+<a name="line-632"></a>		<span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ipgs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x16</span><span class="p">;</span>
+<a name="line-633"></a>		<span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ipgs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0x1A</span><span class="p">;</span>
+<a name="line-634"></a>	<span class="p">}</span> <span class="k">else</span>
+<a name="line-635"></a>		<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_READ_IPG012</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ipgs</span><span class="p">);</span>
+<a name="line-636"></a><span class="p">}</span>
+<a name="line-637"></a><span class="cm">/*</span>
+<a name="line-638"></a><span class="cm"> * Probe for a AX88172 chip.</span>
+<a name="line-639"></a><span class="cm"> */</span>
+<a name="line-640"></a><span class="k">static</span> <span class="kt">int</span>
+<a name="line-641"></a><span class="nf">axe_probe</span><span class="p">(</span><span class="n">device_t</span> <span class="n">dev</span><span class="p">)</span>
+<a name="line-642"></a><span class="p">{</span>
+<a name="line-643"></a>	<span class="k">struct</span> <span class="n">usb_attach_arg</span> <span class="o">*</span><span class="n">uaa</span> <span class="o">=</span> <span class="n">device_get_ivars</span><span class="p">(</span><span class="n">dev</span><span class="p">);</span>
+<a name="line-644"></a>
+<a name="line-645"></a>	<span class="k">if</span> <span class="p">(</span><span class="n">uaa</span><span class="o">-&gt;</span><span class="n">usb_mode</span> <span class="o">!=</span> <span class="n">USB_MODE_HOST</span><span class="p">)</span>
+<a name="line-646"></a>		<span class="k">return</span> <span class="p">(</span><span class="n">ENXIO</span><span class="p">);</span>
+<a name="line-647"></a>	<span class="k">if</span> <span class="p">(</span><span class="n">uaa</span><span class="o">-&gt;</span><span class="n">info</span><span class="p">.</span><span class="n">bConfigIndex</span> <span class="o">!=</span> <span class="n">AXE_CONFIG_IDX</span><span class="p">)</span>
+<a name="line-648"></a>		<span class="k">return</span> <span class="p">(</span><span class="n">ENXIO</span><span class="p">);</span>
+<a name="line-649"></a>	<span class="k">if</span> <span class="p">(</span><span class="n">uaa</span><span class="o">-&gt;</span><span class="n">info</span><span class="p">.</span><span class="n">bIfaceIndex</span> <span class="o">!=</span> <span class="n">AXE_IFACE_IDX</span><span class="p">)</span>
+<a name="line-650"></a>		<span class="k">return</span> <span class="p">(</span><span class="n">ENXIO</span><span class="p">);</span>
+<a name="line-651"></a>	<span class="k">return</span> <span class="p">(</span><span class="n">usbd_lookup_id_by_uaa</span><span class="p">(</span><span class="n">axe_devs</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">axe_devs</span><span class="p">),</span> <span class="n">uaa</span><span class="p">));</span>
+<a name="line-652"></a><span class="p">}</span>
+<a name="line-653"></a>
+<a name="line-654"></a><span class="k">static</span> <span class="kt">void</span>
+<a name="line-655"></a><span class="nf">axe_miibus_statchg</span><span class="p">(</span><span class="k">struct</span> <span class="n">axe_softc</span> <span class="o">*</span><span class="n">sc</span><span class="p">,</span> <span class="kt">uint16_t</span> <span class="n">link_status</span><span class="p">)</span>
+<a name="line-656"></a><span class="p">{</span>
+<a name="line-657"></a>	<span class="k">struct</span> <span class="n">usb_ether</span> <span class="o">*</span><span class="n">ue</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ue</span><span class="p">;</span>
+<a name="line-658"></a>	<span class="k">struct</span> <span class="n">los_eth_driver</span> <span class="o">*</span><span class="n">ifp</span> <span class="o">=</span> <span class="n">ue</span><span class="o">-&gt;</span><span class="n">ue_drv_sc</span><span class="p">;</span>
+<a name="line-659"></a>	<span class="k">struct</span> <span class="n">eth_drv_sc</span> <span class="o">*</span><span class="n">drv_sc</span> <span class="o">=</span> <span class="p">(</span><span class="k">struct</span> <span class="n">eth_drv_sc</span> <span class="o">*</span><span class="p">)</span><span class="n">ifp</span><span class="o">-&gt;</span><span class="n">driver_context</span><span class="p">;</span>
+<a name="line-660"></a>
+<a name="line-661"></a>	<span class="k">if</span> <span class="p">(</span><span class="n">drv_sc</span><span class="o">-&gt;</span><span class="n">state</span> <span class="o">&amp;</span> <span class="n">IFF_DRV_RUNNING</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-662"></a>		<span class="k">if</span> <span class="p">(</span><span class="n">link_status</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-663"></a>			<span class="k">if</span> <span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_flags</span> <span class="o">&amp;</span> <span class="n">AXE_FLAG_772A</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-664"></a>				<span class="n">PRINTK</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">AX88772A Link Up &quot;</span><span class="p">);</span>
+<a name="line-665"></a>			<span class="p">}</span>
+<a name="line-666"></a>			<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_flags</span> <span class="o">&amp;</span> <span class="n">AXE_FLAG_772B</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-667"></a>				<span class="n">PRINTK</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">AX88772B Link Up &quot;</span><span class="p">);</span>
+<a name="line-668"></a>			<span class="p">}</span>
+<a name="line-669"></a>
+<a name="line-670"></a>			<span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n">axe_setmedium</span><span class="p">(</span><span class="n">sc</span><span class="p">);</span>
+<a name="line-671"></a>			<span class="n">axe_start</span><span class="p">(</span><span class="n">ue</span><span class="p">);</span>
+<a name="line-672"></a>
+<a name="line-673"></a>			<span class="n">ifp</span><span class="o">-&gt;</span><span class="n">ac_if</span><span class="p">.</span><span class="n">flags</span> <span class="o">|=</span> <span class="n">NETIF_FLAG_LINK_UP</span><span class="p">;</span>
+<a name="line-674"></a>			<span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">netifapi_netif_set_up</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ifp</span><span class="o">-&gt;</span><span class="n">ac_if</span><span class="p">);</span>
+<a name="line-675"></a>		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a name="line-676"></a>			<span class="k">if</span> <span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_flags</span> <span class="o">&amp;</span> <span class="n">AXE_FLAG_772A</span><span class="p">)</span>
+<a name="line-677"></a>				<span class="n">PRINTK</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">AX88772A Link Down</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<a name="line-678"></a>			<span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_flags</span> <span class="o">&amp;</span> <span class="n">AXE_FLAG_772B</span><span class="p">)</span>
+<a name="line-679"></a>				<span class="n">PRINTK</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\n</span><span class="s">AX88772B Link Down</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<a name="line-680"></a>
+<a name="line-681"></a>			<span class="n">ifp</span><span class="o">-&gt;</span><span class="n">ac_if</span><span class="p">.</span><span class="n">flags</span> <span class="o">&amp;=</span> <span class="o">~</span><span class="n">NETIF_FLAG_LINK_UP</span><span class="p">;</span>
+<a name="line-682"></a>		<span class="p">}</span>
+<a name="line-683"></a>	<span class="p">}</span>
+<a name="line-684"></a><span class="p">}</span>
+<a name="line-685"></a>
+<a name="line-686"></a><span class="cm">/*</span>
+<a name="line-687"></a><span class="cm"> * Attach the interface. Allocate softc structures, do ifmedia</span>
+<a name="line-688"></a><span class="cm"> * setup and ethernet/BPF attach.</span>
+<a name="line-689"></a><span class="cm"> */</span>
+<a name="line-690"></a><span class="k">static</span> <span class="kt">int</span>
+<a name="line-691"></a><span class="nf">axe_attach</span><span class="p">(</span><span class="n">device_t</span> <span class="n">dev</span><span class="p">)</span>
+<a name="line-692"></a><span class="p">{</span>
+<a name="line-693"></a>	<span class="k">struct</span> <span class="n">usb_attach_arg</span> <span class="o">*</span><span class="n">uaa</span> <span class="o">=</span> <span class="n">device_get_ivars</span><span class="p">(</span><span class="n">dev</span><span class="p">);</span>
+<a name="line-694"></a>	<span class="k">struct</span> <span class="n">axe_softc</span> <span class="o">*</span><span class="n">sc</span> <span class="o">=</span> <span class="n">device_get_softc</span><span class="p">(</span><span class="n">dev</span><span class="p">);</span>
+<a name="line-695"></a>	<span class="k">struct</span> <span class="n">usb_ether</span> <span class="o">*</span><span class="n">ue</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ue</span><span class="p">;</span>
+<a name="line-696"></a>	<span class="kt">uint8_t</span> <span class="n">iface_index</span><span class="p">;</span>
+<a name="line-697"></a>	<span class="kt">int</span> <span class="n">error</span><span class="p">;</span>
+<a name="line-698"></a>	<span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_flags</span> <span class="o">=</span> <span class="n">USB_GET_DRIVER_INFO</span><span class="p">(</span><span class="n">uaa</span><span class="p">);</span>
+<a name="line-699"></a>	<span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_link_status</span> <span class="o">=</span> <span class="n">AXE_LINK_MASK</span><span class="p">;</span>
+<a name="line-700"></a>
+<a name="line-701"></a>	<span class="n">device_set_usb_desc</span><span class="p">(</span><span class="n">dev</span><span class="p">);</span>
+<a name="line-702"></a>
+<a name="line-703"></a>	<span class="n">mtx_init</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_mtx</span><span class="p">,</span> <span class="n">device_get_nameunit</span><span class="p">(</span><span class="n">dev</span><span class="p">),</span> <span class="nb">NULL</span><span class="p">,</span> <span class="n">MTX_RECURSE</span><span class="p">);</span>
+<a name="line-704"></a>
+<a name="line-705"></a>	<span class="n">iface_index</span> <span class="o">=</span> <span class="n">AXE_IFACE_IDX</span><span class="p">;</span>
+<a name="line-706"></a>	<span class="n">error</span> <span class="o">=</span> <span class="n">usbd_transfer_setup</span><span class="p">(</span><span class="n">uaa</span><span class="o">-&gt;</span><span class="n">device</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">iface_index</span><span class="p">,</span> <span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_xfer</span><span class="p">,</span>
+<a name="line-707"></a>		<span class="n">axe_config</span><span class="p">,</span> <span class="n">AXE_N_TRANSFER</span><span class="p">,</span> <span class="n">sc</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_mtx</span><span class="p">);</span>
+<a name="line-708"></a>	<span class="k">if</span> <span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-709"></a>		<span class="n">device_printf</span><span class="p">(</span><span class="n">dev</span><span class="p">,</span> <span class="s">&quot;allocating USB transfers failed</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<a name="line-710"></a>		<span class="k">goto</span> <span class="n">detach</span><span class="p">;</span>
+<a name="line-711"></a>	<span class="p">}</span>
+<a name="line-712"></a>
+<a name="line-713"></a>	<span class="n">ue</span><span class="o">-&gt;</span><span class="n">ue_sc</span> <span class="o">=</span> <span class="n">sc</span><span class="p">;</span>
+<a name="line-714"></a>	<span class="n">ue</span><span class="o">-&gt;</span><span class="n">ue_dev</span> <span class="o">=</span> <span class="n">dev</span><span class="p">;</span>
+<a name="line-715"></a>	<span class="n">ue</span><span class="o">-&gt;</span><span class="n">ue_udev</span> <span class="o">=</span> <span class="n">uaa</span><span class="o">-&gt;</span><span class="n">device</span><span class="p">;</span>
+<a name="line-716"></a>	<span class="n">ue</span><span class="o">-&gt;</span><span class="n">ue_mtx</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_mtx</span><span class="p">;</span>
+<a name="line-717"></a>	<span class="n">ue</span><span class="o">-&gt;</span><span class="n">ue_methods</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">axe_ue_methods</span><span class="p">;</span>
+<a name="line-718"></a>	<span class="n">error</span> <span class="o">=</span> <span class="n">uether_ifattach</span><span class="p">(</span><span class="n">ue</span><span class="p">);</span>
+<a name="line-719"></a>	<span class="k">if</span> <span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-720"></a>		<span class="n">device_printf</span><span class="p">(</span><span class="n">dev</span><span class="p">,</span> <span class="s">&quot;could not attach interface</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<a name="line-721"></a>		<span class="k">goto</span> <span class="n">detach</span><span class="p">;</span>
+<a name="line-722"></a>	<span class="p">}</span>
+<a name="line-723"></a>	<span class="k">return</span> <span class="p">(</span><span class="mi">0</span><span class="p">);</span>			<span class="cm">/* success */</span>
+<a name="line-724"></a>
+<a name="line-725"></a><span class="nl">detach</span><span class="p">:</span>
+<a name="line-726"></a>	<span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n">axe_detach</span><span class="p">(</span><span class="n">dev</span><span class="p">);</span>
+<a name="line-727"></a>	<span class="k">return</span> <span class="p">(</span><span class="n">ENXIO</span><span class="p">);</span>			<span class="cm">/* failure */</span>
+<a name="line-728"></a><span class="p">}</span>
+<a name="line-729"></a>
+<a name="line-730"></a><span class="k">static</span> <span class="kt">int</span>
+<a name="line-731"></a><span class="nf">axe_detach</span><span class="p">(</span><span class="n">device_t</span> <span class="n">dev</span><span class="p">)</span>
+<a name="line-732"></a><span class="p">{</span>
+<a name="line-733"></a>	<span class="k">struct</span> <span class="n">axe_softc</span> <span class="o">*</span><span class="n">sc</span> <span class="o">=</span> <span class="n">device_get_softc</span><span class="p">(</span><span class="n">dev</span><span class="p">);</span>
+<a name="line-734"></a>	<span class="k">struct</span> <span class="n">usb_ether</span> <span class="o">*</span><span class="n">ue</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ue</span><span class="p">;</span>
+<a name="line-735"></a>
+<a name="line-736"></a>	<span class="n">usbd_transfer_unsetup</span><span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_xfer</span><span class="p">,</span> <span class="n">AXE_N_TRANSFER</span><span class="p">);</span>
+<a name="line-737"></a>	<span class="n">uether_ifdetach</span><span class="p">(</span><span class="n">ue</span><span class="p">);</span>
+<a name="line-738"></a>	<span class="n">mtx_destroy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_mtx</span><span class="p">);</span>
+<a name="line-739"></a>
+<a name="line-740"></a>	<span class="k">return</span> <span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<a name="line-741"></a><span class="p">}</span>
+<a name="line-742"></a>
+<a name="line-743"></a><span class="cp">#if (AXE_BULK_BUF_SIZE &gt;= 0x10000)</span>
+<a name="line-744"></a><span class="cp">#error &quot;Please update axe_bulk_read_callback()!&quot;</span>
+<a name="line-745"></a><span class="cp">#endif</span>
+<a name="line-746"></a>
+<a name="line-747"></a><span class="k">static</span> <span class="kt">void</span>
+<a name="line-748"></a><span class="nf">axe_bulk_read_callback</span><span class="p">(</span><span class="k">struct</span> <span class="n">usb_xfer</span> <span class="o">*</span><span class="n">xfer</span><span class="p">,</span> <span class="n">usb_error_t</span> <span class="n">error</span><span class="p">)</span>
+<a name="line-749"></a><span class="p">{</span>
+<a name="line-750"></a>	<span class="k">struct</span> <span class="n">axe_softc</span> <span class="o">*</span><span class="n">sc</span> <span class="o">=</span> <span class="n">usbd_xfer_softc</span><span class="p">(</span><span class="n">xfer</span><span class="p">);</span>
+<a name="line-751"></a>	<span class="k">struct</span> <span class="n">usb_ether</span> <span class="o">*</span><span class="n">ue</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ue</span><span class="p">;</span>
+<a name="line-752"></a>	<span class="k">struct</span> <span class="n">usb_page_cache</span> <span class="o">*</span><span class="n">pc</span><span class="p">;</span>
+<a name="line-753"></a>	<span class="kt">int</span> <span class="n">actlen</span><span class="p">;</span>
+<a name="line-754"></a>
+<a name="line-755"></a>	<span class="n">usbd_xfer_status</span><span class="p">(</span><span class="n">xfer</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">actlen</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-756"></a>	<span class="k">switch</span> <span class="p">(</span><span class="n">USB_GET_STATE</span><span class="p">(</span><span class="n">xfer</span><span class="p">))</span> <span class="p">{</span>
+<a name="line-757"></a>	<span class="k">case</span> <span class="nl">USB_ST_TRANSFERRED</span><span class="p">:</span>
+<a name="line-758"></a>		<span class="n">pc</span> <span class="o">=</span> <span class="n">usbd_xfer_get_frame</span><span class="p">(</span><span class="n">xfer</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+<a name="line-759"></a>		<span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n">axe_rx_frame</span><span class="p">(</span><span class="n">ue</span><span class="p">,</span> <span class="n">pc</span><span class="p">,</span> <span class="n">actlen</span><span class="p">);</span>
+<a name="line-760"></a>		<span class="cm">/* FALLTHROUGH */</span>
+<a name="line-761"></a>	<span class="k">case</span> <span class="nl">USB_ST_SETUP</span><span class="p">:</span>
+<a name="line-762"></a><span class="nl">tr_setup</span><span class="p">:</span>
+<a name="line-763"></a>		<span class="n">usbd_xfer_set_frame_len</span><span class="p">(</span><span class="n">xfer</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">usbd_xfer_max_len</span><span class="p">(</span><span class="n">xfer</span><span class="p">));</span>
+<a name="line-764"></a>		<span class="n">usbd_transfer_submit</span><span class="p">(</span><span class="n">xfer</span><span class="p">);</span>
+<a name="line-765"></a>		<span class="n">uether_rxflush</span><span class="p">(</span><span class="n">ue</span><span class="p">);</span>
+<a name="line-766"></a>		<span class="k">return</span><span class="p">;</span>
+<a name="line-767"></a>
+<a name="line-768"></a>	<span class="k">default</span><span class="o">:</span>			<span class="cm">/* Error */</span>
+<a name="line-769"></a>		<span class="n">DPRINTF</span><span class="p">(</span><span class="s">&quot;bulk read error, %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">usbd_errstr</span><span class="p">(</span><span class="n">error</span><span class="p">));</span>
+<a name="line-770"></a>
+<a name="line-771"></a>		<span class="k">if</span> <span class="p">(</span><span class="n">error</span> <span class="o">!=</span> <span class="n">USB_ERR_CANCELLED</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-772"></a>			<span class="cm">/* try to clear stall first */</span>
+<a name="line-773"></a>			<span class="n">usbd_xfer_set_stall</span><span class="p">(</span><span class="n">xfer</span><span class="p">);</span>
+<a name="line-774"></a>			<span class="k">goto</span> <span class="n">tr_setup</span><span class="p">;</span>
+<a name="line-775"></a>		<span class="p">}</span>
+<a name="line-776"></a>		<span class="k">return</span><span class="p">;</span>
+<a name="line-777"></a>	<span class="p">}</span>
+<a name="line-778"></a><span class="p">}</span>
+<a name="line-779"></a>
+<a name="line-780"></a><span class="k">static</span> <span class="kt">int</span>
+<a name="line-781"></a><span class="nf">axe_rx_frame</span><span class="p">(</span><span class="k">struct</span> <span class="n">usb_ether</span> <span class="o">*</span><span class="n">ue</span><span class="p">,</span> <span class="k">struct</span> <span class="n">usb_page_cache</span> <span class="o">*</span><span class="n">pc</span><span class="p">,</span> <span class="kt">int</span> <span class="n">actlen</span><span class="p">)</span>
+<a name="line-782"></a><span class="p">{</span>
+<a name="line-783"></a>	<span class="k">struct</span> <span class="n">axe_softc</span> <span class="o">*</span><span class="n">sc</span> <span class="o">=</span> <span class="n">ue</span><span class="o">-&gt;</span><span class="n">ue_sc</span><span class="p">;</span>
+<a name="line-784"></a>	<span class="k">struct</span> <span class="n">axe_sframe_hdr</span> <span class="n">hdr</span><span class="p">;</span>
+<a name="line-785"></a>	<span class="k">struct</span> <span class="n">axe_csum_hdr</span> <span class="n">csum_hdr</span><span class="p">;</span>
+<a name="line-786"></a>	<span class="kt">int</span> <span class="n">error</span><span class="p">,</span> <span class="n">len</span><span class="p">,</span> <span class="n">pos</span><span class="p">;</span>
+<a name="line-787"></a>
+<a name="line-788"></a>	<span class="n">pos</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-789"></a>	<span class="n">len</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-790"></a>	<span class="n">error</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-791"></a>
+<a name="line-792"></a>	<span class="k">if</span> <span class="p">((</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_flags</span> <span class="o">&amp;</span> <span class="n">AXE_FLAG_STD_FRAME</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-793"></a>		<span class="k">while</span> <span class="p">(</span><span class="n">pos</span> <span class="o">&lt;</span> <span class="n">actlen</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-794"></a>			<span class="k">if</span> <span class="p">((</span><span class="kt">int</span><span class="p">)(</span><span class="n">pos</span> <span class="o">+</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">hdr</span><span class="p">))</span> <span class="o">&gt;</span> <span class="n">actlen</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-795"></a>				<span class="cm">/* too little data */</span>
+<a name="line-796"></a>				<span class="n">error</span> <span class="o">=</span> <span class="n">EINVAL</span><span class="p">;</span>
+<a name="line-797"></a>				<span class="k">break</span><span class="p">;</span>
+<a name="line-798"></a>			<span class="p">}</span>
+<a name="line-799"></a>
+<a name="line-800"></a>			<span class="n">usbd_copy_out</span><span class="p">(</span><span class="n">pc</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hdr</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">hdr</span><span class="p">));</span>
+<a name="line-801"></a>			<span class="k">if</span> <span class="p">((</span><span class="n">hdr</span><span class="p">.</span><span class="n">len</span> <span class="o">^</span> <span class="n">hdr</span><span class="p">.</span><span class="n">ilen</span><span class="p">)</span> <span class="o">!=</span> <span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_lenmask</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-802"></a>				<span class="cm">/* we lost sync */</span>
+<a name="line-803"></a>				<span class="n">error</span> <span class="o">=</span> <span class="n">EINVAL</span><span class="p">;</span>
+<a name="line-804"></a>				<span class="k">break</span><span class="p">;</span>
+<a name="line-805"></a>			<span class="p">}</span>
+<a name="line-806"></a>			<span class="n">pos</span> <span class="o">+=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">hdr</span><span class="p">);</span>
+<a name="line-807"></a>			<span class="n">len</span> <span class="o">=</span> <span class="n">le16toh</span><span class="p">(</span><span class="n">hdr</span><span class="p">.</span><span class="n">len</span><span class="p">);</span>
+<a name="line-808"></a>			<span class="k">if</span> <span class="p">(</span><span class="n">pos</span> <span class="o">+</span> <span class="n">len</span> <span class="o">&gt;</span> <span class="n">actlen</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-809"></a>				<span class="cm">/* invalid length */</span>
+<a name="line-810"></a>				<span class="n">error</span> <span class="o">=</span> <span class="n">EINVAL</span><span class="p">;</span>
+<a name="line-811"></a>				<span class="k">break</span><span class="p">;</span>
+<a name="line-812"></a>			<span class="p">}</span>
+<a name="line-813"></a>			<span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n">axe_rxeof</span><span class="p">(</span><span class="n">ue</span><span class="p">,</span> <span class="n">pc</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">len</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-814"></a>			<span class="n">pos</span> <span class="o">+=</span> <span class="n">len</span> <span class="o">+</span> <span class="p">(</span><span class="n">len</span> <span class="o">%</span> <span class="mi">2</span><span class="p">);</span>
+<a name="line-815"></a>		<span class="p">}</span>
+<a name="line-816"></a>	<span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">((</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_flags</span> <span class="o">&amp;</span> <span class="n">AXE_FLAG_CSUM_FRAME</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-817"></a>		<span class="k">while</span> <span class="p">(</span><span class="n">pos</span> <span class="o">&lt;</span> <span class="n">actlen</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-818"></a>			<span class="k">if</span> <span class="p">((</span><span class="kt">int</span><span class="p">)(</span><span class="n">pos</span> <span class="o">+</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">csum_hdr</span><span class="p">))</span> <span class="o">&gt;</span> <span class="n">actlen</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-819"></a>				<span class="cm">/* too little data */</span>
+<a name="line-820"></a>				<span class="n">error</span> <span class="o">=</span> <span class="n">EINVAL</span><span class="p">;</span>
+<a name="line-821"></a>				<span class="k">break</span><span class="p">;</span>
+<a name="line-822"></a>			<span class="p">}</span>
+<a name="line-823"></a>			<span class="n">usbd_copy_out</span><span class="p">(</span><span class="n">pc</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">csum_hdr</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">csum_hdr</span><span class="p">));</span>
+<a name="line-824"></a>
+<a name="line-825"></a>			<span class="n">csum_hdr</span><span class="p">.</span><span class="n">len</span> <span class="o">=</span> <span class="n">le16toh</span><span class="p">(</span><span class="n">csum_hdr</span><span class="p">.</span><span class="n">len</span><span class="p">);</span>
+<a name="line-826"></a>			<span class="n">csum_hdr</span><span class="p">.</span><span class="n">ilen</span> <span class="o">=</span> <span class="n">le16toh</span><span class="p">(</span><span class="n">csum_hdr</span><span class="p">.</span><span class="n">ilen</span><span class="p">);</span>
+<a name="line-827"></a>			<span class="n">csum_hdr</span><span class="p">.</span><span class="n">cstatus</span> <span class="o">=</span> <span class="n">le16toh</span><span class="p">(</span><span class="n">csum_hdr</span><span class="p">.</span><span class="n">cstatus</span><span class="p">);</span>
+<a name="line-828"></a>			<span class="k">if</span> <span class="p">((</span><span class="n">AXE_CSUM_RXBYTES</span><span class="p">(</span><span class="n">csum_hdr</span><span class="p">.</span><span class="n">len</span><span class="p">)</span> <span class="o">^</span>
+<a name="line-829"></a>			    <span class="n">AXE_CSUM_RXBYTES</span><span class="p">(</span><span class="n">csum_hdr</span><span class="p">.</span><span class="n">ilen</span><span class="p">))</span> <span class="o">!=</span>
+<a name="line-830"></a>			    <span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_lenmask</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-831"></a>				<span class="cm">/* we lost sync */</span>
+<a name="line-832"></a>				<span class="n">error</span> <span class="o">=</span> <span class="n">EINVAL</span><span class="p">;</span>
+<a name="line-833"></a>				<span class="k">break</span><span class="p">;</span>
+<a name="line-834"></a>			<span class="p">}</span>
+<a name="line-835"></a>			<span class="cm">/*</span>
+<a name="line-836"></a><span class="cm">			 * Get total transferred frame length including</span>
+<a name="line-837"></a><span class="cm">			 * checksum header.  The length should be multiple</span>
+<a name="line-838"></a><span class="cm">			 * of 4.</span>
+<a name="line-839"></a><span class="cm">			 */</span>
+<a name="line-840"></a>			<span class="n">len</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">csum_hdr</span><span class="p">)</span> <span class="o">+</span> <span class="n">AXE_CSUM_RXBYTES</span><span class="p">(</span><span class="n">csum_hdr</span><span class="p">.</span><span class="n">len</span><span class="p">);</span>
+<a name="line-841"></a>			<span class="n">len</span> <span class="o">=</span> <span class="p">(</span><span class="n">len</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="o">~</span><span class="mi">3</span><span class="p">;</span>
+<a name="line-842"></a>			<span class="k">if</span> <span class="p">(</span><span class="n">pos</span> <span class="o">+</span> <span class="n">len</span> <span class="o">&gt;</span> <span class="n">actlen</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-843"></a>				<span class="cm">/* invalid length */</span>
+<a name="line-844"></a>				<span class="n">error</span> <span class="o">=</span> <span class="n">EINVAL</span><span class="p">;</span>
+<a name="line-845"></a>				<span class="k">break</span><span class="p">;</span>
+<a name="line-846"></a>			<span class="p">}</span>
+<a name="line-847"></a>			<span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="n">axe_rxeof</span><span class="p">(</span><span class="n">ue</span><span class="p">,</span> <span class="n">pc</span><span class="p">,</span> <span class="n">pos</span> <span class="o">+</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">csum_hdr</span><span class="p">),</span>
+<a name="line-848"></a>				<span class="n">AXE_CSUM_RXBYTES</span><span class="p">(</span><span class="n">csum_hdr</span><span class="p">.</span><span class="n">len</span><span class="p">),</span> <span class="o">&amp;</span><span class="n">csum_hdr</span><span class="p">);</span>
+<a name="line-849"></a>			<span class="n">pos</span> <span class="o">+=</span> <span class="n">len</span><span class="p">;</span>
+<a name="line-850"></a>		<span class="p">}</span>
+<a name="line-851"></a>	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a name="line-852"></a>		<span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">axe_rxeof</span><span class="p">(</span><span class="n">ue</span><span class="p">,</span> <span class="n">pc</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">actlen</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-853"></a>	<span class="p">}</span>
+<a name="line-854"></a>	<span class="k">return</span> <span class="p">(</span><span class="n">error</span><span class="p">);</span>
+<a name="line-855"></a><span class="p">}</span>
+<a name="line-856"></a>
+<a name="line-857"></a><span class="k">static</span> <span class="kt">int</span>
+<a name="line-858"></a><span class="nf">axe_rxeof</span><span class="p">(</span><span class="k">struct</span> <span class="n">usb_ether</span> <span class="o">*</span><span class="n">ue</span><span class="p">,</span> <span class="k">struct</span> <span class="n">usb_page_cache</span> <span class="o">*</span><span class="n">pc</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">offset</span><span class="p">,</span>
+<a name="line-859"></a>		    <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">len</span><span class="p">,</span> <span class="k">struct</span> <span class="n">axe_csum_hdr</span> <span class="o">*</span><span class="n">csum_hdr</span><span class="p">)</span>
+<a name="line-860"></a><span class="p">{</span>
+<a name="line-861"></a>	<span class="k">struct</span> <span class="n">los_eth_driver</span> <span class="o">*</span><span class="n">ifp</span> <span class="o">=</span> <span class="n">ue</span><span class="o">-&gt;</span><span class="n">ue_drv_sc</span><span class="p">;</span>
+<a name="line-862"></a>
+<a name="line-863"></a><span class="hll">	<span class="k">struct</span> <span class="n">pbuf</span> <span class="o">*</span><span class="n">m</span> <span class="o">=</span> <span class="n">pbuf_alloc</span><span class="p">(</span><span class="n">PBUF_RAW</span><span class="p">,</span> <span class="n">len</span><span class="o">+</span><span class="n">ETH_PAD_SIZE</span><span class="p">,</span> <span class="n">PBUF_RAM</span><span class="p">);</span><span class="error2">&lt;--- Skipping configuration 'ETH_PAD_SIZE' since the value of 'ETH_PAD_SIZE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.</span>
+</span><a name="line-864"></a>	<span class="k">struct</span> <span class="n">pbuf</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
+<a name="line-865"></a>
+<a name="line-866"></a>	<span class="k">if</span> <span class="p">(</span><span class="n">len</span> <span class="o">&lt;</span> <span class="n">ETHER_HDR_LEN</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-867"></a>		<span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">pbuf_free</span><span class="p">(</span><span class="n">m</span><span class="p">);</span>
+<a name="line-868"></a>		<span class="k">return</span> <span class="p">(</span><span class="n">EINVAL</span><span class="p">);</span>
+<a name="line-869"></a>	<span class="p">}</span>
+<a name="line-870"></a>
+<a name="line-871"></a><span class="cp">#if ETH_PAD_SIZE</span>
+<a name="line-872"></a>	<span class="cm">/* drop the padding word */</span>
+<a name="line-873"></a><span class="hll">	<span class="k">if</span> <span class="p">(</span><span class="n">pbuf_header</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="o">-</span><span class="n">ETH_PAD_SIZE</span><span class="p">))</span> <span class="p">{</span><span class="error2">&lt;--- Skipping configuration 'ETH_PAD_SIZE' since the value of 'ETH_PAD_SIZE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.</span>
+</span><a name="line-874"></a>		<span class="n">PRINTK</span><span class="p">(</span><span class="s">&quot;[AXE_ERROR]axe_rxeof : pbuf_header drop failed</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<a name="line-875"></a>		<span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">pbuf_free</span><span class="p">(</span><span class="n">m</span><span class="p">);</span>
+<a name="line-876"></a>		<span class="k">return</span> <span class="p">(</span><span class="n">EINVAL</span><span class="p">);</span>
+<a name="line-877"></a>	<span class="p">}</span>
+<a name="line-878"></a><span class="cp">#endif</span>
+<a name="line-879"></a>
+<a name="line-880"></a>	<span class="k">for</span> <span class="p">(</span><span class="n">p</span> <span class="o">=</span> <span class="n">m</span><span class="p">;</span> <span class="n">p</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">)</span>
+<a name="line-881"></a>		<span class="n">usbd_copy_out</span><span class="p">(</span><span class="n">pc</span><span class="p">,</span> <span class="n">offset</span><span class="p">,</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">payload</span><span class="p">,</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">len</span><span class="p">);</span>
+<a name="line-882"></a>
+<a name="line-883"></a><span class="cp">#if ETH_PAD_SIZE</span>
+<a name="line-884"></a>	<span class="cm">/* reclaim the padding word */</span>
+<a name="line-885"></a><span class="hll">	<span class="k">if</span> <span class="p">(</span><span class="n">pbuf_header</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">ETH_PAD_SIZE</span><span class="p">))</span> <span class="p">{</span><span class="error2">&lt;--- Skipping configuration 'ETH_PAD_SIZE' since the value of 'ETH_PAD_SIZE' is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.</span>
+</span><a name="line-886"></a>		<span class="n">PRINTK</span><span class="p">(</span><span class="s">&quot;[AXE_ERROR]axe_rxeof : pbuf_header drop failed</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<a name="line-887"></a>		<span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">pbuf_free</span><span class="p">(</span><span class="n">m</span><span class="p">);</span>
+<a name="line-888"></a>		<span class="k">return</span> <span class="p">(</span><span class="n">EINVAL</span><span class="p">);</span>
+<a name="line-889"></a>	<span class="p">}</span>
+<a name="line-890"></a><span class="cp">#endif</span>
+<a name="line-891"></a>
+<a name="line-892"></a>	<span class="n">driverif_input</span><span class="p">(</span><span class="o">&amp;</span><span class="n">ifp</span><span class="o">-&gt;</span><span class="n">ac_if</span><span class="p">,</span> <span class="n">m</span><span class="p">);</span>
+<a name="line-893"></a>	<span class="k">return</span> <span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<a name="line-894"></a><span class="p">}</span>
+<a name="line-895"></a>
+<a name="line-896"></a><span class="cp">#if ((AXE_BULK_BUF_SIZE &gt;= 0x10000) || (AXE_BULK_BUF_SIZE &lt; (MCLBYTES+4)))</span>
+<a name="line-897"></a><span class="cp">#error &quot;Please update axe_bulk_write_callback()!&quot;</span>
+<a name="line-898"></a><span class="cp">#endif</span>
+<a name="line-899"></a>
+<a name="line-900"></a><span class="k">static</span> <span class="kt">void</span>
+<a name="line-901"></a><span class="nf">axe_bulk_write_callback</span><span class="p">(</span><span class="k">struct</span> <span class="n">usb_xfer</span> <span class="o">*</span><span class="n">xfer</span><span class="p">,</span> <span class="n">usb_error_t</span> <span class="n">error</span><span class="p">)</span>
+<a name="line-902"></a><span class="p">{</span>
+<a name="line-903"></a>	<span class="k">struct</span> <span class="n">axe_softc</span> <span class="o">*</span><span class="n">sc</span> <span class="o">=</span> <span class="n">usbd_xfer_softc</span><span class="p">(</span><span class="n">xfer</span><span class="p">);</span>
+<a name="line-904"></a>	<span class="k">struct</span> <span class="n">axe_sframe_hdr</span> <span class="n">hdr</span><span class="p">;</span>
+<a name="line-905"></a>	<span class="k">struct</span> <span class="n">usb_ether</span> <span class="o">*</span><span class="n">ue</span> <span class="o">=</span> <span class="o">&amp;</span><span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ue</span><span class="p">);</span>
+<a name="line-906"></a>	<span class="k">struct</span> <span class="n">los_eth_driver</span> <span class="o">*</span><span class="n">ifp</span> <span class="o">=</span> <span class="n">ue</span><span class="o">-&gt;</span><span class="n">ue_drv_sc</span><span class="p">;</span>
+<a name="line-907"></a>	<span class="k">struct</span> <span class="n">eth_drv_sc</span> <span class="o">*</span><span class="n">drv_sc</span> <span class="o">=</span> <span class="p">(</span><span class="k">struct</span> <span class="n">eth_drv_sc</span> <span class="o">*</span><span class="p">)</span><span class="n">ifp</span><span class="o">-&gt;</span><span class="n">driver_context</span><span class="p">;</span>
+<a name="line-908"></a>	<span class="k">struct</span> <span class="n">usb_page_cache</span> <span class="o">*</span><span class="n">pc</span><span class="p">;</span>
+<a name="line-909"></a>	<span class="kt">uint16_t</span> <span class="n">txlen</span><span class="p">;</span>
+<a name="line-910"></a>	<span class="kt">int</span> <span class="n">nframes</span><span class="p">,</span> <span class="n">pos</span><span class="p">;</span>
+<a name="line-911"></a>	<span class="k">struct</span> <span class="n">pbuf</span> <span class="o">*</span><span class="n">p</span><span class="p">;</span>
+<a name="line-912"></a>	<span class="kt">uint8_t</span> <span class="n">ustat</span><span class="p">;</span>
+<a name="line-913"></a>
+<a name="line-914"></a>	<span class="n">ustat</span> <span class="o">=</span> <span class="n">USB_GET_STATE</span><span class="p">(</span><span class="n">xfer</span><span class="p">);</span>
+<a name="line-915"></a><span class="nl">tr_setup</span><span class="p">:</span>
+<a name="line-916"></a>	<span class="k">switch</span> <span class="p">(</span><span class="n">ustat</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-917"></a>	<span class="k">case</span> <span class="nl">USB_ST_TRANSFERRED</span><span class="p">:</span>
+<a name="line-918"></a>		<span class="n">DPRINTFN</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="s">&quot;transfer complete</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<a name="line-919"></a>		<span class="n">drv_sc</span><span class="o">-&gt;</span><span class="n">state</span> <span class="o">&amp;=</span> <span class="o">~</span><span class="n">IFF_DRV_OACTIVE</span><span class="p">;</span>
+<a name="line-920"></a>		<span class="cm">/* FALLTHROUGH */</span>
+<a name="line-921"></a>
+<a name="line-922"></a>	<span class="k">case</span> <span class="nl">USB_ST_SETUP</span><span class="p">:</span>
+<a name="line-923"></a>		<span class="k">if</span> <span class="p">(</span><span class="n">drv_sc</span><span class="o">-&gt;</span><span class="n">state</span> <span class="o">&amp;</span> <span class="n">IFF_DRV_OACTIVE</span><span class="p">)</span>
+<a name="line-924"></a>			<span class="k">return</span><span class="p">;</span>
+<a name="line-925"></a>
+<a name="line-926"></a>		<span class="n">UE_LOCK</span><span class="p">(</span><span class="n">ue</span><span class="p">);</span>
+<a name="line-927"></a>		<span class="n">IF_DEQUEUE</span><span class="p">(</span><span class="o">&amp;</span><span class="p">(</span><span class="n">ue</span><span class="o">-&gt;</span><span class="n">ue_txq</span><span class="p">),</span> <span class="n">p</span><span class="p">);</span>
+<a name="line-928"></a>		<span class="n">UE_UNLOCK</span><span class="p">(</span><span class="n">ue</span><span class="p">);</span>
+<a name="line-929"></a>
+<a name="line-930"></a>		<span class="n">nframes</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-931"></a>		<span class="k">while</span> <span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-932"></a>			<span class="n">txlen</span> <span class="o">=</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">len</span><span class="p">;</span>
+<a name="line-933"></a>			<span class="k">if</span> <span class="p">(</span><span class="n">txlen</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)</span>
+<a name="line-934"></a>				<span class="k">break</span><span class="p">;</span>
+<a name="line-935"></a>
+<a name="line-936"></a>			<span class="n">usbd_xfer_set_frame_offset</span><span class="p">(</span><span class="n">xfer</span><span class="p">,</span> <span class="n">nframes</span> <span class="o">*</span> <span class="n">MCLBYTES</span><span class="p">,</span> <span class="n">nframes</span><span class="p">);</span>
+<a name="line-937"></a>			<span class="n">pos</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<a name="line-938"></a>			<span class="n">pc</span> <span class="o">=</span> <span class="n">usbd_xfer_get_frame</span><span class="p">(</span><span class="n">xfer</span><span class="p">,</span> <span class="n">nframes</span><span class="p">);</span>
+<a name="line-939"></a>			<span class="k">if</span> <span class="p">(</span><span class="n">AXE_IS_178_FAMILY</span><span class="p">(</span><span class="n">sc</span><span class="p">))</span> <span class="p">{</span>
+<a name="line-940"></a>				<span class="n">hdr</span><span class="p">.</span><span class="n">len</span> <span class="o">=</span> <span class="n">htole16</span><span class="p">(</span><span class="n">txlen</span><span class="p">);</span>
+<a name="line-941"></a>				<span class="n">hdr</span><span class="p">.</span><span class="n">ilen</span> <span class="o">=</span> <span class="o">~</span><span class="n">hdr</span><span class="p">.</span><span class="n">len</span><span class="p">;</span>
+<a name="line-942"></a>				<span class="n">usbd_copy_in</span><span class="p">(</span><span class="n">pc</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">hdr</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">hdr</span><span class="p">));</span>
+<a name="line-943"></a>				<span class="n">pos</span> <span class="o">+=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">hdr</span><span class="p">);</span>
+<a name="line-944"></a>				<span class="n">usbd_copy_in</span><span class="p">(</span><span class="n">pc</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">payload</span><span class="p">,</span> <span class="n">txlen</span><span class="p">);</span>
+<a name="line-945"></a>				<span class="n">pos</span> <span class="o">+=</span> <span class="n">txlen</span><span class="p">;</span>
+<a name="line-946"></a>			<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a name="line-947"></a>				<span class="n">usbd_copy_in</span><span class="p">(</span><span class="n">pc</span><span class="p">,</span> <span class="n">pos</span><span class="p">,</span> <span class="n">p</span><span class="o">-&gt;</span><span class="n">payload</span><span class="p">,</span> <span class="n">txlen</span><span class="p">);</span>
+<a name="line-948"></a>				<span class="n">pos</span> <span class="o">+=</span> <span class="n">txlen</span><span class="p">;</span>
+<a name="line-949"></a>			<span class="p">}</span>
+<a name="line-950"></a>
+<a name="line-951"></a>			<span class="cm">/* Set frame length. */</span>
+<a name="line-952"></a>			<span class="n">usbd_xfer_set_frame_len</span><span class="p">(</span><span class="n">xfer</span><span class="p">,</span> <span class="n">nframes</span><span class="p">,</span> <span class="n">pos</span><span class="p">);</span>
+<a name="line-953"></a>
+<a name="line-954"></a>			<span class="n">uether_freebuf</span><span class="p">(</span><span class="n">p</span><span class="p">);</span>
+<a name="line-955"></a>			<span class="n">nframes</span><span class="o">++</span><span class="p">;</span>
+<a name="line-956"></a>			<span class="k">if</span> <span class="p">(</span><span class="n">nframes</span> <span class="o">&gt;=</span> <span class="n">USB_AXE_MAX_FRAMES</span><span class="p">)</span>
+<a name="line-957"></a>				<span class="k">break</span><span class="p">;</span>
+<a name="line-958"></a>
+<a name="line-959"></a>			<span class="n">UE_LOCK</span><span class="p">(</span><span class="n">ue</span><span class="p">);</span>
+<a name="line-960"></a>			<span class="n">IF_DEQUEUE</span><span class="p">(</span><span class="o">&amp;</span><span class="p">(</span><span class="n">ue</span><span class="o">-&gt;</span><span class="n">ue_txq</span><span class="p">),</span> <span class="n">p</span><span class="p">);</span>
+<a name="line-961"></a>			<span class="n">UE_UNLOCK</span><span class="p">(</span><span class="n">ue</span><span class="p">);</span>
+<a name="line-962"></a>		<span class="p">}</span>
+<a name="line-963"></a>		<span class="k">if</span> <span class="p">(</span><span class="n">nframes</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-964"></a>			<span class="n">usbd_xfer_set_frames</span><span class="p">(</span><span class="n">xfer</span><span class="p">,</span> <span class="n">nframes</span><span class="p">);</span>
+<a name="line-965"></a>			<span class="n">usbd_transfer_submit</span><span class="p">(</span><span class="n">xfer</span><span class="p">);</span>
+<a name="line-966"></a>			<span class="n">drv_sc</span><span class="o">-&gt;</span><span class="n">state</span> <span class="o">|=</span> <span class="n">IFF_DRV_OACTIVE</span><span class="p">;</span>
+<a name="line-967"></a>		<span class="p">}</span>
+<a name="line-968"></a>		<span class="k">break</span><span class="p">;</span>
+<a name="line-969"></a>
+<a name="line-970"></a>	<span class="k">default</span><span class="o">:</span>			<span class="cm">/* Error */</span>
+<a name="line-971"></a>		<span class="n">DPRINTFN</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span> <span class="s">&quot;transfer error, %s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span>
+<a name="line-972"></a>			    <span class="n">usbd_errstr</span><span class="p">(</span><span class="n">error</span><span class="p">));</span>
+<a name="line-973"></a>		<span class="n">drv_sc</span><span class="o">-&gt;</span><span class="n">state</span> <span class="o">&amp;=</span> <span class="o">~</span><span class="n">IFF_DRV_OACTIVE</span><span class="p">;</span>
+<a name="line-974"></a>		<span class="k">if</span> <span class="p">(</span><span class="n">error</span> <span class="o">!=</span> <span class="n">USB_ERR_CANCELLED</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-975"></a>			<span class="cm">/* try to clear stall first */</span>
+<a name="line-976"></a>			<span class="n">usbd_xfer_set_stall</span><span class="p">(</span><span class="n">xfer</span><span class="p">);</span>
+<a name="line-977"></a>			<span class="n">ustat</span> <span class="o">=</span> <span class="n">USB_ST_SETUP</span><span class="p">;</span>
+<a name="line-978"></a>			<span class="k">goto</span> <span class="n">tr_setup</span><span class="p">;</span>
+<a name="line-979"></a>		<span class="p">}</span>
+<a name="line-980"></a>		<span class="k">break</span><span class="p">;</span>
+<a name="line-981"></a>	<span class="p">}</span>
+<a name="line-982"></a><span class="p">}</span>
+<a name="line-983"></a>
+<a name="line-984"></a><span class="k">static</span> <span class="kt">void</span>
+<a name="line-985"></a><span class="nf">axe_start</span><span class="p">(</span><span class="k">struct</span> <span class="n">usb_ether</span> <span class="o">*</span><span class="n">ue</span><span class="p">)</span>
+<a name="line-986"></a><span class="p">{</span>
+<a name="line-987"></a>	<span class="k">struct</span> <span class="n">axe_softc</span> <span class="o">*</span><span class="n">sc</span> <span class="o">=</span> <span class="n">ue</span><span class="o">-&gt;</span><span class="n">ue_sc</span><span class="p">;</span>
+<a name="line-988"></a>
+<a name="line-989"></a>	<span class="cm">/*</span>
+<a name="line-990"></a><span class="cm">	 * start the USB transfers, if not already started:</span>
+<a name="line-991"></a><span class="cm">	 */</span>
+<a name="line-992"></a>	<span class="n">usbd_transfer_start</span><span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_xfer</span><span class="p">[</span><span class="n">AXE_BULK_DT_WR</span><span class="p">]);</span>
+<a name="line-993"></a>	<span class="n">usbd_transfer_start</span><span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_xfer</span><span class="p">[</span><span class="n">AXE_BULK_DT_RD</span><span class="p">]);</span>
+<a name="line-994"></a><span class="p">}</span>
+<a name="line-995"></a>
+<a name="line-996"></a><span class="k">static</span> <span class="kt">void</span>
+<a name="line-997"></a><span class="nf">axe_csum_cfg</span><span class="p">(</span><span class="k">struct</span> <span class="n">usb_ether</span> <span class="o">*</span><span class="n">ue</span><span class="p">)</span>
+<a name="line-998"></a><span class="p">{</span>
+<a name="line-999"></a>	<span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">ue</span><span class="p">;</span>
+<a name="line-1000"></a><span class="p">}</span>
+<a name="line-1001"></a>
+<a name="line-1002"></a><span class="k">static</span> <span class="kt">void</span>
+<a name="line-1003"></a><span class="nf">axe_init</span><span class="p">(</span><span class="k">struct</span> <span class="n">usb_ether</span> <span class="o">*</span><span class="n">ue</span><span class="p">)</span>
+<a name="line-1004"></a><span class="p">{</span>
+<a name="line-1005"></a>	<span class="k">struct</span> <span class="n">axe_softc</span> <span class="o">*</span><span class="n">sc</span> <span class="o">=</span> <span class="n">uether_getsc</span><span class="p">(</span><span class="n">ue</span><span class="p">);</span>
+<a name="line-1006"></a>	<span class="k">struct</span> <span class="n">los_eth_driver</span> <span class="o">*</span><span class="n">ifp</span> <span class="o">=</span> <span class="n">ue</span><span class="o">-&gt;</span><span class="n">ue_drv_sc</span><span class="p">;</span>
+<a name="line-1007"></a>	<span class="k">struct</span> <span class="n">eth_drv_sc</span> <span class="o">*</span><span class="n">drv_sc</span> <span class="o">=</span> <span class="p">(</span><span class="k">struct</span> <span class="n">eth_drv_sc</span> <span class="o">*</span><span class="p">)</span><span class="n">ifp</span><span class="o">-&gt;</span><span class="n">driver_context</span><span class="p">;</span>
+<a name="line-1008"></a>	<span class="kt">uint16_t</span> <span class="n">rxmode</span><span class="p">;</span>
+<a name="line-1009"></a>
+<a name="line-1010"></a>	<span class="n">drv_sc</span><span class="o">-&gt;</span><span class="n">state</span> <span class="o">=</span> <span class="n">IFF_BROADCAST</span> <span class="o">|</span> <span class="n">IFF_SIMPLEX</span> <span class="o">|</span> <span class="n">IFF_MULTICAST</span><span class="p">;</span>
+<a name="line-1011"></a>
+<a name="line-1012"></a>	<span class="n">AXE_LOCK_ASSERT</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">MA_OWNED</span><span class="p">);</span>
+<a name="line-1013"></a>	<span class="k">if</span> <span class="p">((</span><span class="n">drv_sc</span><span class="o">-&gt;</span><span class="n">state</span> <span class="o">&amp;</span> <span class="n">IFF_DRV_RUNNING</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+<a name="line-1014"></a>		<span class="k">return</span><span class="p">;</span>
+<a name="line-1015"></a>
+<a name="line-1016"></a>	<span class="cm">/* Cancel pending I/O */</span>
+<a name="line-1017"></a>	<span class="n">axe_stop</span><span class="p">(</span><span class="n">ue</span><span class="p">);</span>
+<a name="line-1018"></a>	<span class="n">axe_reset</span><span class="p">(</span><span class="n">sc</span><span class="p">);</span>
+<a name="line-1019"></a>
+<a name="line-1020"></a>	<span class="cm">/* Set MAC address and transmitter IPG values. */</span>
+<a name="line-1021"></a>	<span class="k">if</span> <span class="p">(</span><span class="n">AXE_IS_178_FAMILY</span><span class="p">(</span><span class="n">sc</span><span class="p">))</span> <span class="p">{</span>
+<a name="line-1022"></a>		<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_178_CMD_READ_NODEID</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ue</span><span class="o">-&gt;</span><span class="n">ue_eaddr</span><span class="p">);</span>
+<a name="line-1023"></a>		<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_178_CMD_WRITE_IPG012</span><span class="p">,</span> <span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ipgs</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+<a name="line-1024"></a>			    <span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ipgs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="mi">8</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ipgs</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-1025"></a>	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a name="line-1026"></a>		<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_178_CMD_READ_NODEID</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">ue</span><span class="o">-&gt;</span><span class="n">ue_eaddr</span><span class="p">);</span>
+<a name="line-1027"></a>		<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_172_CMD_WRITE_IPG0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ipgs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-1028"></a>		<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_172_CMD_WRITE_IPG1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ipgs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-1029"></a>		<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_172_CMD_WRITE_IPG2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_ipgs</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-1030"></a>	<span class="p">}</span>
+<a name="line-1031"></a>	<span class="k">if</span> <span class="p">(</span><span class="n">AXE_IS_178_FAMILY</span><span class="p">(</span><span class="n">sc</span><span class="p">))</span> <span class="p">{</span>
+<a name="line-1032"></a>		<span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_flags</span> <span class="o">&amp;=</span> <span class="o">~</span><span class="p">(</span><span class="n">AXE_FLAG_STD_FRAME</span> <span class="o">|</span> <span class="n">AXE_FLAG_CSUM_FRAME</span><span class="p">);</span>
+<a name="line-1033"></a>		<span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_lenmask</span> <span class="o">=</span> <span class="n">AXE_HDR_LEN_MASK</span><span class="p">;</span>
+<a name="line-1034"></a>		<span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_flags</span> <span class="o">|=</span> <span class="n">AXE_FLAG_STD_FRAME</span><span class="p">;</span>
+<a name="line-1035"></a>	<span class="p">}</span>
+<a name="line-1036"></a>	<span class="cm">/* Configure TX/RX checksum offloading. */</span>
+<a name="line-1037"></a>	<span class="n">axe_csum_cfg</span><span class="p">(</span><span class="n">ue</span><span class="p">);</span>
+<a name="line-1038"></a>	<span class="k">if</span> <span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_flags</span> <span class="o">&amp;</span> <span class="n">AXE_FLAG_772B</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-1039"></a>		<span class="cm">/* AX88772B uses different maximum frame burst configuration. */</span>
+<a name="line-1040"></a>		<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_772B_CMD_RXCTL_WRITE_CFG</span><span class="p">,</span>
+<a name="line-1041"></a>			    <span class="n">ax88772b_mfb_table</span><span class="p">[</span><span class="n">AX88772B_MFB_16K</span><span class="p">].</span><span class="n">threshold</span><span class="p">,</span>
+<a name="line-1042"></a>			    <span class="n">ax88772b_mfb_table</span><span class="p">[</span><span class="n">AX88772B_MFB_16K</span><span class="p">].</span><span class="n">byte_cnt</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-1043"></a>	<span class="p">}</span>
+<a name="line-1044"></a>
+<a name="line-1045"></a>	<span class="cm">/* Enable receiver, set RX mode. */</span>
+<a name="line-1046"></a>	<span class="n">rxmode</span> <span class="o">=</span> <span class="p">(</span><span class="n">AXE_RXCMD_ALLMULTI</span> <span class="o">|</span> <span class="n">AXE_RXCMD_MULTICAST</span> <span class="o">|</span> <span class="n">AXE_RXCMD_ENABLE</span><span class="p">);</span>
+<a name="line-1047"></a>	<span class="k">if</span> <span class="p">(</span><span class="n">AXE_IS_178_FAMILY</span><span class="p">(</span><span class="n">sc</span><span class="p">))</span> <span class="p">{</span>
+<a name="line-1048"></a>		<span class="k">if</span> <span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_flags</span> <span class="o">&amp;</span> <span class="n">AXE_FLAG_772B</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-1049"></a>			<span class="cm">/*</span>
+<a name="line-1050"></a><span class="cm">			 * Select RX header format type 1.  Aligning IP</span>
+<a name="line-1051"></a><span class="cm">			 * header on 4 byte boundary is not needed when</span>
+<a name="line-1052"></a><span class="cm">			 * checksum offloading feature is not used</span>
+<a name="line-1053"></a><span class="cm">			 * because we always copy the received frame in</span>
+<a name="line-1054"></a><span class="cm">			 * RX handler.  When RX checksum offloading is</span>
+<a name="line-1055"></a><span class="cm">			 * active, aligning IP header is required to</span>
+<a name="line-1056"></a><span class="cm">			 * reflect actual frame length including RX</span>
+<a name="line-1057"></a><span class="cm">			 * header size.</span>
+<a name="line-1058"></a><span class="cm">			 */</span>
+<a name="line-1059"></a>			<span class="n">rxmode</span> <span class="o">|=</span> <span class="n">AXE_772B_RXCMD_HDR_TYPE_1</span><span class="p">;</span>
+<a name="line-1060"></a>		<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a name="line-1061"></a>			<span class="cm">/*</span>
+<a name="line-1062"></a><span class="cm">			 * Default Rx buffer size is too small to get</span>
+<a name="line-1063"></a><span class="cm">			 * maximum performance.</span>
+<a name="line-1064"></a><span class="cm">			 */</span>
+<a name="line-1065"></a>			<span class="k">if</span> <span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_flags</span> <span class="o">&amp;</span> <span class="n">AXE_FLAG_772A</span><span class="p">)</span>
+<a name="line-1066"></a>				<span class="n">rxmode</span> <span class="o">|=</span> <span class="n">AXE_178_RXCMD_MFB_16384</span><span class="p">;</span>
+<a name="line-1067"></a>		<span class="p">}</span>
+<a name="line-1068"></a>	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a name="line-1069"></a>		<span class="n">rxmode</span> <span class="o">|=</span> <span class="n">AXE_172_RXCMD_UNICAST</span><span class="p">;</span>
+<a name="line-1070"></a>	<span class="p">}</span>
+<a name="line-1071"></a>
+<a name="line-1072"></a>	<span class="cm">/* If we want promiscuous mode, set the allframes bit. */</span>
+<a name="line-1073"></a>	<span class="k">if</span> <span class="p">(</span><span class="n">drv_sc</span><span class="o">-&gt;</span><span class="n">state</span> <span class="o">&amp;</span> <span class="n">IFF_PROMISC</span><span class="p">)</span>
+<a name="line-1074"></a>		<span class="n">rxmode</span> <span class="o">|=</span> <span class="n">AXE_RXCMD_PROMISC</span><span class="p">;</span>
+<a name="line-1075"></a>
+<a name="line-1076"></a>	<span class="k">if</span> <span class="p">(</span><span class="n">drv_sc</span><span class="o">-&gt;</span><span class="n">state</span> <span class="o">&amp;</span> <span class="n">IFF_BROADCAST</span><span class="p">)</span>
+<a name="line-1077"></a>		<span class="n">rxmode</span> <span class="o">|=</span> <span class="n">AXE_RXCMD_BROADCAST</span><span class="p">;</span>
+<a name="line-1078"></a>
+<a name="line-1079"></a>	<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_RXCTL_WRITE</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">rxmode</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-1080"></a>
+<a name="line-1081"></a>	<span class="cm">/* Load the multicast filter. */</span>
+<a name="line-1082"></a>	<span class="n">axe_setmulti</span><span class="p">(</span><span class="n">ue</span><span class="p">);</span>
+<a name="line-1083"></a>
+<a name="line-1084"></a>	<span class="n">usbd_xfer_set_stall</span><span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_xfer</span><span class="p">[</span><span class="n">AXE_BULK_DT_WR</span><span class="p">]);</span>
+<a name="line-1085"></a>	<span class="n">usbd_xfer_set_stall</span><span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_xfer</span><span class="p">[</span><span class="n">AXE_BULK_DT_RD</span><span class="p">]);</span>
+<a name="line-1086"></a>
+<a name="line-1087"></a>	<span class="n">drv_sc</span><span class="o">-&gt;</span><span class="n">state</span> <span class="o">|=</span> <span class="n">IFF_DRV_RUNNING</span><span class="p">;</span>
+<a name="line-1088"></a>	<span class="n">ifp</span><span class="o">-&gt;</span><span class="n">ac_if</span><span class="p">.</span><span class="n">link_layer_type</span> <span class="o">=</span> <span class="n">ETHERNET_DRIVER_IF</span><span class="p">;</span>
+<a name="line-1089"></a><span class="p">}</span>
+<a name="line-1090"></a>
+<a name="line-1091"></a><span class="k">static</span> <span class="kt">void</span>
+<a name="line-1092"></a><span class="nf">axe_setpromisc</span><span class="p">(</span><span class="k">struct</span> <span class="n">usb_ether</span> <span class="o">*</span><span class="n">ue</span><span class="p">)</span>
+<a name="line-1093"></a><span class="p">{</span>
+<a name="line-1094"></a>	<span class="k">struct</span> <span class="n">axe_softc</span> <span class="o">*</span><span class="n">sc</span> <span class="o">=</span> <span class="n">uether_getsc</span><span class="p">(</span><span class="n">ue</span><span class="p">);</span>
+<a name="line-1095"></a>	<span class="k">struct</span> <span class="n">los_eth_driver</span> <span class="o">*</span><span class="n">ifp</span> <span class="o">=</span> <span class="n">ue</span><span class="o">-&gt;</span><span class="n">ue_drv_sc</span><span class="p">;</span>
+<a name="line-1096"></a>	<span class="k">struct</span> <span class="n">eth_drv_sc</span> <span class="o">*</span><span class="n">drv_sc</span> <span class="o">=</span> <span class="p">(</span><span class="k">struct</span> <span class="n">eth_drv_sc</span> <span class="o">*</span><span class="p">)</span><span class="n">ifp</span><span class="o">-&gt;</span><span class="n">driver_context</span><span class="p">;</span>
+<a name="line-1097"></a>	<span class="kt">uint16_t</span> <span class="n">rxmode</span><span class="p">;</span>
+<a name="line-1098"></a>
+<a name="line-1099"></a>	<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_RXCTL_READ</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">rxmode</span><span class="p">);</span>
+<a name="line-1100"></a>
+<a name="line-1101"></a>	<span class="n">rxmode</span> <span class="o">=</span> <span class="n">le16toh</span><span class="p">(</span><span class="n">rxmode</span><span class="p">);</span>
+<a name="line-1102"></a>
+<a name="line-1103"></a>	<span class="k">if</span> <span class="p">(</span><span class="n">drv_sc</span><span class="o">-&gt;</span><span class="n">state</span> <span class="o">&amp;</span> <span class="n">IFF_PROMISC</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-1104"></a>		<span class="n">rxmode</span> <span class="o">|=</span> <span class="n">AXE_RXCMD_PROMISC</span><span class="p">;</span>
+<a name="line-1105"></a>	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<a name="line-1106"></a>		<span class="n">rxmode</span> <span class="o">&amp;=</span> <span class="o">~</span><span class="n">AXE_RXCMD_PROMISC</span><span class="p">;</span>
+<a name="line-1107"></a>	<span class="p">}</span>
+<a name="line-1108"></a>
+<a name="line-1109"></a>	<span class="n">axe_cmd</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">AXE_CMD_RXCTL_WRITE</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">rxmode</span><span class="p">,</span> <span class="nb">NULL</span><span class="p">);</span>
+<a name="line-1110"></a>	<span class="n">axe_setmulti</span><span class="p">(</span><span class="n">ue</span><span class="p">);</span>
+<a name="line-1111"></a><span class="p">}</span>
+<a name="line-1112"></a>
+<a name="line-1113"></a><span class="k">static</span> <span class="kt">void</span>
+<a name="line-1114"></a><span class="nf">axe_tick</span><span class="p">(</span><span class="k">struct</span> <span class="n">usb_ether</span> <span class="o">*</span><span class="n">ue</span><span class="p">)</span>
+<a name="line-1115"></a><span class="p">{</span>
+<a name="line-1116"></a>	<span class="k">struct</span> <span class="n">axe_softc</span> <span class="o">*</span><span class="n">sc</span> <span class="o">=</span> <span class="n">uether_getsc</span><span class="p">(</span><span class="n">ue</span><span class="p">);</span>
+<a name="line-1117"></a>	<span class="kt">uint16_t</span> <span class="n">link_status</span><span class="p">;</span>
+<a name="line-1118"></a>
+<a name="line-1119"></a>	<span class="n">AXE_LOCK_ASSERT</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">MA_OWNED</span><span class="p">);</span>
+<a name="line-1120"></a>
+<a name="line-1121"></a>	<span class="n">link_status</span> <span class="o">=</span> <span class="n">axe_miibus_readreg</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">MII_BMSR</span><span class="p">)</span> <span class="o">&amp;</span> <span class="n">AXE_LINK_MASK</span><span class="p">;</span>
+<a name="line-1122"></a>	<span class="k">if</span> <span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_link_status</span> <span class="o">!=</span> <span class="n">link_status</span><span class="p">)</span> <span class="p">{</span>
+<a name="line-1123"></a>		<span class="n">axe_miibus_statchg</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">link_status</span><span class="p">);</span>
+<a name="line-1124"></a>		<span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_link_status</span> <span class="o">=</span> <span class="n">link_status</span><span class="p">;</span>
+<a name="line-1125"></a>	<span class="p">}</span>
+<a name="line-1126"></a><span class="p">}</span>
+<a name="line-1127"></a>
+<a name="line-1128"></a><span class="k">static</span> <span class="kt">void</span>
+<a name="line-1129"></a><span class="nf">axe_stop</span><span class="p">(</span><span class="k">struct</span> <span class="n">usb_ether</span> <span class="o">*</span><span class="n">ue</span><span class="p">)</span>
+<a name="line-1130"></a><span class="p">{</span>
+<a name="line-1131"></a>	<span class="k">struct</span> <span class="n">axe_softc</span> <span class="o">*</span><span class="n">sc</span> <span class="o">=</span> <span class="n">uether_getsc</span><span class="p">(</span><span class="n">ue</span><span class="p">);</span>
+<a name="line-1132"></a>	<span class="k">struct</span> <span class="n">los_eth_driver</span> <span class="o">*</span><span class="n">ifp</span> <span class="o">=</span> <span class="n">ue</span><span class="o">-&gt;</span><span class="n">ue_drv_sc</span><span class="p">;</span>
+<a name="line-1133"></a>	<span class="k">struct</span> <span class="n">eth_drv_sc</span> <span class="o">*</span><span class="n">drv_sc</span> <span class="o">=</span> <span class="p">(</span><span class="k">struct</span> <span class="n">eth_drv_sc</span> <span class="o">*</span><span class="p">)</span><span class="n">ifp</span><span class="o">-&gt;</span><span class="n">driver_context</span><span class="p">;</span>
+<a name="line-1134"></a>
+<a name="line-1135"></a>	<span class="n">AXE_LOCK_ASSERT</span><span class="p">(</span><span class="n">sc</span><span class="p">,</span> <span class="n">MA_OWNED</span><span class="p">);</span>
+<a name="line-1136"></a>	<span class="n">drv_sc</span><span class="o">-&gt;</span><span class="n">state</span> <span class="o">&amp;=</span> <span class="o">~</span><span class="p">(</span><span class="n">IFF_DRV_RUNNING</span> <span class="o">|</span> <span class="n">IFF_DRV_OACTIVE</span><span class="p">);</span>
+<a name="line-1137"></a>	<span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_flags</span> <span class="o">&amp;=</span> <span class="o">~</span><span class="n">AXE_FLAG_LINK</span><span class="p">;</span>
+<a name="line-1138"></a>	<span class="cm">/*</span>
+<a name="line-1139"></a><span class="cm">	 * stop all the transfers, if not already stopped:</span>
+<a name="line-1140"></a><span class="cm">	 */</span>
+<a name="line-1141"></a>	<span class="n">usbd_transfer_stop</span><span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_xfer</span><span class="p">[</span><span class="n">AXE_BULK_DT_WR</span><span class="p">]);</span>
+<a name="line-1142"></a>	<span class="n">usbd_transfer_stop</span><span class="p">(</span><span class="n">sc</span><span class="o">-&gt;</span><span class="n">sc_xfer</span><span class="p">[</span><span class="n">AXE_BULK_DT_RD</span><span class="p">]);</span>
+<a name="line-1143"></a><span class="p">}</span>
+<a name="line-1144"></a>
+<a name="line-1145"></a><span class="cp">#undef USB_DEBUG_VAR</span>
+</pre></div>
+</td></tr></table>
+      </div> <!-- /.wrapper -->
+    </div>
+    <div id="footer" class="footer">
+      <p>
+        Cppcheck 2.1 - a tool for static C/C++ code analysis<br>
+        <br>
+        Internet: <a href="http://cppcheck.net">http://cppcheck.net</a><br>
+        IRC: <a href="irc://irc.freenode.net/cppcheck">irc://irc.freenode.net/cppcheck</a><br>
+      </p>
+    </div>
+  </body>
+</html>

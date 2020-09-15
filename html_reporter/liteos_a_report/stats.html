@@ -1,0 +1,138 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Cppcheck - HTML report - [project name]</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
+    <script>
+      function getStyle(el, styleProp) {
+        var y;
+
+        if (el.currentStyle) {
+          y = el.currentStyle[styleProp];
+        } else if (window.getComputedStyle) {
+          y = document.defaultView.getComputedStyle(el, null).getPropertyValue(styleProp);
+        }
+
+        return y;
+      }
+
+      function toggle() {
+        var el = this.expandable_content;
+        var mark = this.expandable_marker;
+
+        if (el.style.display === "block") {
+          el.style.display = "none";
+          mark.textContent = "[+]";
+        } else {
+          el.style.display = "block";
+          mark.textContent = "[-]";
+        }
+      }
+
+      function initExpandables() {
+        var elements = document.querySelectorAll(".expandable");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var el = elements[i];
+          var clickable = el.querySelector("span");
+          var marker = clickable.querySelector(".marker");
+          var content = el.querySelector(".content");
+          var width = clickable.clientWidth - parseInt(getStyle(content, "padding-left")) - parseInt(getStyle(content, "padding-right"));
+          content.style.width = width + "px";
+          clickable.expandable_content = content;
+          clickable.expandable_marker = marker;
+          clickable.addEventListener("click", toggle);
+        }
+      }
+
+      function toggleDisplay(id) {
+        var elements = document.querySelectorAll("." + id);
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("d-none");
+        }
+      }
+
+      function toggleAll() {
+        var elements = document.querySelectorAll("input");
+
+        // starting from 1 since 0 is the "toggle all" input
+        for (var i = 1, len = elements.length; i < len; i++) {
+          var el = elements[i];
+
+          if (el.checked) {
+            el.checked = false;
+          } else {
+            el.checked = true;
+          }
+
+          toggleDisplay(el.id);
+        }
+      }
+      window.addEventListener("load", initExpandables);
+    </script>
+  </head>
+  <body>
+    <div id="header" class="header">
+      <h1>Cppcheck report - [project name]: Statistics</h1>
+    </div>
+    <div class="wrapper">
+      <div id="menu_index">
+       <p id="filename"><a href="index.html">Back to summary</a> </p>
+
+    </div>
+    <div id="content_index">
+<p>Top 10 files for error severity, total findings: 219<br>
+&#160;&#160;&#160;20&#160;<a href="33.html">  kernel/liteos_a/bsd/dev/usb/storage/umass.c</a><br>
+&#160;&#160;&#160;17&#160;<a href="106.html">  kernel/liteos_a/syscall/process_syscall.c</a><br>
+&#160;&#160;&#160;15&#160;<a href="48.html">  kernel/liteos_a/compat/posix/src/time.c</a><br>
+&#160;&#160;&#160;11&#160;<a href="64.html">  kernel/liteos_a/kernel/base/ipc/los_futex.c</a><br>
+&#160;&#160;&#160;11&#160;<a href="12.html">  kernel/liteos_a/bsd/dev/usb/controller/xhci.c</a><br>
+&#160;&#160;&#160;10&#160;<a href="11.html">  kernel/liteos_a/bsd/dev/usb/controller/ehci.c</a><br>
+&#160;&#160;&#160;9&#160;&#160;<a href="49.html">  kernel/liteos_a/fs/fat/os_adapt/fat_shellcmd.c</a><br>
+&#160;&#160;&#160;7&#160;&#160;<a href="77.html">  kernel/liteos_a/kernel/common/hwi_shell.c</a><br>
+&#160;&#160;&#160;7&#160;&#160;<a href="65.html">  kernel/liteos_a/kernel/base/ipc/los_signal.c</a><br>
+&#160;&#160;&#160;7&#160;&#160;<a href="55.html">  kernel/liteos_a/fs/vfs/bcache/src/bcache.c</a><br>
+</p>
+<p>Top 10 files for style severity, total findings: 159<br>
+&#160;&#160;&#160;35&#160;<a href="35.html">  kernel/liteos_a/bsd/dev/usb/storage/scsi.h</a><br>
+&#160;&#160;&#160;18&#160;<a href="88.html">  kernel/liteos_a/net/lwip-2.1/enhancement/src/api_shell.c</a><br>
+&#160;&#160;&#160;12&#160;<a href="60.html">  kernel/liteos_a/fs/vfs/vfs_cmd/vfs_shellcmd.c</a><br>
+&#160;&#160;&#160;10&#160;<a href="52.html">  kernel/liteos_a/fs/proc/os_adapt/mounts_proc.c</a><br>
+&#160;&#160;&#160;10&#160;<a href="33.html">  kernel/liteos_a/bsd/dev/usb/storage/umass.c</a><br>
+&#160;&#160;&#160;9&#160;&#160;<a href="105.html">  kernel/liteos_a/syscall/net_syscall.c</a><br>
+&#160;&#160;&#160;5&#160;&#160;<a href="40.html">  kernel/liteos_a/bsd/dev/usb/usb_generic.c</a><br>
+&#160;&#160;&#160;4&#160;&#160;<a href="34.html">  kernel/liteos_a/bsd/dev/usb/storage/scsi_all.h</a><br>
+&#160;&#160;&#160;4&#160;&#160;<a href="25.html">  kernel/liteos_a/bsd/dev/usb/net/if_cdcereg.h</a><br>
+&#160;&#160;&#160;2&#160;&#160;<a href="66.html">  kernel/liteos_a/kernel/base/mem/bestfit/los_memory.c</a><br>
+</p>
+<p>Top 10 files for information severity, total findings: 28<br>
+&#160;&#160;&#160;3&#160;<a href="28.html">  kernel/liteos_a/bsd/dev/usb/net/usb_eth_drv.c</a><br>
+&#160;&#160;&#160;3&#160;<a href="26.html">  kernel/liteos_a/bsd/dev/usb/net/if_urndis.c</a><br>
+&#160;&#160;&#160;3&#160;<a href="23.html">  kernel/liteos_a/bsd/dev/usb/net/if_axge.c</a><br>
+&#160;&#160;&#160;3&#160;<a href="20.html">  kernel/liteos_a/bsd/dev/usb/net/if_axe.c</a><br>
+&#160;&#160;&#160;2&#160;<a href="90.html">  kernel/liteos_a/net/lwip-2.1/porting/src/driverif.c</a><br>
+&#160;&#160;&#160;1&#160;<a href="91.html">  kernel/liteos_a/net/lwip-2.1/porting/src/sockets.c</a><br>
+&#160;&#160;&#160;1&#160;<a href="88.html">  kernel/liteos_a/net/lwip-2.1/enhancement/src/api_shell.c</a><br>
+&#160;&#160;&#160;1&#160;<a href="84.html">  kernel/liteos_a/kernel/common/virtual_serial.c</a><br>
+&#160;&#160;&#160;1&#160;<a href="81.html">  kernel/liteos_a/kernel/common/los_printf.c</a><br>
+&#160;&#160;&#160;1&#160;<a href="79.html">  kernel/liteos_a/kernel/common/los_exc_interaction.c</a><br>
+</p>
+
+      </div> <!-- /.wrapper -->
+    </div>
+    <div id="footer" class="footer">
+      <p>
+        Cppcheck 2.1 - a tool for static C/C++ code analysis<br>
+        <br>
+        Internet: <a href="http://cppcheck.net">http://cppcheck.net</a><br>
+        IRC: <a href="irc://irc.freenode.net/cppcheck">irc://irc.freenode.net/cppcheck</a><br>
+      </p>
+    </div>
+  </body>
+</html>

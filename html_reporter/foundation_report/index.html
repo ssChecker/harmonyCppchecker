@@ -1,0 +1,281 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Cppcheck - HTML report - [project name]</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
+    <script>
+      function getStyle(el, styleProp) {
+        var y;
+
+        if (el.currentStyle) {
+          y = el.currentStyle[styleProp];
+        } else if (window.getComputedStyle) {
+          y = document.defaultView.getComputedStyle(el, null).getPropertyValue(styleProp);
+        }
+
+        return y;
+      }
+
+      function toggle() {
+        var el = this.expandable_content;
+        var mark = this.expandable_marker;
+
+        if (el.style.display === "block") {
+          el.style.display = "none";
+          mark.textContent = "[+]";
+        } else {
+          el.style.display = "block";
+          mark.textContent = "[-]";
+        }
+      }
+
+      function initExpandables() {
+        var elements = document.querySelectorAll(".expandable");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var el = elements[i];
+          var clickable = el.querySelector("span");
+          var marker = clickable.querySelector(".marker");
+          var content = el.querySelector(".content");
+          var width = clickable.clientWidth - parseInt(getStyle(content, "padding-left")) - parseInt(getStyle(content, "padding-right"));
+          content.style.width = width + "px";
+          clickable.expandable_content = content;
+          clickable.expandable_marker = marker;
+          clickable.addEventListener("click", toggle);
+        }
+      }
+
+      function toggleDisplay(id) {
+        var elements = document.querySelectorAll("." + id);
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("d-none");
+        }
+      }
+
+      function toggleAll() {
+        var elements = document.querySelectorAll("input");
+
+        // starting from 1 since 0 is the "toggle all" input
+        for (var i = 1, len = elements.length; i < len; i++) {
+          var el = elements[i];
+
+          if (el.checked) {
+            el.checked = false;
+          } else {
+            el.checked = true;
+          }
+
+          toggleDisplay(el.id);
+        }
+      }
+      window.addEventListener("load", initExpandables);
+    </script>
+  </head>
+  <body>
+    <div id="header" class="header">
+      <h1>Cppcheck report - [project name]: </h1>
+    </div>
+    <div class="wrapper">
+      <div id="menu_index">
+       <p id="filename"><a href="index.html">Defect summary;</a> </p>
+
+       <label><input type="checkbox" onclick="toggleAll()" checked> Toggle all</label>
+       <table>
+           <tr><th>Show</th><th>#</th><th>Defect ID</th></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="bughuntingUninit" name="bughuntingUninit" checked></td><td>60</td><td>bughuntingUninit</td></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="cert-EXP05-C" name="cert-EXP05-C" checked></td><td>21</td><td>cert-EXP05-C</td></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="bughuntingDivByZero" name="bughuntingDivByZero" checked></td><td>8</td><td>bughuntingDivByZero</td></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="cert-API01-C" name="cert-API01-C" checked></td><td>7</td><td>cert-API01-C</td></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="bughuntingUninitArg" name="bughuntingUninitArg" checked></td><td>6</td><td>bughuntingUninitArg</td></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="cert-INT31-c" name="cert-INT31-c" checked></td><td>4</td><td>cert-INT31-c</td></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="cert-MSC24-C" name="cert-MSC24-C" checked></td><td>3</td><td>cert-MSC24-C</td></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="bughuntingInvalidArgValue" name="bughuntingInvalidArgValue" checked></td><td>2</td><td>bughuntingInvalidArgValue</td></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="toomanyconfigs" name="toomanyconfigs" checked></td><td>2</td><td>toomanyconfigs</td></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="cert-STR05-C" name="cert-STR05-C" checked></td><td>1</td><td>cert-STR05-C</td></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="missingInclude" name="missingInclude" checked></td><td>1</td><td>missingInclude</td></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="syntaxError" name="syntaxError" checked></td><td>1</td><td>syntaxError</td></tr>
+           <tr><td></td><td>116</td><td>total</td></tr>
+       </table>
+       <p><a href="stats.html">Statistics</a></p>
+    </div>
+    <div id="content_index">
+
+       <table>
+       <tr><th>Line</th><th>Id</th><th>CWE</th><th>Severity</th><th>Message</th></tr>
+       <tr><td colspan="5"><a href="41.html"></a></td></tr>
+         <tr class="missingInclude"><td></td><td>missingInclude</td><td></td><td>information</td><td>Cppcheck cannot find all the include files (use --check-config for details)</td></tr>
+       <tr><td colspan="5"><a href="0.html">foundation/aafwk/services/abilitymgr_lite/tools/src/main.cpp</a></td></tr>
+       <tr class="bughuntingUninit"><td><a href="0.html#line-49">49</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;argv[1]&apos; is initialized</td></tr>
+       <tr><td colspan="5"><a href="1.html">foundation/ace/frameworks/lite/src/core/animation/transition_impl.cpp</a></td></tr>
+       <tr class="bughuntingUninit"><td><a href="1.html#line-170">170</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;easingType_[EasingType::EASE_IN]&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="1.html#line-172">172</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;easingType_[EasingType::EASE_OUT]&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="1.html#line-174">174</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;easingType_[EasingType::EASE_IN_OUT]&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="1.html#line-237">237</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;isTransitionSet_[GeneralType::IS_HEIGHT_TRANSITION_SET]&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="1.html#line-240">240</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;isTransitionSet_[GeneralType::IS_WIDTH_TRANSITION_SET]&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="1.html#line-244">244</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;isTransitionSet_[GeneralType::IS_OPCITY_TRANSITION_SET]&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="1.html#line-248">248</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;isTransitionSet_[GeneralType::IS_BACKGROUND_COLOR_TRANSITION_SET]&apos; is initialized</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="1.html#line-270">270</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="1.html#line-271">271</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="1.html#line-272">272</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="1.html#line-323">323</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="cert-INT31-c"><td><a href="1.html#line-352">352</a></td><td>cert-INT31-c</td><td></td><td>style</td><td >Ensure that integer conversions do not result in lost or misinterpreted data (casting 128 to signed char)</td></tr>
+       <tr><td colspan="5"><a href="2.html">foundation/ace/frameworks/lite/src/core/base/ace_mem_base.cpp</a></td></tr>
+       <tr class="bughuntingInvalidArgValue"><td><a href="2.html#line-67">67</a></td><td>bughuntingInvalidArgValue</td><td></td><td>error</td><td class="error">There is function call, cannot determine that 1st argument value is valid. Bad value: less than 1</td></tr>
+       <tr><td colspan="5"><a href="3.html">foundation/ace/frameworks/lite/src/core/base/js_fwk_common.cpp</a></td></tr>
+       <tr class="toomanyconfigs"><td><a href="3.html#line-0">0</a></td><td>toomanyconfigs</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>information</td><td >Too many #ifdef configurations - cppcheck only checks 12 of 14 configurations. Use --force to check all configurations.</td></tr>
+       <tr class="cert-INT31-c"><td><a href="3.html#line-1066">1066</a></td><td>cert-INT31-c</td><td></td><td>style</td><td >Ensure that integer conversions do not result in lost or misinterpreted data (casting -1 to unsigned char)</td></tr>
+       <tr><td colspan="5"><a href="4.html">foundation/ace/frameworks/lite/src/core/base/key_parser.cpp</a></td></tr>
+       <tr class="toomanyconfigs"><td><a href="4.html#line-0">0</a></td><td>toomanyconfigs</td><td><a href="https://cwe.mitre.org/data/definitions/398.html">398</a></td><td>information</td><td >Too many #ifdef configurations - cppcheck only checks 12 of 13 configurations. Use --force to check all configurations.</td></tr>
+       <tr><td colspan="5"><a href="5.html">foundation/ace/frameworks/lite/src/core/base/keys.h</a></td></tr>
+       <tr class="syntaxError"><td><a href="5.html#line-223">223</a></td><td>syntaxError</td><td></td><td>error</td><td class="error">syntax error</td></tr>
+       <tr><td colspan="5"><a href="6.html">foundation/ace/frameworks/lite/src/core/components/component.cpp</a></td></tr>
+       <tr class="bughuntingUninitArg"><td><a href="6.html#line-828">828</a></td><td>bughuntingUninitArg</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">There is function call, cannot determine that 1st argument is initialized.</td></tr>
+       <tr><td colspan="5"><a href="7.html">foundation/ace/frameworks/lite/src/core/components/tab_bar_component.cpp</a></td></tr>
+       <tr class="cert-STR05-C"><td><a href="7.html#line-132">132</a></td><td>cert-STR05-C</td><td></td><td>style</td><td >Use pointers to const when referring to string literals</td></tr>
+       <tr><td colspan="5"><a href="8.html">foundation/ace/frameworks/lite/src/core/components/video_component.cpp</a></td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="8.html#line-391">391</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr><td colspan="5"><a href="9.html">foundation/ace/frameworks/lite/src/core/components/video_view.cpp</a></td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="9.html#line-443">443</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="9.html#line-450">450</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="9.html#line-456">456</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr><td colspan="5"><a href="10.html">foundation/ace/frameworks/lite/src/core/modules/module_manager.cpp</a></td></tr>
+       <tr class="bughuntingUninit"><td><a href="10.html#line-170">170</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;count&apos; is initialized</td></tr>
+       <tr><td colspan="5"><a href="11.html">foundation/ace/frameworks/lite/src/core/modules/presets/cjson_parser.cpp</a></td></tr>
+       <tr class="bughuntingUninitArg"><td><a href="11.html#line-301">301</a></td><td>bughuntingUninitArg</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">There is function call, cannot determine that 1st argument is initialized.</td></tr>
+       <tr class="bughuntingUninit"><td><a href="11.html#line-669">669</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;allCountries_[index]&apos; is initialized</td></tr>
+       <tr><td colspan="5"><a href="12.html">foundation/ace/frameworks/lite/src/core/modules/presets/timer_module.cpp</a></td></tr>
+       <tr class="cert-INT31-c"><td><a href="12.html#line-133">133</a></td><td>cert-INT31-c</td><td></td><td>style</td><td >Ensure that integer conversions do not result in lost or misinterpreted data (casting -1 to unsigned char)</td></tr>
+       <tr><td colspan="5"><a href="13.html">foundation/ace/frameworks/lite/src/core/router/js_page_state_machine.cpp</a></td></tr>
+       <tr class="bughuntingUninit"><td><a href="13.html#line-61">61</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;stateMap_[i]&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="13.html#line-251">251</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;stateMap_[newState]&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="13.html#line-252">252</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;state&apos; is initialized</td></tr>
+       <tr><td colspan="5"><a href="14.html">foundation/appexecfwk/services/bundlemgr_lite/src/zip_file.cpp</a></td></tr>
+       <tr class="cert-MSC24-C"><td><a href="14.html#line-192">192</a></td><td>cert-MSC24-C</td><td></td><td>style</td><td >Do not use fopen() better use fopen_s()</td></tr>
+       <tr><td colspan="5"><a href="15.html">foundation/communication/frameworks/ipc_lite/liteipc/src/liteipc_adapter.c</a></td></tr>
+       <tr class="cert-API01-C"><td><a href="15.html#line-55">55</a></td><td>cert-API01-C</td><td></td><td>style</td><td >Avoid laying out strings in memory directly before sensitive data</td></tr>
+       <tr><td colspan="5"><a href="16.html">foundation/communication/frameworks/ipc_lite/liteipc/src/serializer.c</a></td></tr>
+       <tr class="cert-EXP05-C"><td><a href="16.html#line-233">233</a></td><td>cert-EXP05-C</td><td></td><td>style</td><td >Attempt to cast away const</td></tr>
+       <tr class="bughuntingUninit"><td><a href="16.html#line-496">496</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;*size&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="16.html#line-499">499</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;*size&apos; is initialized</td></tr>
+       <tr><td colspan="5"><a href="17.html">foundation/communication/services/softbus_lite/authmanager/source/auth_interface.c</a></td></tr>
+       <tr class="bughuntingInvalidArgValue"><td><a href="17.html#line-37">37</a></td><td>bughuntingInvalidArgValue</td><td></td><td>error</td><td class="error">There is function call, cannot determine that 1st argument value is valid. Bad value: less than 0</td></tr>
+       <tr class="cert-EXP05-C"><td><a href="17.html#line-451">451</a></td><td>cert-EXP05-C</td><td></td><td>style</td><td >Attempt to cast away const</td></tr>
+       <tr><td colspan="5"><a href="18.html">foundation/communication/services/softbus_lite/authmanager/source/wifi_auth_manager.c</a></td></tr>
+       <tr class="cert-EXP05-C"><td><a href="18.html#line-434">434</a></td><td>cert-EXP05-C</td><td></td><td>style</td><td >Attempt to cast away const</td></tr>
+       <tr><td colspan="5"><a href="19.html">foundation/communication/services/softbus_lite/discovery/coap/source/coap_adapter.c</a></td></tr>
+       <tr class="bughuntingUninit"><td><a href="19.html#line-37">37</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;*value&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="19.html#line-39">39</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;*headerLen&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="19.html#line-48">48</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;*value&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="19.html#line-49">49</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;*headerLen&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="19.html#line-50">50</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;*headerLen&apos; is initialized</td></tr>
+       <tr class="cert-INT31-c"><td><a href="19.html#line-60">60</a></td><td>cert-INT31-c</td><td></td><td>style</td><td >Ensure that integer conversions do not result in lost or misinterpreted data (casting 65536 to unsigned short)</td></tr>
+       <tr class="bughuntingUninit"><td><a href="19.html#line-65">65</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;*value&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="19.html#line-102">102</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;*runningDelta&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="19.html#line-107">107</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;*runningDelta&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="19.html#line-558">558</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;*len&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="19.html#line-567">567</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;*len&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="19.html#line-570">570</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;*len&apos; is initialized</td></tr>
+       <tr class="cert-EXP05-C"><td><a href="19.html#line-615">615</a></td><td>cert-EXP05-C</td><td></td><td>style</td><td >Attempt to cast away const</td></tr>
+       <tr class="cert-EXP05-C"><td><a href="19.html#line-620">620</a></td><td>cert-EXP05-C</td><td></td><td>style</td><td >Attempt to cast away const</td></tr>
+       <tr class="cert-EXP05-C"><td><a href="19.html#line-626">626</a></td><td>cert-EXP05-C</td><td></td><td>style</td><td >Attempt to cast away const</td></tr>
+       <tr><td colspan="5"><a href="20.html">foundation/communication/services/softbus_lite/discovery/coap/source/coap_discover.c</a></td></tr>
+       <tr class="cert-EXP05-C"><td><a href="20.html#line-92">92</a></td><td>cert-EXP05-C</td><td></td><td>style</td><td >Attempt to cast away const</td></tr>
+       <tr><td colspan="5"><a href="21.html">foundation/communication/services/softbus_lite/discovery/coap/source/coap_socket.c</a></td></tr>
+       <tr class="cert-EXP05-C"><td><a href="21.html#line-108">108</a></td><td>cert-EXP05-C</td><td></td><td>style</td><td >Attempt to cast away const</td></tr>
+       <tr><td colspan="5"><a href="22.html">foundation/communication/services/softbus_lite/discovery/coap/source/json_payload.c</a></td></tr>
+       <tr class="cert-EXP05-C"><td><a href="22.html#line-296">296</a></td><td>cert-EXP05-C</td><td></td><td>style</td><td >Attempt to cast away const</td></tr>
+       <tr><td colspan="5"><a href="23.html">foundation/communication/services/softbus_lite/discovery/coap/source/nstackx_device.c</a></td></tr>
+       <tr class="bughuntingUninitArg"><td><a href="23.html#line-206">206</a></td><td>bughuntingUninitArg</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">There is function call, cannot determine that 3rd argument is initialized.</td></tr>
+       <tr><td colspan="5"><a href="24.html">foundation/communication/services/softbus_lite/discovery/discovery_service/source/discovery_service.c</a></td></tr>
+       <tr class="cert-API01-C"><td><a href="24.html#line-29">29</a></td><td>cert-API01-C</td><td></td><td>style</td><td >Avoid laying out strings in memory directly before sensitive data</td></tr>
+       <tr class="cert-API01-C"><td><a href="24.html#line-40">40</a></td><td>cert-API01-C</td><td></td><td>style</td><td >Avoid laying out strings in memory directly before sensitive data</td></tr>
+       <tr class="bughuntingUninitArg"><td><a href="24.html#line-92">92</a></td><td>bughuntingUninitArg</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">There is function call, cannot determine that 3rd argument is initialized.</td></tr>
+       <tr class="bughuntingUninitArg"><td><a href="24.html#line-97">97</a></td><td>bughuntingUninitArg</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">There is function call, cannot determine that 3rd argument is initialized.</td></tr>
+       <tr><td colspan="5"><a href="25.html">foundation/communication/services/softbus_lite/os_adapter/source/L0/os_adapter.c</a></td></tr>
+       <tr class="bughuntingUninit"><td><a href="25.html#line-64">64</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;*fd&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="25.html#line-65">65</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;*fd&apos; is initialized</td></tr>
+       <tr class="cert-EXP05-C"><td><a href="25.html#line-75">75</a></td><td>cert-EXP05-C</td><td></td><td>style</td><td >Attempt to cast away const</td></tr>
+       <tr><td colspan="5"><a href="26.html">foundation/communication/services/softbus_lite/os_adapter/source/L1/os_adapter.c</a></td></tr>
+       <tr class="bughuntingUninit"><td><a href="26.html#line-64">64</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;*fd&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="26.html#line-65">65</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;*fd&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="26.html#line-111">111</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;*bufferSize&apos; is initialized</td></tr>
+       <tr><td colspan="5"><a href="27.html">foundation/communication/services/softbus_lite/trans_service/source/libdistbus/tcp_session.h</a></td></tr>
+       <tr class="cert-API01-C"><td><a href="27.html#line-35">35</a></td><td>cert-API01-C</td><td></td><td>style</td><td >Avoid laying out strings in memory directly before sensitive data</td></tr>
+       <tr><td colspan="5"><a href="28.html">foundation/communication/services/softbus_lite/trans_service/source/libdistbus/tcp_session_manager.c</a></td></tr>
+       <tr class="cert-API01-C"><td><a href="28.html#line-79">79</a></td><td>cert-API01-C</td><td></td><td>style</td><td >Avoid laying out strings in memory directly before sensitive data</td></tr>
+       <tr class="cert-EXP05-C"><td><a href="28.html#line-391">391</a></td><td>cert-EXP05-C</td><td></td><td>style</td><td >Attempt to cast away const</td></tr>
+       <tr class="cert-EXP05-C"><td><a href="28.html#line-603">603</a></td><td>cert-EXP05-C</td><td></td><td>style</td><td >Attempt to cast away const</td></tr>
+       <tr class="bughuntingUninitArg"><td><a href="28.html#line-618">618</a></td><td>bughuntingUninitArg</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">There is function call, cannot determine that 1st argument is initialized.</td></tr>
+       <tr class="cert-EXP05-C"><td><a href="28.html#line-1091">1091</a></td><td>cert-EXP05-C</td><td></td><td>style</td><td >Attempt to cast away const</td></tr>
+       <tr><td colspan="5"><a href="29.html">foundation/distributedschedule/services/dtbschedmgr_lite/source/dmslite.c</a></td></tr>
+       <tr class="cert-EXP05-C"><td><a href="29.html#line-60">60</a></td><td>cert-EXP05-C</td><td></td><td>style</td><td >Attempt to cast away const</td></tr>
+       <tr><td colspan="5"><a href="30.html">foundation/distributedschedule/services/dtbschedmgr_lite/source/dmslite_tlv_common.c</a></td></tr>
+       <tr class="bughuntingUninit"><td><a href="30.html#line-46">46</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;*len&apos; is initialized</td></tr>
+       <tr><td colspan="5"><a href="31.html">foundation/distributedschedule/services/samgr_lite/samgr/source/samgr_lite.c</a></td></tr>
+       <tr class="cert-EXP05-C"><td><a href="31.html#line-249">249</a></td><td>cert-EXP05-C</td><td></td><td>style</td><td >Attempt to cast away const</td></tr>
+       <tr class="cert-EXP05-C"><td><a href="31.html#line-453">453</a></td><td>cert-EXP05-C</td><td></td><td>style</td><td >Attempt to cast away const</td></tr>
+       <tr><td colspan="5"><a href="32.html">foundation/distributedschedule/services/samgr_lite/samgr/source/service.c</a></td></tr>
+       <tr class="cert-EXP05-C"><td><a href="32.html#line-140">140</a></td><td>cert-EXP05-C</td><td></td><td>style</td><td >Attempt to cast away const</td></tr>
+       <tr class="cert-EXP05-C"><td><a href="32.html#line-156">156</a></td><td>cert-EXP05-C</td><td></td><td>style</td><td >Attempt to cast away const</td></tr>
+       <tr class="cert-EXP05-C"><td><a href="32.html#line-171">171</a></td><td>cert-EXP05-C</td><td></td><td>style</td><td >Attempt to cast away const</td></tr>
+       <tr><td colspan="5"><a href="33.html">foundation/distributedschedule/services/samgr_lite/samgr_endpoint/source/sa_store.h</a></td></tr>
+       <tr class="cert-API01-C"><td><a href="33.html#line-35">35</a></td><td>cert-API01-C</td><td></td><td>style</td><td >Avoid laying out strings in memory directly before sensitive data</td></tr>
+       <tr class="cert-API01-C"><td><a href="33.html#line-41">41</a></td><td>cert-API01-C</td><td></td><td>style</td><td >Avoid laying out strings in memory directly before sensitive data</td></tr>
+       <tr><td colspan="5"><a href="34.html">foundation/distributedschedule/services/samgr_lite/samgr_server/source/samgr_server.c</a></td></tr>
+       <tr class="cert-EXP05-C"><td><a href="34.html#line-411">411</a></td><td>cert-EXP05-C</td><td></td><td>style</td><td >Attempt to cast away const</td></tr>
+       <tr class="cert-EXP05-C"><td><a href="34.html#line-412">412</a></td><td>cert-EXP05-C</td><td></td><td>style</td><td >Attempt to cast away const</td></tr>
+       <tr><td colspan="5"><a href="35.html">foundation/graphic/lite/frameworks/ui/src/common/image.cpp</a></td></tr>
+       <tr class="cert-MSC24-C"><td><a href="35.html#line-212">212</a></td><td>cert-MSC24-C</td><td></td><td>style</td><td >Do not use fopen() better use fopen_s()</td></tr>
+       <tr class="cert-MSC24-C"><td><a href="35.html#line-315">315</a></td><td>cert-MSC24-C</td><td></td><td>style</td><td >Do not use fopen() better use fopen_s()</td></tr>
+       <tr><td colspan="5"><a href="36.html">foundation/graphic/lite/services/wms/src/server/lite_win.cpp</a></td></tr>
+       <tr class="bughuntingUninit"><td><a href="36.html#line-136">136</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;ret.full&apos; is initialized</td></tr>
+       <tr><td colspan="5"><a href="37.html">foundation/multimedia/frameworks/camera_lite/camera_device.cpp</a></td></tr>
+       <tr class="bughuntingUninit"><td><a href="37.html#line-294">294</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;vencHdls_[i]&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="37.html#line-304">304</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;vencHdls_[i]&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="37.html#line-321">321</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;vencHdls_[i]&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="37.html#line-322">322</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;vencHdls_[i]&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="37.html#line-335">335</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;vencAttr_[i]&apos; is initialized</td></tr>
+       <tr><td colspan="5"><a href="38.html">foundation/multimedia/frameworks/player_lite/player_control/sink/player_audio_sink.cpp</a></td></tr>
+       <tr class="bughuntingUninit"><td><a href="38.html#line-160">160</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;frameCacheQue_[0]&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="38.html#line-170">170</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;frameCacheQue_[0]&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="38.html#line-172">172</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;frame&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="38.html#line-186">186</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;frameCacheQue_[i]&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="38.html#line-197">197</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;frameReleaseQue_[0]&apos; is initialized</td></tr>
+       <tr><td colspan="5"><a href="39.html">foundation/multimedia/frameworks/player_lite/player_control/sink/player_sink_manager.cpp</a></td></tr>
+       <tr class="bughuntingUninit"><td><a href="39.html#line-70">70</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;m_audioSinkInfo_[m_audioSinkNum_]&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="39.html#line-80">80</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;m_videoSinkInfo_[m_videoSinkNum_]&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="39.html#line-370">370</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;audioStatus.audFrameCount&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="39.html#line-375">375</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;videoStatus.vidFrameCount&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="39.html#line-376">376</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;videoStatus.decHeight&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="39.html#line-377">377</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;videoStatus.decWidth&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="39.html#line-378">378</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;videoStatus.fpsDecimal&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="39.html#line-379">379</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;videoStatus.fpsInteger&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="39.html#line-432">432</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;audioPos&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="39.html#line-433">433</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;videoPos&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="39.html#line-434">434</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;audioPos&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="39.html#line-434">434</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;videoPos&apos; is initialized</td></tr>
+       <tr><td colspan="5"><a href="40.html">foundation/multimedia/frameworks/player_lite/player_control/sink/player_video_sink.cpp</a></td></tr>
+       <tr class="bughuntingUninit"><td><a href="40.html#line-219">219</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;frameCacheQue_[0]&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="40.html#line-229">229</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;frameCacheQue_[0]&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="40.html#line-231">231</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;frame&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="40.html#line-245">245</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;frameCacheQue_[i]&apos; is initialized</td></tr>
+       <tr class="bughuntingUninit"><td><a href="40.html#line-256">256</a></td><td>bughuntingUninit</td><td><a href="https://cwe.mitre.org/data/definitions/457.html">457</a></td><td>error</td><td class="error">Cannot determine that &apos;frameReleaseQue_[0]&apos; is initialized</td></tr>
+       </table>
+      </div> <!-- /.wrapper -->
+    </div>
+    <div id="footer" class="footer">
+      <p>
+        Cppcheck 2.1 - a tool for static C/C++ code analysis<br>
+        <br>
+        Internet: <a href="http://cppcheck.net">http://cppcheck.net</a><br>
+        IRC: <a href="irc://irc.freenode.net/cppcheck">irc://irc.freenode.net/cppcheck</a><br>
+      </p>
+    </div>
+  </body>
+</html>

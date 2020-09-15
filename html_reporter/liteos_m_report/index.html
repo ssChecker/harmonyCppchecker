@@ -1,0 +1,171 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Cppcheck - HTML report - [project name]</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+
+    </style>
+    <script>
+      function getStyle(el, styleProp) {
+        var y;
+
+        if (el.currentStyle) {
+          y = el.currentStyle[styleProp];
+        } else if (window.getComputedStyle) {
+          y = document.defaultView.getComputedStyle(el, null).getPropertyValue(styleProp);
+        }
+
+        return y;
+      }
+
+      function toggle() {
+        var el = this.expandable_content;
+        var mark = this.expandable_marker;
+
+        if (el.style.display === "block") {
+          el.style.display = "none";
+          mark.textContent = "[+]";
+        } else {
+          el.style.display = "block";
+          mark.textContent = "[-]";
+        }
+      }
+
+      function initExpandables() {
+        var elements = document.querySelectorAll(".expandable");
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          var el = elements[i];
+          var clickable = el.querySelector("span");
+          var marker = clickable.querySelector(".marker");
+          var content = el.querySelector(".content");
+          var width = clickable.clientWidth - parseInt(getStyle(content, "padding-left")) - parseInt(getStyle(content, "padding-right"));
+          content.style.width = width + "px";
+          clickable.expandable_content = content;
+          clickable.expandable_marker = marker;
+          clickable.addEventListener("click", toggle);
+        }
+      }
+
+      function toggleDisplay(id) {
+        var elements = document.querySelectorAll("." + id);
+
+        for (var i = 0, len = elements.length; i < len; i++) {
+          elements[i].classList.toggle("d-none");
+        }
+      }
+
+      function toggleAll() {
+        var elements = document.querySelectorAll("input");
+
+        // starting from 1 since 0 is the "toggle all" input
+        for (var i = 1, len = elements.length; i < len; i++) {
+          var el = elements[i];
+
+          if (el.checked) {
+            el.checked = false;
+          } else {
+            el.checked = true;
+          }
+
+          toggleDisplay(el.id);
+        }
+      }
+      window.addEventListener("load", initExpandables);
+    </script>
+  </head>
+  <body>
+    <div id="header" class="header">
+      <h1>Cppcheck report - [project name]: </h1>
+    </div>
+    <div class="wrapper">
+      <div id="menu_index">
+       <p id="filename"><a href="index.html">Defect summary;</a> </p>
+
+       <label><input type="checkbox" onclick="toggleAll()" checked> Toggle all</label>
+       <table>
+           <tr><th>Show</th><th>#</th><th>Defect ID</th></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="bughuntingDivByZero" name="bughuntingDivByZero" checked></td><td>43</td><td>bughuntingDivByZero</td></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="ConfigurationNotChecked" name="ConfigurationNotChecked" checked></td><td>3</td><td>ConfigurationNotChecked</td></tr>
+            <tr><td><input type="checkbox" onclick="toggleDisplay(this.id)" id="missingInclude" name="missingInclude" checked></td><td>1</td><td>missingInclude</td></tr>
+           <tr><td></td><td>47</td><td>total</td></tr>
+       </table>
+       <p><a href="stats.html">Statistics</a></p>
+    </div>
+    <div id="content_index">
+
+       <table>
+       <tr><th>Line</th><th>Id</th><th>CWE</th><th>Severity</th><th>Message</th></tr>
+       <tr><td colspan="5"><a href="9.html"></a></td></tr>
+         <tr class="missingInclude"><td></td><td>missingInclude</td><td></td><td>information</td><td>Cppcheck cannot find all the include files (use --check-config for details)</td></tr>
+       <tr><td colspan="5"><a href="0.html">kernel/liteos_m/arch/arm/cortex-m/src/los_hw_tick.c</a></td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="0.html#line-72">72</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr><td colspan="5"><a href="1.html">kernel/liteos_m/kernel/base/core/los_swtmr.c</a></td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="1.html#line-104">104</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="1.html#line-218">218</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="1.html#line-222">222</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="1.html#line-244">244</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="1.html#line-245">245</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="1.html#line-246">246</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="1.html#line-322">322</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="1.html#line-358">358</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="1.html#line-384">384</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="1.html#line-686">686</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="1.html#line-695">695</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="1.html#line-697">697</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="1.html#line-699">699</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="1.html#line-742">742</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="1.html#line-784">784</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="1.html#line-827">827</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr><td colspan="5"><a href="2.html">kernel/liteos_m/kernel/base/core/los_sys.c</a></td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="2.html#line-114">114</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="2.html#line-145">145</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr><td colspan="5"><a href="3.html">kernel/liteos_m/kernel/base/core/los_task.c</a></td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="3.html#line-155">155</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="3.html#line-282">282</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="3.html#line-498">498</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="3.html#line-499">499</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="3.html#line-500">500</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="3.html#line-501">501</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="3.html#line-502">502</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="3.html#line-503">503</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="3.html#line-1444">1444</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr><td colspan="5"><a href="4.html">kernel/liteos_m/kernel/base/mem/bestfit/los_memory.c</a></td></tr>
+       <tr class="ConfigurationNotChecked"><td><a href="4.html#line-86">86</a></td><td>ConfigurationNotChecked</td><td></td><td>information</td><td >Skipping configuration &apos;OS_SYS_NOCACHEMEM_SIZE&apos; since the value of &apos;OS_SYS_NOCACHEMEM_SIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.</td></tr>
+       <tr class="ConfigurationNotChecked"><td><a href="4.html#line-109">109</a></td><td>ConfigurationNotChecked</td><td></td><td>information</td><td >Skipping configuration &apos;OS_SYS_NOCACHEMEM_SIZE&apos; since the value of &apos;OS_SYS_NOCACHEMEM_SIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.</td></tr>
+       <tr class="ConfigurationNotChecked"><td><a href="4.html#line-110">110</a></td><td>ConfigurationNotChecked</td><td></td><td>information</td><td >Skipping configuration &apos;OS_SYS_NOCACHEMEM_SIZE&apos; since the value of &apos;OS_SYS_NOCACHEMEM_SIZE&apos; is unknown. Use -D if you want to check it. You can use -U to skip it explicitly.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="4.html#line-1470">1470</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="4.html#line-1484">1484</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr><td colspan="5"><a href="5.html">kernel/liteos_m/kernel/base/mem/common/los_slab.c</a></td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="5.html#line-243">243</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="5.html#line-246">246</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="5.html#line-297">297</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="5.html#line-299">299</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="5.html#line-380">380</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="5.html#line-383">383</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr><td colspan="5"><a href="6.html">kernel/liteos_m/kernel/base/mem/common/los_slabmem.c</a></td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="6.html#line-62">62</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="6.html#line-187">187</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr><td colspan="5"><a href="7.html">kernel/liteos_m/kernel/extended/cpup/los_cpup.c</a></td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="7.html#line-502">502</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="7.html#line-523">523</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr><td colspan="5"><a href="8.html">kernel/liteos_m/platform/cpu/arm/cortex-m4/src/los_sr.c</a></td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="8.html#line-96">96</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="8.html#line-100">100</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       <tr class="bughuntingDivByZero"><td><a href="8.html#line-107">107</a></td><td>bughuntingDivByZero</td><td><a href="https://cwe.mitre.org/data/definitions/369.html">369</a></td><td>error</td><td class="error">There is division, cannot determine that there can&apos;t be a division by zero.</td></tr>
+       </table>
+      </div> <!-- /.wrapper -->
+    </div>
+    <div id="footer" class="footer">
+      <p>
+        Cppcheck 2.1 - a tool for static C/C++ code analysis<br>
+        <br>
+        Internet: <a href="http://cppcheck.net">http://cppcheck.net</a><br>
+        IRC: <a href="irc://irc.freenode.net/cppcheck">irc://irc.freenode.net/cppcheck</a><br>
+      </p>
+    </div>
+  </body>
+</html>
