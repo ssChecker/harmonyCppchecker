@@ -2,7 +2,7 @@
 我只使用SE CERT进行了分析了部分代码
 见目录html_reporter，每一个子目录对应鸿蒙2.0源码的一个目录。目录xml是报告的xml格式。 点击 index.html使用浏览器查看
 
-如果你想自己分析按照一下步骤，
+如果你想自己分析按照下面步骤，
 ## Install Tools
 ### 下载开源工具cppcheck源码和鸿蒙源码
 
