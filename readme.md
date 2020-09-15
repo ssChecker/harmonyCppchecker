@@ -10,12 +10,12 @@
 运行完后，你的目录下会看到静态代码检测的目录cppcheck-2.1和harmonyos2.0源码目录
 
 ## Compile and Install cppcheck
-`chmod a+x donwload.sh && ./install_cppcheck.sh`
+`chmod a+x install_cppcheck.sh && ./install_cppcheck.sh`
 安装完成后你可以使用, `cppcheck -h`,来查看选项
-工具网址， http://cppcheck.sourceforge.net/
-在线文档， http://cppcheck.sourceforge.net/#unique
-在线教程， http://cppcheck.sourceforge.net/manual.pdf
-check list, https://sourceforge.net/p/cppcheck/wiki/ListOfChecks/
+- 工具网址， http://cppcheck.sourceforge.net/
+- 在线文档， http://cppcheck.sourceforge.net/#unique
+- 在线教程， http://cppcheck.sourceforge.net/manual.pdf
+- check list, https://sourceforge.net/p/cppcheck/wiki/ListOfChecks/
 
 
 ## 如何使用
