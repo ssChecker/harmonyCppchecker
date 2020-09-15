@@ -1,3 +1,4 @@
 *.tar
+*.tar.gz
 cppcheck-2.1
 harmonyos2.0
