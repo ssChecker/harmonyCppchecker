@@ -40,3 +40,7 @@ vendor太大了，如果你的计算资源足够，可以检查它。
 cppcheck提供了把xml文件转换为html报告的Python脚本,具体见 http://cppcheck.sourceforge.net/manual.pdf ，最后一章
 在cppcheck-2.1目录下，有一个目录 htmlreport
 帮助信息， `htmlreport/cppcheck-htmlreport -h`
+
+## 报告
+见目录html_reporter，每一个子目录对应鸿蒙2.0源码的一个目录。目录xml是报告的xml格式。
+点击 index.html使用浏览器查看
