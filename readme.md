@@ -38,6 +38,7 @@ done
 运行check_cert.sh,检查如下目录
 
 `./check_cert.sh base domains drivers foundation kernel/liteos_a kernel/liteos_m utils`
+
 vendor太大了，如果你的计算资源足够，可以检查它。
 脚本check_cert.sh运行完后，你会看到对应每个目录的输出结果xml文件
 
